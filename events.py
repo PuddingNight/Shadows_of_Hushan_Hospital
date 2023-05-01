@@ -465,7 +465,7 @@ def opening_the_music_box():
    print("You're not sure what just happened, but you know that this artifact is important, and that it holds the key to uncovering the secrets of Hushan Hospital.")
    time.sleep(5)
    print("You carefully tuck the music box into your bag.")
-
+#to finish
 
 
 def going_through_main_entrance():
