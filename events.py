@@ -290,6 +290,40 @@ def entering_the_toilets_from_window():
 
 def entering_Hospital_lobby():
    
+   print("You step inside the hospital lobby and are immediately hit by the smell of decay and mildew.")
+   time.sleep(5)
+   print("The air is thick with dust and the floorboards creak underfoot.")
+   time.sleep(5)
+   print("The only sound is the distant sound of water dripping, echoing off the empty walls.")
+   time.sleep(5)
+   print("To your right, you notice a door leading to the toilets.")
+   time.sleep(4)
+   print("The door is slightly ajar, and you catch a glimpse of something moving in the shadows inside.")
+   time.sleep(6)
+   print("You can't shake the feeling that you're being watched.")
+   time.sleep(4)
+   print("To your left, you see a long corridor leading to the main entrance.")
+   time.sleep(4)
+   print("The corridor is lined with old posters and faded photographs, showing smiling doctors and nurses from a bygone era.")
+   time.sleep(6)
+   print("The pictures are now faded and torn, adding to the eerie atmosphere of the place.")
+   time.sleep(5)
+   print("Straight ahead of you, you notice a staff-only door.")
+   time.sleep(4)
+   print("It's rusted shut, and you can see through the gap that the hallway beyond is completely dark.")
+   time.sleep(6)
+   print("Next to the staff door, you notice a set of stairs that lead to the first floor.")
+   time.sleep(4)
+   print("In the middle of the room, there is a large reception desk.")
+   time.sleep(4)
+   print("The wood is old and there are piles of dusty papers and broken equipment scattered about.")
+   time.sleep(6)
+   print("As you stand there, taking in your surroundings, you can't help but feel a sense of dread.")
+   time.sleep(5)
+   print("The hospital is old and abandoned, and it feels like something terrible is lurking just around the corner.")
+   time.sleep(6)
+   
+
    while True:
       print("What do you want to do?")
       time.sleep(2)
@@ -374,7 +408,46 @@ def stairs_first_floor():
    pass
 
 def entering_the_toilets_from_door():
-   pass
+   print("You now stand still in the middle of the bathroom.")
+   time.sleep(4)
+   print("Some mold is growing on the walls and you can hear the faint sound of something crawling under the floor.")
+   time.sleep(6)
+   print("Your suddently realise that an object, hidden under one of the stalls is glowing slowly.")
+   time.sleep(5)
+   print("You decide to inspect the object.")
+   time.sleep(3)
+   print("As you get closer to the glowing object, you realize it's a small music box.")
+   time.sleep(4)
+   print("It's covered in strange symbols and glyphs, and it seems to be emanating a faint energy.")
+   time.sleep(5)
+   print("You notice a small worn latch that keeps the box shut.")
+   time.sleep(4)
+
+   while True:
+      print("What do you want to do?")
+      time.sleep(2)
+      print("1. Open the box.")
+      time.sleep(2)
+      print("2. Leave the box alone and go through the door.")
+      time.sleep(2)
+      print("3. Leave the box alone and go outside from the window.")
+      choice = input("Enter the number of your choice: ")
+
+      if choice == "1":
+         opening_the_music_box()
+         break
+      elif choice == "2":
+         entering_Hospital_lobby()
+         break
+      elif choice == "3":
+         print("You decide to hop through the window as you feel that something is not right.")
+         time.sleep(4)
+         continue_exploring_outside()
+         break
+      else:
+         print("Invalid choice. Please enter a valid number.")
+         time.sleep(2)
+
 
 def opening_the_music_box():
    print("You cautiously open the music box, revealing its contents.")
