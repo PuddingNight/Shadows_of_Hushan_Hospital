@@ -277,7 +277,7 @@ def entering_the_toilets_from_window():
          opening_the_music_box()
          break
       elif choice == "2":
-         entering_Hospital_loby()
+         entering_Hospital_lobby()
          break
       elif choice == "3":
          print("You decide to hop back outside, you feel that something is not right.")
@@ -288,7 +288,7 @@ def entering_the_toilets_from_window():
          print("Invalid choice. Please enter a valid number.")
          time.sleep(2)
 
-def entering_Hospital_lobys():
+def entering_Hospital_lobby():
    
    while True:
       print("What do you want to do?")
@@ -305,12 +305,73 @@ def entering_Hospital_lobys():
       if choice == "1":
          print("You decide to leave the lobby through the main door.")
          time.sleep(2)
+         return_to_front_hospital_trough_main_entrance()
+         break
+      elif choice == "2":
+         print("You slowly pass through the main reception desk.")
+         time.sleep(2)
+         print("A chill runs down your spine, you now stand in front of the door reserved for the staff.")
+         time.sleep(2)
+         print("You put your hand on the door knob and feel something moist as you push it down.")
+         entering_staff_only()
+         break
+      elif choice == "3":
+         print("You can feel the cold sweat on your forehead dripping down your black hair.")
+         time.sleep(3)
+         print("The stairs still are in a good condition.")
+         time.sleep(2)
+         print("while you are climbing the stairs, you can feel a presence near you.")
+         time.sleep(2)
+         stairs_first_floor()
+         break
+      elif choice == "4":
+         print("You push slowly the door leading to the toilets of the lobby.")
+         time.sleep(2)
+         entering_the_toilets_from_door()
+         break
+      else:
+         print("Invalid choice. Please enter a valid number.")
+         time.sleep(2)
 
 
-def return_to_front_hospital():
+def return_to_front_hospital_trough_main_entrance():
+   print("You stand in front of the abandonned hospital.")
+   time.sleep(3)
+   print("The main entrance is a busted double door, hanging off its hinges, creaking eerily in the wind.")
+   time.sleep(5)
+   print("You can hear the faint rustle of leaves and the distant sound of creaking metal coming from inside the building.")
+   time.sleep(5)
+   
+   while True:
+      print("What do you want to do?")
+      time.sleep(2)
+      print("1. Go through the main entrance.")
+      time.sleep(2)
+      print("2. Explore the exterior.")
+      time.sleep(2)
+      choice = input("Enter the number of your choice: ")
+
+      if choice == "1":
+         print("You cautiously approach the main entrance, taking care not to step on any broken glass or loose debris.")
+         time.sleep(4)
+         print("The doors groan as you push them open, revealing a dark and ominous interior.")
+         time.sleep(3)
+         going_through_main_entrance()
+         break
+      elif choice == "2":
+         exploring_outside()
+         break
+      else:
+         print("Invalid choice. Please enter a valid number.")
+         time.sleep(2)
+         
+  
+
+def entering_staff_only():
    pass
 
-
+def stairs_first_floor():
+   pass
 
 def entering_the_toilets_from_door():
    pass
