@@ -51,16 +51,30 @@ def intro_scene():
 
 
 def arriving_hospital():
-    print("You arrive at the hospital and look up at the towering, foreboding structure before you.")
-    time.sleep(4)
-    print("The main entrance is a busted double door, hanging off its hinges, creaking eerily in the wind.")
-    time.sleep(5)
-    print("The windows on the upper floors are all shattered, and the ivy that once covered the building has grown wild and unchecked.")
-    time.sleep(6)
-    print("You can hear the faint rustle of leaves and the distant sound of creaking metal coming from inside the building.")
-    time.sleep(5)
+   print("The hospital looms before you, its imposing brick facade rising up into the sky.")
+   time.sleep(3)
+   print("It's a two-story building, with the windows on the ground floor all boarded up.")
+   time.sleep(4)
+   print("The windows on the upper floors are all shattered, and the ivy that once covered the building has grown wild and unchecked.")
+   time.sleep(6)
+   print("The wood is old and warped, and some of the boards have fallen away, revealing the dark, empty interior beyond.")
+   time.sleep(5)
+   print("You can't help but think how different it looks from when you were a child.")
+   time.sleep(3)
+   print("Back then, the hospital was a place of comfort and healing.")
+   time.sleep(4)
+   print("Now, it's a place of decay and abandonment.")
+   time.sleep(4)
+   print("The only sound is the rustle of leaves and the occasional creak of metal.")
+   time.sleep(3)
+   print("There's a strange, almost palpable feeling of unease that seems to hang in the air.")
+   time.sleep(5)
+   print("The main entrance is a busted double door, hanging off its hinges, creaking eerily in the wind.")
+   time.sleep(5)
+   print("You can hear the faint rustle of leaves and the distant sound of creaking metal coming from inside the building.")
+   time.sleep(5)  
     
-    while True:
+   while True:
         directions = ["Main Entrance", "Explore the Exterior"]
         print("What do you want to do?")
         time.sleep(2)
@@ -85,7 +99,25 @@ def arriving_hospital():
             time.sleep(3)
             print("Your heart races as you try to determine if it's just your imagination playing tricks on you, or if there's something else out there with you.")
             time.sleep(8)
+            print("As you're exploring the exterior of the hospital, you suddenly take notice of a window that's not boarded up like the rest of the windows.")
+            time.sleep(8)
+            print("It's on the second floor, and there's a faint light coming from within the room.") 
+            time.sleep(4)
+            print("You can't help but feel drawn to it, like it's calling out to you somehow.")
+            time.sleep(4)
+            glowing_window()
             break
         else:
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
+
+
+
+
+
+def glowing_window():
+    pass
+
+
+def going_through_main_entrance():
+    pass 
