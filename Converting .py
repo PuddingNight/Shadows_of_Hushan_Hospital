@@ -3,16 +3,15 @@ import time
 def typewritter(string):
     for char in string: 
         print(char, end="", flush=True)
-        time.sleep(0.05)
+        time.sleep(0.04)
         if char == "\n": 
-            time.sleep(1)
+            time.sleep(0.08)
     print("\n")
 
-typewritter(intro_scene) 
 
 
 
-intro_scene = """
+test = """
 You are Luo Mei Ling, a Chinese PhD student studying parapsychology in the United States.\n
 You've always been fascinated by the paranormal and psychology, which led you to pursue a career in parapsychology.\n
 You've studied under some of the top researchers in the field, and you've gained a reputation as one of the most promising young parapsychologists in the country.\n
@@ -36,3 +35,23 @@ You're not sure if it's a dream or if you're really hearing his voice, but you f
 
 
 
+
+
+
+#Starting the program
+
+def intro():
+    typewritter(test)
+    time.sleep(1)
+    while True:
+        user_input = input(
+            "When you're ready to continue, enter \"Continue\": ")
+        if user_input.lower() == "continue":
+            print("Your journey beggins !")
+            time.sleep(2)
+            arriving_hospital()
+            break
+        else:
+            print("Invalid input, please check you entered \"Continue\"")
+
+ 
