@@ -8,9 +8,6 @@ def typewritter(string):
             time.sleep(1)
     print("\n")
 
-message_test = "Bla blablalaalajalj \n lmqskdjfqsldf \n fin"
-
-
 typewritter(intro_scene) 
 
 
