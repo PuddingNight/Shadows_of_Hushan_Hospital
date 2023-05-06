@@ -1,50 +1,9 @@
 import time
 
 
+  
 
-    
-
-
-
-
-
-
-
-
-
-def return_to_main_entrance():
-    print("You decide to keep searching for another way inside.")
-    time.sleep(4)
-    print("As you continue your search, you can't shake the feeling that you're being watched.")
-    time.sleep(4)
-    print("After a long walk, you almost broke your ankle due to some unseen holes in the ground.")
-    time.sleep(4)
-    print("Nature had time to claim the outskirts of the hospital. You cannot continue any further.")
-
-    while True:
-        print("You have to chose wich entrance you wish to take.")
-        time.sleep(2)
-        print("1. Try to climb up the window that leads to the first floor")
-        time.sleep(2)
-        print("2. Investigate on the glowing window.")
-        time.sleep("2")
-        print("3. The main entrance might be a safer option.")
-        time.sleep("2")
-        choice = input("Enter the number of your choice: ")
-
-        if choice == "1":
-            climbing_through_the_window()
-            break
-        elif choice == "2":
-            glowing_window()
-            break
-        elif choice == "3":
-            going_through_main_entrance()
-            break
-        else:
-            print("Invalid choice. Please enter a valid number.")
-
-
+#working on it
 def climbing_through_the_window():
     print("You carefully stack the debris and manage to climb up to the window.")
     time.sleep(4)
@@ -98,53 +57,6 @@ def entering_staff_only():
 
 def stairs_first_floor():
     pass
-
-
-def entering_the_toilets_from_door():
-    print("You now stand still in the middle of the bathroom.")
-    time.sleep(4)
-    print("Some mold is growing on the walls and you can hear the faint sound of something crawling under the floor.")
-    time.sleep(6)
-    print("Your suddently realise that an object, hidden under one of the stalls is glowing slowly.")
-    time.sleep(5)
-    print("You decide to inspect the object.")
-    time.sleep(3)
-    print("As you get closer to the glowing object, you realize it's a small music box.")
-    time.sleep(4)
-    print("It's covered in strange symbols and glyphs, and it seems to be emanating a faint energy.")
-    time.sleep(5)
-    print("You notice a small worn latch that keeps the box shut.")
-    time.sleep(4)
-
-    while True:
-        print("What do you want to do?")
-        time.sleep(2)
-        print("1. Open the box.")
-        time.sleep(2)
-        print("2. Leave the box alone and go through the door.")
-        time.sleep(2)
-        print("3. Leave the box alone and go outside from the window.")
-        choice = input("Enter the number of your choice: ")
-
-        if choice == "1":
-            opening_the_music_box()
-            break
-        elif choice == "2":
-            entering_Hospital_lobby()
-            break
-        elif choice == "3":
-            print(
-                "You decide to hop through the window as you feel that something is not right.")
-            time.sleep(4)
-            continue_exploring_outside()
-            break
-        else:
-            print("Invalid choice. Please enter a valid number.")
-            time.sleep(2)
-
-
-
-
 
 
 
