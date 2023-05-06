@@ -50,7 +50,14 @@ class Ghost:
         self.description = description
 
 
+#making a class for the morgue killer
+class MorgueKiller:
+    def __init__(self, health, description):
+        self.health = health
+        self.description = description
 
+#instantiating the morgue killer
+creepy_cultist = MorgueKiller(100, "A creepy cultist")
 
 
 
@@ -255,8 +262,8 @@ There, on the last gurney, something lies covered by a chunky white sheet.\n
 \n
 You pounder for a moment, trying to decide if you should pull the sheet to see what lies underneath.\n
 \n
-As you turn to notice anything of interest.\n
-In the corner of the room, lies a pile of dust next to a big machine.\n
+As you turn to notice anything else of interest.\n
+You notice that in the corner of the room, lies a pile of dust next to a big machine.\n
 You stare at it for a moment, trying to figure out what it is.\n
 Then it hits you - it's a pile of ashes near the incinerator.\n
 You can feel your heart pounding in your chest as you realize what this means.\n
@@ -264,7 +271,7 @@ You can feel your heart pounding in your chest as you realize what this means.\n
 Getting closer, you can feel that the ashes are still warm.\n
 You can see a faint glow coming from the incinerator, and you can hear the sound of something moving inside.\n
 
-
+#TODO: add a choice to open the incinerator
 """
 
 pulling_the_sheet_text = """
@@ -318,12 +325,12 @@ I fear that it's free to prey on anyone who dares to enter this cursed place. I 
 """
 
 killer_comes_morgue_text = """
-You finish reading the journal, your mind trying to comprehend what could have happened to this "ghost specialist".\n
+You finish reading the journal, your mind is trying to comprehend what could have happened to this "ghost specialist".\n
 Strangely, you feel that this poor soul is really similar to you.\n
 how could he have died ?\n
 The body on the gurney is still there, and you can see that the maggots are still crawling on it.\n
 His body is too decomposed to see if he has any wounds.\n
-You put the journal back in the corpse's hand and turn away.\n
+You put the journal into your backpack.\n
 Suddenly, you hear a noise from outside the morgue door.\n
 \n
 It's a sound like footsteps, heavy and deliberate.\n
@@ -831,7 +838,9 @@ def entering_staff_only():
 
 
 def going_down_the_morgue():
-    pass
+    typewritter(going_down_the_morgue_text)
+    time.sleep(1)
+
 
 def going_to_the_storage_room():
     pass
