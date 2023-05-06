@@ -386,6 +386,39 @@ Your eyes land on a metal pipe lying on the ground. You pick it up, your hands s
 """
 
 
+opening_the_incinerator_text = """
+You cautiously approach the incinerator, the rusted metal creaking under your weight. The door is heavy and it takes all your strength to pull it open.\n
+The stench of burning flesh hits you like a wave, and you can feel bile rising in your throat.\n
+\n
+Inside the incinerator, you see the charred remains of what used to be human bodies.\n
+Some are nothing more than blackened bones, while others are still smoldering, the flesh melted and twisted beyond recognition.\n
+\n
+You notice a pile of glowing ashes in the corner of the incinerator.\n
+As you approach the pile, you hear a faint whisper in your ear :
+\n
+"Your time will come soon enough, you will serve the Overseer forever like the rest of us."\n
+\n
+The ashes seem to glow brighter as you reach out to touch them, and you can feel a strange energy pulsing through your body.\n
+You pull your hand back quickly, feeling like you've just made a deal with the devil.\n
+\n
+As you turn to leave the incinerator, you can't shake the feeling that something is watching you.\n
+You glance back over your shoulder, but the incinerator is empty except for the pile of glowing ashes.\n
+You are eager to put as much distance as possible between yourself and the horrors you've just witnessed.\n
+Although, you feel like the ashes could be useful in the future.\n
+"""
+
+standing_in_the_morgue_text = """
+You stand in the morgue, unsure of what to do next.\n
+"""
+
+getting_the_ashes_text = """
+As you pick up the glowing ashes, a whispering voice echoes in your mind.\n
+It speaks of ancient eldritch entities, dark rituals, and unspeakable power.\n
+The voice promises you the world, but warns you of the price that must be paid.\n
+It speaks of endless servitude and the loss of your very soul.\n
+The words chill you to the bone, and you feel a sense of dread wash over you as you realize the true nature of the power you hold in your hand.\n
+"""
+
 #Starting the program
 
 #leads to arriving_hospital()
@@ -893,7 +926,7 @@ def going_down_the_morgue():
                 print("You decide to investigate on the last gurney.")
                 time.sleep(2)
                 events.append("investigated the body on the last gurney")
-                #add a function to investigate on the last gurney
+                investigating_the_last_gurney()
                 break
             elif choice == "2":
                 print("You decide to open the door of the incinerator.")
@@ -926,7 +959,7 @@ def going_down_the_morgue():
                 if choice == "1":
                     print("You decide to investigate on the last gurney.")
                     time.sleep(2)
-                    #add a function to investigate on the last gurney
+                    investigating_the_last_gurney()
                     break
                 elif choice == "2":
                     print("You decide to open the door of the incinerator.")
@@ -974,7 +1007,7 @@ def going_down_the_morgue():
                 if choice == "1":
                     print("You decide to investigate on the last gurney.")
                     time.sleep(2)
-                    #add a function to investigate on the last gurney
+                    investigating_the_last_gurney()
                     break
                 elif choice == "2":
                     print("You decide to go back to the lobby.")
@@ -1000,10 +1033,168 @@ def going_down_the_morgue():
                     print("Invalid choice. Please enter a valid number.")
                     time.sleep(2)
 
+#coming from the morgue, leads to:
+# getting the ashes
+#standing in the morgue
+def opening_the_incinerator():
+    typewritter(opening_the_incinerator_text)
+    time.sleep(1)
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Get the ashes.")
+        time.sleep(2)
+        print("2. Leave the incinerator and explore the rest of the morgue.")
+        time.sleep(2)
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to get the ashes.")
+            time.sleep(2)
+            getting_the_ashes()
+            break
+        elif choice == "2":
+            print("You decide to leave the incinerator and explore the rest of the morgue.")
+            time.sleep(2)
+            standing_in_the_morgue()
+            break
+
+#coming from the opening the incinerator, leads to:
+# standing in the morgue
+def getting_the_ashes():
+    typewritter(getting_the_ashes_text)
+    time.sleep(1)
+    standing_in_the_morgue()
+
+
+
+#coming from the opening the incenerator, getting ashes, the investigation of the last gurney, leads to:
+def standing_in_the_morgue():
+    typewritter(standing_in_the_morgue_text)
+    time.sleep(1)
+    while True:
+        if events("investigated the body on the last gurney") == False and check_inventory("Ashes") == False:
+            print("What do you want to do?")
+            time.sleep(2)
+            print("1. Investigate on the last gurney that is draped with a white sheet.")
+            time.sleep(2)
+            print("2. Open the door of the incinerator.")
+            time.sleep(2)
+            print("3. Go back to the staff only room.")
+            time.sleep(2)
+            choice = input("Enter the number of your choice: ")
+
+            if choice == "1":
+                print("You decide to investigate on the last gurney.")
+                time.sleep(2)
+                investigating_the_last_gurney()
+                break
+            elif choice == "2":
+                print("You decide to open the door of the incinerator.")
+                time.sleep(2)
+                #add a function to open the door of the incinerator
+                break
+            elif choice == "3":
+                print("You decide to go back to the lobby.")
+                time.sleep(2)
+                #add a return to the staff only room
+                break
+            else:
+                print("Invalid choice. Please enter a valid number.")
+                time.sleep(2)
+        elif events("investigated the body on the last gurney") == True and check_inventory("Ashes") == False:
+            print("What do you want to do?")
+            time.sleep(2)
+            print("1. Open the door of the incinerator.")
+            time.sleep(2)
+            print("2. Go back to the staff only room.")
+            time.sleep(2)
+            choice = input("Enter the number of your choice: ")
+            if choice == "1":
+                print("You decide to open the door of the incinerator.")
+                time.sleep(2)
+                #add a function to open the door of the incinerator
+                break
+            elif choice == "2":
+                print("You decide to go back to the lobby.")
+                time.sleep(2)
+                #add a return to the staff only room
+                break
+            else:
+                print("Invalid choice. Please enter a valid number.")
+                time.sleep(2)
+        elif events("investigated the body on the last gurney") == False and check_inventory("Ashes") == True:
+            print("What do you want to do?")
+            time.sleep(2)
+            print("1. Investigate on the last gurney that is draped with a white sheet.")
+            time.sleep(2)
+            print("2. Go back to the staff only room.")
+            time.sleep(2)
+            choice = input("Enter the number of your choice: ")
+
+            if choice == "1":
+                print("You decide to investigate on the last gurney.")
+                time.sleep(2)
+                #add a function to investigate on the last gurney
+                break
+            elif choice == "2":
+                print("You decide to go back to the lobby.")
+                time.sleep(2)
+                #add a return to the staff only room
+                break
+            else:
+                print("Invalid choice. Please enter a valid number.")
+                time.sleep(2)
+        elif events("investigated the body on the last gurney") == True and check_inventory("Ashes") == True:
+            print("What do you want to do?")
+            time.sleep(2)
+            print("1. Go back to the staff only room.")
+            time.sleep(2)
+            choice = input("Enter the number of your choice: ")
+            
+            if choice == "1":
+                print("You decide to go back to the lobby.")
+                time.sleep(2)
+                #add a return to the staff only room
+                break
+            else:
+                print("Invalid choice. Please enter a valid number.")
+                time.sleep(2)
+
+
+
+def investigating_the_last_gurney():
+    typewritter(pulling_the_sheet_text)
+    time.sleep(1)
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Try to grab the journal.")
+        time.sleep(2)
+        print("2. Go back to exploring the morgue.")
+        time.sleep(2)
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to grab the journal.")
+            time.sleep(2)
+            #add a function to grab the journal
+            break
+        elif choice == "2":
+            print("You decide to explore the morgue a bit more.")
+            time.sleep(2)
+            standing_in_the_morgue()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
 
 
 
 
+
+def returning_to_staff_only():
+    pass
 
 
 def going_to_the_storage_room():
