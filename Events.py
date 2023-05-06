@@ -567,7 +567,7 @@ def entering_the_toilets_from_window():
 
 
 
-    typewritter(entering_the_toilets_from_window_text)
+    typewritter(entering_the_toilets_from_window_text_no_MB)
     while True:
         print("What do you want to do?")
         time.sleep(2)
@@ -605,7 +605,7 @@ def opening_the_music_box():
 
 def entering_the_toilets_from_door():
     if check_inventory("Music Box") == False:
-        typewritter(entering_the_toilets_from_door_text_no_MB)
+        typewritter(entering_the_toilets_form_door_no_MB)
         while True:
             print("What do you want to do?")
             time.sleep(2)
@@ -631,7 +631,7 @@ def entering_the_toilets_from_door():
                 print("Invalid choice. Please enter a valid number.")
                 time.sleep(2)
     else:
-        typewritter(entering_the_toilets_from_door_text_MB)
+        typewritter(entering_the_toilets_from_the_door_MB)
         while True:
             print("What do you want to do?")
             time.sleep(2)
@@ -711,7 +711,7 @@ def continue_exploring_outside():
 # glowing_window()
 # going_through_main_entrance()
 def return_to_main_entrance():
-    typewritter(return_to_main_entrance_text)
+    typewritter(return_to_the_main_entrance_text)
     time.sleep(1)
     while True:
         print("You have to chose wich entrance you wish to take.")
@@ -753,7 +753,7 @@ def return_to_main_entrance():
 # in_the_administrative_offices() !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
 def climbing_through_the_window():
     typewritter(climbing_through_the_window_text)
-    in_the_administrative_offices()
+    #adding administrative offices function here !!!!!!!!
 
 
 #Comming from the lobby leads to going_through_the_main_entrance or exploring outside
@@ -823,7 +823,7 @@ def entering_Hospital_lobby():
             time.sleep(2)
             print("while you are climbing the stairs, you can feel a presence following your steps.")
             time.sleep(2)
-            stairs_first_floor()
+            #adding the first floor function here !!!!!!!!
             break
         elif choice == "4":
             entering_the_toilets_from_door()
@@ -909,7 +909,7 @@ def going_down_the_morgue():
                 print("Invalid choice. Please enter a valid number.")
                 time.sleep(2)
     else:
-        typewritter(going_down_the_morgue_old_text)
+        typewritter(going_down_the_morgue_visited_text)
         time.sleep(1)
         while True:
             if events("investigated the body on the last gurney") == False and check_inventory("Ashes") == False:
