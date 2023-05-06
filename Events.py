@@ -1,4 +1,5 @@
 import time
+import random
 
 def typewritter(string):
     for char in string: 
@@ -73,16 +74,41 @@ class Ghost:
 
 
 #making a class for the morgue killer
-class MorgueKiller:
+class Killer:
     def __init__(self, health, description):
         self.health = health
         self.description = description
 
 #instantiating the morgue killer
-creepy_cultist = MorgueKiller(100, "A creepy cultist")
+creepy_cultist = Killer(100, "A creepy cultist")
+
+
+def fight_morgue_killer():
+    outcome = random.randint(1, 2, 3)
+    if outcome == 1:
+        typewritter(fight_text_1)
+        standing_in_the_morgue()
+    elif outcome == 2:
+        typewritter(fight_text_2)
+        print("You have died. Game over.")
+        time.sleep(2)
+        while True:
+            play_again = input("Would you like to play again? (Y/N) ")
+            if play_again.capitalize == "Y":
+                print("Restarting game...")
+                time.sleep(2)
+                intro()
+            elif play_again.capitalize == "N":
+                print("Thanks for playing!")
+                exit()
+    elif outcome == 3:
+        typewritter(fight_text_3)
+        standing_in_the_morgue()
 
 
 
+
+    
 
 
 intro_text = """
@@ -381,10 +407,39 @@ Your heart is pounding in your chest as you try to steady your breathing, prayin
 """
 
 fighting_morgue_text = """
-You start to look around the room for anything you can use as a weapon. 
-Your eyes land on a metal pipe lying on the ground. You pick it up, your hands shaking, and wait for whoever is coming to enter the room.
+You start to look around the room for anything you can use as a weapon.\n
+Your eyes land on a metal pipe lying on the ground. You pick it up, your hands shaking, and wait for whoever is coming to enter the room.\n
 """
 
+fight_text_1 = """
+As soon as the man comes through the door, you swing the pipe with all your might, hitting in the center of his head.\n
+A cracking sound fills the room as his skull shatters under the force of the blow.\n
+Blood splatters across the floor, he crumples to the ground, unmoving.\n
+You take some time to catch your breath and lean against the wall, trying to calm your nerves.\n
+You can't believe what just happened, you've never killed anyone before.\n
+You close your eyes and try to steady your breathing, unable to stop your hands from shaking.\n
+as you open your eyes, the body is gone.\n
+"""
+fight_text_2 = """
+You swing the pipe at the man, but you miss, hitting him in the shoulder instead.\n
+He recoils in pain, but quickly recovers and pulls out a knife.\n
+In a moment of desperation, he stabs you, and you feel a searing pain in your side.\n
+Your blood is pouring out of the wound, and you can feel yourself getting weaker by the second.\n
+You collapse to the ground, and witness the man fading away into the darkness.\n
+before you lose consciousness, you see the knife in your hand.\n
+Was all of this just a dream ?\n
+Did you stab yourself ?\n
+A voice whispers in your ear:\n
+You will now serve with the rest of us.\n
+"""
+
+fight_text_3 = """
+You swing the pipe at the cultist, but your vision suddenly blurs, and you feel a sense of disorientation.\n
+The cultist disappears, and you realize that you were just having an intense hallucination.\n 
+Creepy voices whisper in your head, telling you of eldritch entities and dark rituals.\n
+You stumble out of the morgue, shaken and confused.:\n
+You're not sure what just happened, but you know that you need to bring peace to the spirits of this hospital.\n
+"""
 
 opening_the_incinerator_text = """
 You cautiously approach the incinerator, the rusted metal creaking under your weight. The door is heavy and it takes all your strength to pull it open.\n
@@ -1190,7 +1245,33 @@ def investigating_the_last_gurney():
             time.sleep(2)
 
 
+def grabbing_the_journal():
+    typewritter(reading_the_journal_morgue_text)
+    time.sleep(1)
+    typewritter(killer_comes_morgue_text)
+    time.sleep(1)
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Hide.")
+        time.sleep(2)
+        print("2. Fight")
+        time.sleep(2)
+        choice = input("Enter the number of your choice: ")
 
+        if choice == "1":
+            print("You decide to hide.")
+            time.sleep(2)
+            #add a function to hide
+            break
+        elif choice == "2":
+            print("You decide to fight.")
+            time.sleep(2)
+            #add a function to fight
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
 
 
 def returning_to_staff_only():
