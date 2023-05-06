@@ -10,6 +10,51 @@ def typewritter(string):
 
 
 
+#Make an inventory that will hold the items the player will find
+inventory = []
+
+#make a general function that cheks if the player has an item in their inventory
+def check_inventory(item):
+    if item in inventory:
+        return True
+    else:
+        return False
+
+
+#make a list that tracks the encounters the player had
+encounters = []
+
+#make a general function that checks if the player has encountered a ghost
+def check_encounters(ghost):
+    if ghost in encounters:
+        return True
+    else:
+        return False
+
+
+#make an object for the player
+class Player:
+    def __init__(self, name, health, inventory):
+        self.name = name
+        self.health = health
+        self.inventory = inventory
+
+
+#instantiating the player
+player = Player("Luo Mei Ling", 100, inventory)
+
+#make a class for the ghosts they do not have health but they have a name and a description
+class Ghost:
+    def __init__(self, name, description):
+        self.name = name
+        self.description = description
+
+
+
+
+
+
+
 
 intro_text = """
 You are Luo Mei Ling, a Chinese PhD student studying parapsychology in the United States.\n
@@ -102,7 +147,7 @@ As you make your way around the side of the building, you spot a small window on
 You notice a small pile of debris nearby that looks like it could be used to climb up and reach the window.\n
 """
 
-entering_the_toilets_from_window_text = """
+entering_the_toilets_from_window_text_no_MB = """
 You carefully enter the bathroom, keeping an eye out for any signs of danger\n
 You can see a door half open that leads to what seems to be a big room.\n
 The sound of the wind whistles calmly through throughout the building.\n
@@ -110,6 +155,12 @@ Your eyes start to get used to darkness and you gather up the courage to find ou
 As you get closer to the glowing object, you realize it's a small music box.\n
 It's covered in strange symbols and glyphs, and it seems to be emanating a faint energy."\n
 You notice a small worn latch that keeps the box shut.\n
+"""
+
+entering_the_toilets_from_window_text_MB = """
+You carefully enter the bathroom, keeping an eye out for any signs of danger\n
+You can see a door half open that leads to what seems to be a big room.\n
+The sound of the wind whistles calmly through throughout the building.\n
 """
 
 opening_the_music_box_text = """
@@ -121,6 +172,7 @@ The vision is so vivid and intense that you feel like you're actually there, exp
 When the vision ends, you find yourself back in the abandoned hospital, clutching the music box tightly.\n
 You carefully tuck the music box into your bag.\n
 """
+
 
 #Starting the program
 
@@ -206,31 +258,102 @@ def exploring_outside():
 # entering_the_toilets_from_window()
 # continue_exploring_outside()
 def glowing_window():
-    typewritter(glowing_window_text)
-    while True:
-        print("What do you want to do?")
-        time.sleep(2)
-        print("1. Investigate the glow.")
-        time.sleep(2)
-        print("2. Continue exploring the exterior of the hospital.")
-        time.sleep(2)
-        choice = input("Enter the number of your choice: ")
-
-        if choice == "1":
-            entering_the_toilets_from_window()
-            break
-        elif choice == "2":
-            continue_exploring_outside()
-            break
-        else:
-            print("Invalid choice. Please enter a valid number.")
+    if check_inventory("Music Box") == False:
+        typewritter(glowing_window_text)
+        while True:
+            print("What do you want to do?")
             time.sleep(2)
+            print("1. Investigate the glow.")
+            time.sleep(2)
+            print("2. Continue exploring the exterior of the hospital.")
+            time.sleep(2)
+            choice = input("Enter the number of your choice: ")
+
+            if choice == "1":
+                entering_the_toilets_from_window()
+                break
+            elif choice == "2":
+                continue_exploring_outside()
+                break
+            else:
+                print("Invalid choice. Please enter a valid number.")
+                time.sleep(2)
+    else:
+        typewritter(glowing_window_text_MB)
+        while True:
+            print("What do you want to do?")
+            time.sleep(2)
+            print("1. Investigate the glow.")
+            time.sleep(2)
+            print("2. Continue exploring the exterior of the hospital.")
+            time.sleep(2)
+            choice = input("Enter the number of your choice: ")
+
+            if choice == "1":
+                entering_the_toilets_from_window()
+                break
+            elif choice == "2":
+                continue_exploring_outside()
+                break
+            else:
+                print("Invalid choice. Please enter a valid number.")
+                time.sleep(2)
 
 #Coming from glowing_window() leads to :
 # opening_the_music_box() !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
 # entering_Hospital_lobby()
 # continue_exploring_outside()
 def entering_the_toilets_from_window():
+    if check_inventory("Music Box") == False:
+        typewritter(entering_the_toilets_from_window_text_no_MB)
+        while True:
+            print("What do you want to do?")
+            time.sleep(2)
+            print("1. Open the box.")
+            time.sleep(2)
+            print("2. Leave the box alone and continue through the door.")
+            time.sleep(2)
+            print("3. Leave the box alone and go back outside from the window.")
+            choice = input("Enter the number of your choice: ")
+
+            if choice == "1":
+                opening_the_music_box()
+                break
+            elif choice == "2":
+                entering_Hospital_lobby()
+                break
+            elif choice == "3":
+                print("You decide to hop back outside, you feel that something is not right.")
+                time.sleep(4)
+                continue_exploring_outside()
+                break
+            else:
+                print("Invalid choice. Please enter a valid number.")
+                time.sleep(2)
+    else:
+     typewritter(entering_the_toilets_from_window_text_MB)
+     while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Continue through the door.")
+        time.sleep(2)
+        print("2. Go back outside from the window.")
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            entering_Hospital_lobby()
+        elif choice == "2":
+            print("You decide to hop back outside, you feel that something is not right.")
+            time.sleep(4)
+            continue_exploring_outside()
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+    
+
+
+
+
     typewritter(entering_the_toilets_from_window_text)
     while True:
         print("What do you want to do?")
@@ -258,7 +381,8 @@ def entering_the_toilets_from_window():
             time.sleep(2)
 
 #coming from entering_the_toilets_from_the_window() or entering_toilets_from_door() Leads to :
-#  to define !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
+#  to define a condition if the box is picked !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
+#  or a inventory check !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
 def opening_the_music_box():
     typewritter(opening_the_music_box_text)
     time.sleep(1)
