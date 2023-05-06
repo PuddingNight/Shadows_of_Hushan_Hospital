@@ -208,7 +208,12 @@ After a long walk, you almost broke your ankle due to some unseen holes in the g
 Nature had time to claim the outskirts of the hospital. You cannot continue any further.\n
 """
 
-
+climbing_through_the_window_text = """
+You carefully stack the debris and manage to climb up to the window.\n
+As you peek inside, you see what looks like a dark office stretching off into the distance.\n
+You can see rotten chairs, empy files and papers scattered all over the floor. A fait smell of iron floats in the air.\n
+You take a deep breath and climb through the broken window, entering the hospital through the side entrance.\n
+"""
 
 
 
@@ -426,7 +431,7 @@ def opening_the_music_box():
     inventory.append("Music Box")
     standing_in_the_toilets()
     time.sleep(1)
-# to finish
+
 
 
 def entering_the_toilets_from_door():
@@ -503,12 +508,12 @@ def standing_in_the_toilets():
         else:
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
-
+                                                 
 
 
 
 #coming from exploring_outside() or glowing_window() Leads to :
-# climbing_through_the_window() !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
+# climbing_through_the_window()
 # return_to_main_entrance() 
 def continue_exploring_outside():
     typewritter(continue_exploring_outside_text)
@@ -533,7 +538,7 @@ def continue_exploring_outside():
             time.sleep(2)
 
 #coming from continue_exploring_outside() Leads to :
-# climbing_through_the_window() !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
+# climbing_through_the_window()
 # glowing_window()
 # going_through_main_entrance()
 def return_to_main_entrance():
@@ -551,16 +556,64 @@ def return_to_main_entrance():
         choice = input("Enter the number of your choice: ")
 
         if choice == "1":
+            print("You decide to go back to the window that leads to the first floor.")
+            time.sleep(2)
+            print("You walk back to the place that had stacked debris and a broken window.")
+            time.sleep(2)
             climbing_through_the_window()
             break
         elif choice == "2":
+            print("You decide to go back to the window that wasn't boarded like the others on the ground floor.")
+            time.sleep(2)
+            print("You walk carefully and manage recall the position of this window.")
+            time.sleep(2)
             glowing_window()
             break
         elif choice == "3":
+            print("You decide to go through the main entrance.")
+            time.sleep(2)
+            print("You walk back to the main entrance.")
+            time.sleep(2)
             going_through_main_entrance()
             break
         else:
             print("Invalid choice. Please enter a valid number.")
+
+
+#²coming from return_to_main_entrance() and climbing_through_the_window() Leads to :
+# in_the_administrative_offices() !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
+def climbing_through_the_window():
+    typewritter(climbing_through_the_window_text)
+    in_the_administrative_offices()
+
+
+#Comming from the lobby leads to going_through_the_main_entrance or exploring outside
+def return_to_front_hospital_trough_main_entrance():
+    typewritter(return_to_front_hospital_trough_main_entrance_text)
+    time.sleep(1)
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Go through the main entrance.")
+        time.sleep(2)
+        print("2. Explore the exterior.")
+        time.sleep(2)
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You cautiously approach the main entrance, taking care not to step on any broken glass or loose debris.")
+            time.sleep(4)
+            print("The doors groan as you push them open, revealing a dark and ominous interior.")
+            time.sleep(3)
+            going_through_main_entrance()
+            break
+        elif choice == "2":
+            exploring_outside()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+
 
 
 
@@ -592,55 +645,21 @@ def entering_Hospital_lobby():
         elif choice == "2":
             print("You slowly pass through the main reception desk.")
             time.sleep(2)
-            print(
-                "A chill runs down your spine, you now stand in front of the door reserved for the staff.")
+            print("A chill runs down your spine, you now stand in front of the door reserved for the staff.")
             time.sleep(2)
-            print(
-                "You put your hand on the door knob and feel something moist as you push it down.")
             entering_staff_only()
             break
         elif choice == "3":
-            print(
-                "You can feel the cold sweat on your forehead dripping down your black hair.")
+            print("You can feel the cold sweat on your forehead dripping down your black hair.")
             time.sleep(3)
             print("The stairs still are in a good condition.")
             time.sleep(2)
-            print("while you are climbing the stairs, you can feel a presence near you.")
+            print("while you are climbing the stairs, you can feel a presence following your steps.")
             time.sleep(2)
             stairs_first_floor()
             break
         elif choice == "4":
-            print("You push slowly the door leading to the toilets of the lobby.")
-            time.sleep(2)
             entering_the_toilets_from_door()
-            break
-        else:
-            print("Invalid choice. Please enter a valid number.")
-            time.sleep(2)
-
-
-#Comming from the lobby leads to going_through_the_main_entrance or exploring outside
-def return_to_front_hospital_trough_main_entrance():
-    typewritter(return_to_front_hospital_trough_main_entrance_text)
-    time.sleep(1)
-    while True:
-        print("What do you want to do?")
-        time.sleep(2)
-        print("1. Go through the main entrance.")
-        time.sleep(2)
-        print("2. Explore the exterior.")
-        time.sleep(2)
-        choice = input("Enter the number of your choice: ")
-
-        if choice == "1":
-            print("You cautiously approach the main entrance, taking care not to step on any broken glass or loose debris.")
-            time.sleep(4)
-            print("The doors groan as you push them open, revealing a dark and ominous interior.")
-            time.sleep(3)
-            going_through_main_entrance()
-            break
-        elif choice == "2":
-            exploring_outside()
             break
         else:
             print("Invalid choice. Please enter a valid number.")
