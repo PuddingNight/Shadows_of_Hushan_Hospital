@@ -31,6 +31,28 @@ def check_encounters(ghost):
     else:
         return False
 
+#make a list that tracks the events the player has already experienced
+events = []
+
+#make a general function that checks if the player has experienced an event
+def check_events(event):
+    if event in events:
+        return True
+    else:
+        return False
+
+
+#make a list that tracks the rooms with long descriptions of rooms that the player has already visited
+visited_rooms = []
+
+#make a general function that checks if the player has visited a room
+def check_visited_rooms(room):
+    if room in visited_rooms:
+        return True
+    else:
+        return False
+
+
 
 #make an object for the player
 class Player:
@@ -270,8 +292,19 @@ You can feel your heart pounding in your chest as you realize what this means.\n
 \n
 Getting closer, you can feel that the ashes are still warm.\n
 You can see a faint glow coming from the incinerator, and you can hear the sound of something moving inside.\n
+The incinerator is closed, but you can see a small latch on the side.\n
+\n
+You now stand still in the middle of the morgue.\n
+"""
 
-#TODO: add a choice to open the incinerator
+
+going_down_the_morgue_visited_text = """
+You remember what happened the last time you went down there.\n
+You can still feel the sense of dread when you heard the sound of shuffling footsteps and muffled whispers.\n
+You reluctantly decide to go back down there.\n
+the stairs creak under your weight, and you can feel your heart pounding in your chest as you descend deeper into the bowels of the hospital.\n
+You walk down the hallway, and you can feel a chill running down your spine.\n
+You now stand still in the middle of the morgue.\n
 """
 
 pulling_the_sheet_text = """
@@ -836,10 +869,141 @@ def entering_staff_only():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
-
+#Coming from entering_staff_only() leads to :
+# open the incinerator !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
+# investigate on the last gurney !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
+# reurn to returning_to_staff_only() !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
 def going_down_the_morgue():
-    typewritter(going_down_the_morgue_text)
-    time.sleep(1)
+    if check_visited_rooms("morgue") == False:
+        typewritter(going_down_the_morgue_new_text)
+        time.sleep(1)
+        check_visited_rooms.append("morgue")
+        while True:
+            print("What do you want to do?")
+            time.sleep(2)
+            print("1. Investigate on the last gurney that is draped with a white sheet.")
+            time.sleep(2)
+            print("2. Open the door of the incinerator.")
+            time.sleep(2)
+            print("3. Go back to the staff only room.")
+            time.sleep(2)
+            choice = input("Enter the number of your choice: ")
+
+            if choice == "1":
+                print("You decide to investigate on the last gurney.")
+                time.sleep(2)
+                events.append("investigated the body on the last gurney")
+                #add a function to investigate on the last gurney
+                break
+            elif choice == "2":
+                print("You decide to open the door of the incinerator.")
+                time.sleep(2)
+                #add a function to open the door of the incinerator
+                break
+            elif choice == "3":
+                print("You decide to go back to the lobby.")
+                time.sleep(2)
+                #add a return to the staff only room
+                break
+            else:
+                print("Invalid choice. Please enter a valid number.")
+                time.sleep(2)
+    else:
+        typewritter(going_down_the_morgue_old_text)
+        time.sleep(1)
+        while True:
+            if events("investigated the body on the last gurney") == False and check_inventory("Ashes") == False:
+                print("What do you want to do?")
+                time.sleep(2)
+                print("1. Investigate on the last gurney that is draped with a white sheet.")
+                time.sleep(2)
+                print("2. Open the door of the incinerator.")
+                time.sleep(2)
+                print("3. Go back to the staff only room.")
+                time.sleep(2)
+                choice = input("Enter the number of your choice: ")
+
+                if choice == "1":
+                    print("You decide to investigate on the last gurney.")
+                    time.sleep(2)
+                    #add a function to investigate on the last gurney
+                    break
+                elif choice == "2":
+                    print("You decide to open the door of the incinerator.")
+                    time.sleep(2)
+                    #add a function to open the door of the incinerator
+                    break
+                elif choice == "3":
+                    print("You decide to go back to the lobby.")
+                    time.sleep(2)
+                    #add a return to the staff only room
+                    break
+                else:
+                    print("Invalid choice. Please enter a valid number.")
+                    time.sleep(2)
+            elif events("investigated the body on the last gurney") == True and check_inventory("Ashes") == False:
+                print("What do you want to do?")
+                time.sleep(2)
+                print("1. Open the door of the incinerator.")
+                time.sleep(2)
+                print("2. Go back to the staff only room.")
+                time.sleep(2)
+                choice = input("Enter the number of your choice: ")
+                if choice == "1":
+                    print("You decide to open the door of the incinerator.")
+                    time.sleep(2)
+                    #add a function to open the door of the incinerator
+                    break
+                elif choice == "2":
+                    print("You decide to go back to the lobby.")
+                    time.sleep(2)
+                    #add a return to the staff only room
+                    break
+                else:
+                    print("Invalid choice. Please enter a valid number.")
+                    time.sleep(2)
+            elif events("investigated the body on the last gurney") == False and check_inventory("Ashes") == True:
+                print("What do you want to do?")
+                time.sleep(2)
+                print("1. Investigate on the last gurney that is draped with a white sheet.")
+                time.sleep(2)
+                print("2. Go back to the staff only room.")
+                time.sleep(2)
+                choice = input("Enter the number of your choice: ")
+
+                if choice == "1":
+                    print("You decide to investigate on the last gurney.")
+                    time.sleep(2)
+                    #add a function to investigate on the last gurney
+                    break
+                elif choice == "2":
+                    print("You decide to go back to the lobby.")
+                    time.sleep(2)
+                    #add a return to the staff only room
+                    break
+                else:
+                    print("Invalid choice. Please enter a valid number.")
+                    time.sleep(2)
+            elif events("investigated the body on the last gurney") == True and check_inventory("Ashes") == True:
+                print("What do you want to do?")
+                time.sleep(2)
+                print("1. Go back to the staff only room.")
+                time.sleep(2)
+                choice = input("Enter the number of your choice: ")
+                
+                if choice == "1":
+                    print("You decide to go back to the lobby.")
+                    time.sleep(2)
+                    #add a return to the staff only room
+                    break
+                else:
+                    print("Invalid choice. Please enter a valid number.")
+                    time.sleep(2)
+
+
+
+
+
 
 
 def going_to_the_storage_room():
