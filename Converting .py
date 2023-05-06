@@ -215,7 +215,23 @@ You can see rotten chairs, empy files and papers scattered all over the floor. A
 You take a deep breath and climb through the broken window, entering the hospital through the side entrance.\n
 """
 
-
+entering_staff_only_text = """
+You cautiously approach the staff-only door, your heart pounding in your chest.\n
+The rusted metal creaks as you push it open, revealing a dark and foreboding hallway beyond.\n
+You take a step forward, and the floorboards groan underfoot.\n
+The hallway is musty and stale, with a faint smell of decay that makes your stomach turn.\n
+The only sound is the distant drip of water and the faint buzz of white noise coming from somewhere deeper in the hospital.\n
+\n
+As you make your way down the hallway, you notice a sign pointing to the morgue.\n
+The arrow seems to point down a flight of stairs that disappear into the darkness.\n
+You can feel your heart racing in your chest as you consider the implications of the sign.\n
+The thought of what might be waiting for you down there makes your skin crawl.\n
+\n
+But as you continue down the hallway, you notice another set of stairs leading even deeper into the bowels of the hospital.\n
+The stairs are old and worn, with a railing that looks like it might give way at any moment.\n
+You can hear strange noises coming from down below - the sound of shuffling footsteps and muffled whispers.\n
+Your palms begin to sweat as you realize that you're not alone in this place, and that whatever is down there might not have your best interests in mind.\n
+"""
 
 #Starting the program
 
@@ -645,8 +661,6 @@ def entering_Hospital_lobby():
         elif choice == "2":
             print("You slowly pass through the main reception desk.")
             time.sleep(2)
-            print("A chill runs down your spine, you now stand in front of the door reserved for the staff.")
-            time.sleep(2)
             entering_staff_only()
             break
         elif choice == "3":
@@ -665,8 +679,42 @@ def entering_Hospital_lobby():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
+#Coming from entering_Hospital_lobby() leads to :
+# going down the morgue
+# going to the storage room
+# going to entering_Hospital_lobby()
+def entering_staff_only():
+    typewritter(entering_staff_only_text)
+    time.sleep(1)
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Go to the morgue.")
+        time.sleep(2)
+        print("2. Go down the other dark sairs.")
+        time.sleep(2)
+        print("3. Go back to the lobby.")
+        time.sleep(2)
+        choice = input("Enter the number of your choice: ")
 
-
+        if choice == "1":
+            print("You decide to go to the morgue.")
+            time.sleep(2)
+            going_down_the_morgue()
+            break
+        elif choice == "2":
+            print("You decide to go to the storage room.")
+            time.sleep(2)
+            going_to_the_storage_room()
+            break
+        elif choice == "3":
+            print("You decide to go back to the lobby.")
+            time.sleep(2)
+            entering_Hospital_lobby()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
 
 
 #dummy intro launch that needs to be moved.
