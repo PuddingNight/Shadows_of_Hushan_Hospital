@@ -254,6 +254,7 @@ def exploring_outside():
             time.sleep(2)
 
 
+
 #coming from exploring_outside() leads to :
 # entering_the_toilets_from_window()
 # continue_exploring_outside()
