@@ -317,6 +317,35 @@ There was always something else there, something lurking in the shadows.\n
 I fear that it's free to prey on anyone who dares to enter this cursed place. I need to warn the villagers.\n
 """
 
+killer_comes_morgue_text = """
+You finish reading the journal, your mind trying to comprehend what could have happened to this "ghost specialist".\n
+Strangely, you feel that this poor soul is really similar to you.\n
+how could he have died ?\n
+The body on the gurney is still there, and you can see that the maggots are still crawling on it.\n
+His body is too decomposed to see if he has any wounds.\n
+You put the journal back in the corpse's hand and turn away.\n
+Suddenly, you hear a noise from outside the morgue door.\n
+\n
+It's a sound like footsteps, heavy and deliberate.\n
+You quickly realize that someone - or something - is coming down the hallway.\n
+\n
+Terrified, you realize that you have to take a quick decison.\n
+You have two options: you can either hide or prepare to fight.\n
+"""
+
+hiding_morgue_text = """
+You quickly scan the room for a hiding place. 
+Your eyes land on a gurney in the corner of the room.\n
+You hurry over and climb inside, pulling the sheet over your body.\n
+Your heart is pounding in your chest as you try to steady your breathing, praying that whoever is coming won't find you.
+"""
+
+fighting_morgue_text = """
+You start to look around the room for anything you can use as a weapon. 
+Your eyes land on a metal pipe lying on the ground. You pick it up, your hands shaking, and wait for whoever is coming to enter the room.
+"""
+
+
 #Starting the program
 
 #leads to arriving_hospital()
