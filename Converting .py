@@ -233,6 +233,90 @@ You can hear strange noises coming from down below - the sound of shuffling foot
 Your palms begin to sweat as you realize that you're not alone in this place, and that whatever is down there might not have your best interests in mind.\n
 """
 
+going_down_the_morgue_new_text = """
+You take a deep breath and steel yourself before descending down the stairs towards the morgue.\n
+The stairs creak under your weight, and you can feel your heart pounding in your chest as you descend deeper into the bowels of the hospital.\n
+The air grows colder and damper, and you can feel a chill running down your spine.\n
+\n
+As you reach the bottom of the stairs, you find yourself in a dimly lit hallway.\n
+The walls are made of rough stone, and the floor is covered in a thick layer of dust.\n
+The air is thick with the scent of decay, and you can see cobwebs clinging to the corners of the ceiling.\n
+\n
+The morgue is at the end of the hallway, and you can see the faint outline of a metal door in the dim light.\n
+You can feel your hands shaking as you approach the door, and you take a deep breath before pushing it open.\n
+\n
+Inside, the room is cold and sterile.\n
+The walls are lined with metal cabinets, each one containing a steel gurney with a sheet draped over it.\n
+The room is eerily silent, except for the sound of your footsteps echoing off the metal walls.\n
+\n
+You make your way down the rows of cabinets, your eyes fixed on the gurneys.\n
+You can feel a growing sense of unease in the pit of your stomach as you approach the last cabinet.\n
+There, on the last gurney, something lies covered by a chunky white sheet.\n
+\n
+You pounder for a moment, trying to decide if you should pull the sheet to see what lies underneath.\n
+\n
+As you turn to notice anything of interest.\n
+In the corner of the room, lies a pile of dust next to a big machine.\n
+You stare at it for a moment, trying to figure out what it is.\n
+Then it hits you - it's a pile of ashes near the incinerator.\n
+You can feel your heart pounding in your chest as you realize what this means.\n
+\n
+Getting closer, you can feel that the ashes are still warm.\n
+You can see a faint glow coming from the incinerator, and you can hear the sound of something moving inside.\n
+
+
+"""
+
+pulling_the_sheet_text = """
+You hesitate for a moment before pulling back the sheet, and what you see makes your blood run cold.\n
+Lying there on the gurney is a body - or what used to be a body.\n
+The flesh is gray and bloated, and you can see maggots wriggling in the open wounds.\n
+\n
+You stumble backwards, gagging on the smell.\n
+You can feel your stomach churning, and you have to fight the urge to vomit.\n
+You turn away from the body, trying to catch your breath.\n
+\n
+You then notice a small object in the hand of the corpse.\n
+You take a step closer, terrified.\n
+It appears to be a small journal, and you can see the words "Property of Dr. Zhao Ming" written on the cover.\n
+"""
+
+
+reading_the_journal_morgue_text = """
+You decide to read the journal, hoping that it will provide some answers.\n
+frightened, you reach for the journal that lies in the hand of the corpse.\n
+You start to pull it out, the maggots are falling off the pages.\n
+A strong smell of iron and rotten flesh fills the room.\n
+You put yoursef together and start reading the journal.\n
+an entry catches your attention :\n
+\n
+\n
+Date: June 3, 1975\n
+Location: Abandoned hospital in Hushan\n
+\n
+I arrived at the hospital today after hearing rumors of strange paranormal activity in the area.\n
+As a renowned ghost specialist, I couldn't resist the opportunity to investigate these claims for myself.\n
+The hospital is old and rundown, with a musty smell that lingers in the air. It's the perfect place for ghosts to hide.\n
+\n
+As I made my way through the abandoned halls, I couldn't shake the feeling that I was being watched.\n
+I could hear faint whispers and footsteps in the distance, but every time I turned around, there was no one there.\n
+\n
+But my investigation took a chilling turn when I came across a ghostly apparition in one of the rooms.\n
+The ghost was pale and trembling, and she told me a horrifying story of being tortured by the hospital staff before her death.\n
+She begged me to help her, to make sure that no one ever suffered the same fate as she did.\n
+\n
+I promised her that I would do everything in my power to uncover the truth and put an end to the horrors that had taken place in this hospital.\n
+But as I continued my investigation, I began to realize that there was more to this place than just ghosts.\n
+\n
+I could feel a presence watching me, following me as I made my way through the hospital.\n 
+It was a cold and malevolent presence, unlike any ghost I had ever encountered before.\n
+I began to suspect that there was something else in this hospital with me, something that wasn't bound by the laws of the afterlife.\n
+\n
+Now, as I look back on my time in this hospital, I realize that I was never alone.\n
+There was always something else there, something lurking in the shadows.\n
+I fear that it's free to prey on anyone who dares to enter this cursed place. I need to warn the villagers.\n
+"""
+
 #Starting the program
 
 #leads to arriving_hospital()
@@ -680,8 +764,8 @@ def entering_Hospital_lobby():
             time.sleep(2)
 
 #Coming from entering_Hospital_lobby() leads to :
-# going down the morgue
-# going to the storage room
+# going down the morgue !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
+# going to the storage room !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
 # going to entering_Hospital_lobby()
 def entering_staff_only():
     typewritter(entering_staff_only_text)
@@ -715,6 +799,14 @@ def entering_staff_only():
         else:
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
+
+
+def going_down_the_morgue():
+    pass
+
+def going_to_the_storage_room():
+    pass
+
 
 
 #dummy intro launch that needs to be moved.
