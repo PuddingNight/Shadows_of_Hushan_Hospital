@@ -83,28 +83,6 @@ class Killer:
 creepy_cultist = Killer(100, "A creepy cultist")
 
 
-def fight_morgue_killer():
-    outcome = random.randint(1, 2, 3)
-    if outcome == 1:
-        typewritter(fight_text_1)
-        standing_in_the_morgue()
-    elif outcome == 2:
-        typewritter(fight_text_2)
-        print("You have died. Game over.")
-        time.sleep(2)
-        while True:
-            play_again = input("Would you like to play again? (Y/N) ")
-            if play_again.capitalize == "Y":
-                print("Restarting game...")
-                time.sleep(2)
-                intro()
-            elif play_again.capitalize == "N":
-                print("Thanks for playing!")
-                exit()
-    elif outcome == 3:
-        typewritter(fight_text_3)
-        standing_in_the_morgue()
-
 
 
 
@@ -399,11 +377,43 @@ Terrified, you realize that you have to take a quick decison.\n
 You have two options: you can either hide or prepare to fight.\n
 """
 
-hiding_morgue_text = """
+hidding_morgue_text = """
 You quickly scan the room for a hiding place. 
 Your eyes land on a gurney in the corner of the room.\n
 You hurry over and climb inside, pulling the sheet over your body.\n
 Your heart is pounding in your chest as you try to steady your breathing, praying that whoever is coming won't find you.
+"""
+
+hidding_1_morgue_text = """
+You hear the sound of heavy footsteps approaching, each one thudding against the ground like the footfall of a giant beast.\n
+The footsteps are slow and deliberate, each one sending a shiver down your spine.\n
+You can hear the sound of breathing, heavy and labored, like the breaths of some massive creature.\n
+\n
+You hold your breath, trying to make yourself as small and inconspicuous as possible.\n
+The footsteps grow closer, until they're just a few feet away from your hiding spot.\n
+You can hear the creature sniffing the air, trying to catch a whiff of your scent.\n
+\n
+You pull the sheet tighter around your body, hoping against hope that the creature won't find you.\n
+You can feel your heart pounding in your chest, your breath coming in short gasps.\n
+\n
+Suddenly, the footsteps stop. 
+You can hear the creature breathing heavily, as if it's just a few inches away from you.\n
+You can feel its hot breath on your face, and you can't help but shudder.\n
+\n
+And then, just as suddenly as it appeared, the creature turns and walks away.\n
+You can hear the sound of its footsteps receding, growing fainter and fainter until they're nothing but a distant echo.\n
+\n
+You let out a long, ragged breath, feeling the tension slowly leave your body.\n
+But even as you lay there, hidden under the sheet, you can hear the sound of something climbing the stairs, leaving the morgue behind.\n
+"""
+
+hidding_2_morgue_text = """
+You wait until you're absolutely sure that the coast is clear before slowly lifting the sheet off your body and sliding off the gurney.\n 
+Your legs feel numb from being in the same position for so long, but you force yourself to move silently towards the door.\n
+\n
+You pause for a moment, listening carefully for any sign of whatever was here.\n
+The only sound is your own breathing and the pounding of your heart in your chest.\n
+You take a deep breath and push the door open, relieved to see that the hallway is empty.\n
 """
 
 fighting_morgue_text = """
@@ -438,7 +448,8 @@ You swing the pipe at the cultist, but your vision suddenly blurs, and you feel 
 The cultist disappears, and you realize that you were just having an intense hallucination.\n 
 Creepy voices whisper in your head, telling you of eldritch entities and dark rituals.\n
 You stumble out of the morgue, shaken and confused.:\n
-You're not sure what just happened, but you know that you need to bring peace to the spirits of this hospital.\n
+Are you going insane ?\n
+You are convinced you need to bring peace to the spirits of this hospital.\n
 """
 
 opening_the_incinerator_text = """
@@ -473,6 +484,21 @@ The voice promises you the world, but warns you of the price that must be paid.\
 It speaks of endless servitude and the loss of your very soul.\n
 The words chill you to the bone, and you feel a sense of dread wash over you as you realize the true nature of the power you hold in your hand.\n
 """
+
+returning_to_staff_only_text = """
+You turn away from the morgue and start making your way back to the staff-only door.\n
+As you walk you can hear the echo of your footsteps, and strangely enough, a faint piano melody.\n
+You can't quite place the tune, but it sounds familiar.\n
+When you finally arrive at the door, you stop and take a deep breath.\n
+\n
+You consider your options:\n 
+You could open the door and go back to the lobby.\n
+Or you could head back to the morgue.\n
+Alternatively, you could descend down the dark stairs, risking whatever dangers lie in the depths of the hospital.\n
+"""
+
+
+
 
 #Starting the program
 
@@ -1217,7 +1243,7 @@ def standing_in_the_morgue():
                 time.sleep(2)
 
 
-
+#coming from the standing in the morgue, leads to:
 def investigating_the_last_gurney():
     typewritter(pulling_the_sheet_text)
     time.sleep(1)
@@ -1233,7 +1259,7 @@ def investigating_the_last_gurney():
         if choice == "1":
             print("You decide to grab the journal.")
             time.sleep(2)
-            #add a function to grab the journal
+            grabbing_the_journal()
             break
         elif choice == "2":
             print("You decide to explore the morgue a bit more.")
@@ -1244,7 +1270,9 @@ def investigating_the_last_gurney():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
-
+#coming from investigating the last gurney, leads to:
+# hiding from the morgue killer
+# fighting the morgue killer
 def grabbing_the_journal():
     typewritter(reading_the_journal_morgue_text)
     time.sleep(1)
@@ -1262,18 +1290,61 @@ def grabbing_the_journal():
         if choice == "1":
             print("You decide to hide.")
             time.sleep(2)
-            #add a function to hide
+            hidding_from_morgue_killer()
             break
         elif choice == "2":
             print("You decide to fight.")
             time.sleep(2)
-            #add a function to fight
+            fight_morgue_killer()
             break
         else:
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
+#coming from grabbing_the_journal()
+#leads to standing_in_the_morgue()
+#leads to intro() if you die and choose to play again
+def fight_morgue_killer():
+    outcome = random.randint(1, 2, 3)
+    if outcome == 1:
+        typewritter(fight_text_1)
+        time.sleep(2)
+        standing_in_the_morgue()
+    elif outcome == 2:
+        typewritter(fight_text_2)
+        print("You have died. Game over.")
+        time.sleep(2)
+        while True:
+            play_again = input("Would you like to play again? (Y/N) ")
+            if play_again.capitalize == "Y":
+                print("Restarting game...")
+                time.sleep(2)
+                intro()
+                break
+            elif play_again.capitalize == "N":
+                print("Thanks for playing!")
+                time.sleep(2)
+                exit()
+                break
+    elif outcome == 3:
+        typewritter(fight_text_3)
+        time.sleep(2)
+        standing_in_the_morgue()
 
+
+#coming from grabbing the journal leads to :
+# standing in the morgue
+def hiding_from_the_morgue_killer():
+    typewritter(hidding_morgue_text)
+    time.sleep(1)
+    typewritter(hidding_1_morgue_text)
+    time.sleep(1)
+    typewritter(hidding_2_morgue_text)
+    time.sleep(1)
+    standing_in_the_morgue()
+
+
+#to do
 def returning_to_staff_only():
     pass
 
