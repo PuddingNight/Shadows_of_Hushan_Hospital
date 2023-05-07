@@ -140,7 +140,7 @@ The doors groan and creak as you push them open, revealing a dark and ominous in
 As your eyes adjust to the dim light, you can make out a large reception desk.\n
 """
 
-entering_Hospital_lobby_text = """
+entering_Hospital_lobby_text_new = """
 You step inside the hospital lobby and are immediately hit by the smell of decay and mildew.\n
 The air is thick with dust and the floorboards creak underfoot.\n
 The only sound is the distant sound of water dripping, echoing off the empty walls.\n
@@ -157,6 +157,12 @@ In the middle of the room, there is a large reception desk.\n
 The wood is old and there are piles of dusty papers and broken equipment scattered about.\n
 As you stand there, taking in your surroundings, you can't help but feel a sense of dread.\n
 The hospital is old and abandoned, and it feels like something terrible is lurking just around the corner.\n
+"""
+
+entering_Hospital_lobby_text_old = """
+Once again, you find yourself standing in the hospital lobby.\n
+The air is thick with dust and the floorboards creak underfoot.\n
+far away, the wind howls through the broken windows.\n
 """
 
 return_to_front_hospital_trough_main_entrance_text = """
@@ -497,7 +503,21 @@ Or you could head back to the morgue.\n
 Alternatively, you could descend down the dark stairs, risking whatever dangers lie in the depths of the hospital.\n
 """
 
+going_up_lobby_stairs_text = """
 
+"""
+
+going_down_lobby_stairs_text = """
+
+"""
+
+going_up_first_floor_stairs_text = """
+
+"""
+
+going_down_first_floor_stairs_text = """
+
+"""
 
 
 #Starting the program
@@ -902,12 +922,22 @@ def return_to_front_hospital_trough_main_entrance():
 
 #Coming form going_through_main_entrance() leads to :
 # return_to_front_hospital_trough_main_entrance()
-# entering_staff_only() !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
+# entering_staff_only()
 # sairs_first_floor() !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
 # Entering_the_toilets_from_door() 
 def entering_Hospital_lobby():
-    typewritter(entering_Hospital_lobby_text)
-    time.sleep(1)
+    if check_visited_rooms("Hospital lobby") == False:
+        typewritter(entering_Hospital_lobby_text_new)
+        time.sleep(1)
+        visited_rooms.append("Hospital lobby")
+        time.sleep(1)
+        hospital_lobby_choice()
+    else:
+        typewritter(entering_Hospital_lobby_text_old)
+        time.sleep(1)
+        hospital_lobby_choice()
+#don't forget to add first floor stairs !!!!!!!!!
+def hospital_lobby_choice():
     while True:
         print("What do you want to do?")
         time.sleep(2)
@@ -946,8 +976,9 @@ def entering_Hospital_lobby():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
+
 #Coming from entering_Hospital_lobby() leads to :
-# going down the morgue !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
+# going down the morgue
 # going to the storage room !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
 # going to entering_Hospital_lobby()
 def entering_staff_only():
@@ -984,9 +1015,9 @@ def entering_staff_only():
             time.sleep(2)
 
 #Coming from entering_staff_only() leads to :
-# open the incinerator !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
-# investigate on the last gurney !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
-# reurn to returning_to_staff_only() !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
+# open the incinerator 
+# investigate on the last gurney 
+# reurn to returning_to_staff_only() 
 def going_down_the_morgue():
     if check_visited_rooms("morgue") == False:
         typewritter(going_down_the_morgue_new_text)
@@ -1008,16 +1039,19 @@ def going_down_the_morgue():
                 time.sleep(2)
                 events.append("investigated the body on the last gurney")
                 investigating_the_last_gurney()
+                time.sleep(2)
                 break
             elif choice == "2":
                 print("You decide to open the door of the incinerator.")
                 time.sleep(2)
-                #add a function to open the door of the incinerator
+                opening_the_incinerator()
+                time.sleep(2)
                 break
             elif choice == "3":
                 print("You decide to go back to the lobby.")
                 time.sleep(2)
-                #add a return to the staff only room
+                returning_to_staff_only()
+                time.sleep(2)
                 break
             else:
                 print("Invalid choice. Please enter a valid number.")
@@ -1045,12 +1079,13 @@ def going_down_the_morgue():
                 elif choice == "2":
                     print("You decide to open the door of the incinerator.")
                     time.sleep(2)
-                    #add a function to open the door of the incinerator
+                    opening_the_incinerator()
                     break
                 elif choice == "3":
                     print("You decide to go back to the lobby.")
                     time.sleep(2)
-                    #add a return to the staff only room
+                    returning_to_staff_only()
+                    time.sleep(2)
                     break
                 else:
                     print("Invalid choice. Please enter a valid number.")
@@ -1066,12 +1101,14 @@ def going_down_the_morgue():
                 if choice == "1":
                     print("You decide to open the door of the incinerator.")
                     time.sleep(2)
-                    #add a function to open the door of the incinerator
+                    opening_the_incinerator()
+                    time.sleep(2)
                     break
                 elif choice == "2":
                     print("You decide to go back to the lobby.")
                     time.sleep(2)
-                    #add a return to the staff only room
+                    returning_to_staff_only()
+                    time.sleep(2)
                     break
                 else:
                     print("Invalid choice. Please enter a valid number.")
@@ -1093,7 +1130,8 @@ def going_down_the_morgue():
                 elif choice == "2":
                     print("You decide to go back to the lobby.")
                     time.sleep(2)
-                    #add a return to the staff only room
+                    returning_to_staff_only()
+                    time.sleep(2)
                     break
                 else:
                     print("Invalid choice. Please enter a valid number.")
@@ -1108,7 +1146,7 @@ def going_down_the_morgue():
                 if choice == "1":
                     print("You decide to go back to the lobby.")
                     time.sleep(2)
-                    #add a return to the staff only room
+                    returning_to_staff_only()
                     break
                 else:
                     print("Invalid choice. Please enter a valid number.")
@@ -1290,7 +1328,7 @@ def grabbing_the_journal():
         if choice == "1":
             print("You decide to hide.")
             time.sleep(2)
-            hidding_from_morgue_killer()
+            hidding_morgue_text()
             break
         elif choice == "2":
             print("You decide to fight.")
@@ -1344,9 +1382,38 @@ def hiding_from_the_morgue_killer():
     standing_in_the_morgue()
 
 
-#to do
+#Need to add the storage room !!!!!!!!!!!!!!!!!!!!!!!!
 def returning_to_staff_only():
-    pass
+    typewritter(returning_to_staff_only_text)
+    time.sleep(1)
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Go to the lobby.")
+        time.sleep(2)
+        print("2. Go down the dark sairs.")
+        time.sleep(2)
+        print("3. Go to the morgue.")
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to go to the lobby.")
+            time.sleep(2)
+            entering_Hospital_lobby()
+            break
+        elif choice == "2":
+            print("You decide to go down the dark sairs.")
+            time.sleep(2)
+            #add a return to the storage room
+            break
+        elif choice == "3":
+            print("You decide to go to the morgue.")
+            time.sleep(2)
+            going_down_the_morgue()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
 
 
 def going_to_the_storage_room():
