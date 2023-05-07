@@ -617,7 +617,94 @@ The rooms semms to be darker than before now that the folder is gone.\n
 
 
 administrative_office_note = """
+Your hands are shaking as you reach for the folder.\n
+You open it slowly, and a strange light fills the room.\n
+gust of wind blows through the door, and the candle on the desk flickers heavily.\n
+\n
+Inside the folder, you find a collection of strange and unsettling documents.\n
+There are notes on dark rituals and eldritch entities, diagrams of strange symbols, and even a few photographs that defy explanation.\n
+The more you read, the more you feel like you're getting a glimpse into a world that shouldn't exist.\n
+You realize that you could spend hours poring over the contents of the folder, but something tells you that you shouldn't stay in this room for too long.\n
+\n
+As you were about to close the folder, you notice a folded note that was hidden between the pages.\n
+It is handwritten, and the words are barely legible:\n
+\n
+"While finishing the ritual cleanup, I heard for the first time the sweet sound of the voice of the Overseer.\n
+He led me to untold knowledge, and soon the truths unveiled themselves to me.\n
+I swore to him that I would do everything in my power to bring him back to this world.\n
+I did everything he asked of me, and he rewarded me with knowledge beyond my wildest dreams.\n
+\n
+Thirteen years have passed since then, and time has made my body weak.\n
+I have grown old, and my health is failing.\n
+I fear that i will not live long enough to finally grasp the knowledge that I seek.\n
+Knowing and understanding the universe...\n
+The old unseen gods that crawls in every corner of it...\n
+The explanation of the unexplainable...\n
+The rationality of madness.\n
+\n
+I need to find a way to extend my life, to continue my research...\n
+Maybe a deal with the Overseer himself would be enough to grant me the knowledge that I need to buy me more time.\n
+"""
 
+
+
+
+journal_operating_room_text = """
+As I continue my research into the possibility of immortality, I have made a remarkable discovery.\n
+It seems that the human soul contains a life essence that, when properly extracted, can be transformed into a fluid that has the power to extend one's life.\n
+\n
+At first, I was skeptical of such a claim. But as I began experimenting with patients in the hospital, I discovered that there was indeed something to this theory.\n
+By using a machine of my own design, I was able to extract the souls of patients who had recently passed away and transform them into a glowing fluid that I injected into my own body.\n
+\n
+The effects were immediate and astounding.\n
+I felt rejuvenated, alive with a vitality that I had not experienced in years.\n
+The fluid seemed to heal my body, repairing damage and restoring my youth.\n
+\n
+But I soon discovered a problem.\n
+My body consumed the fluid at a faster rate than I was able to produce it.\n
+I needed to find a way to extract more souls, to create a greater supply of the fluid.\n
+\n
+And that's when I had a terrible idea.\n
+What if I were to extract the souls of living patients, rather than just the deceased?\n
+It seemed like a logical step, a necessary evil in order to continue my research.\n
+\n
+I began experimenting with the living patients, using a modified version of the machine to extract their souls without killing them.\n
+The process was painful for them, but it yielded a greater supply of the life-giving fluid.\n
+\n
+As I sit here, writing this note, I am wracked with guilt and horror at what I have done.\n
+But at the same time, I cannot deny the power and potential of this discovery.\n
+I must continue my research, no matter the cost. And if that means experimenting on the severed heads of patients to find a way to produce more fluid, then so be it.\n
+The quest for immortality is not for the faint of heart.\n
+"""
+
+
+journal_laboratory_text = """
+Now is the time to begin my greatest experiment, the culmination of all my research.\n
+I have gathered the necessary materials and prepared the rital chamber.\n
+It took me weeks to dig this pit in the storage room, but I could conduct my darkest works without fear of interruption.\n
+\n
+I cannot stop shaking as I write this.\n
+I will have to put the ashes of the tortured souls into the pentagram, and then put candles at each point of the star.\n
+I then will dig a hole in the middle of the pentagram, put the machine in it...\n
+and...\n
+Gods, I'm so nervous.\n
+\n\n
+...Inject enough of the fluid into my body...\n\n
+to be able to cut my own head off...\n
+I will then put my head in the machine.\n
+It is the only way to be sure that I will be able to survive the ritual.\n
+
+I told Xin my trusted assistant to cover up the hole with dirt.\n
+This boy is loyal to me, and I know he will do what I ask of him.\n
+I gave him a supply of corpses in the morgue to... "fulfill" his terrible needs...\n
+I just hope that the disparition of so many young girls will not be noticed by the authorities.\n
+It's amazing that stupidity is often linked to the most perverted of minds.\n
+But I digress.\n
+\n
+I will finally have the time to seek the knowledge I crave.\n
+I just need to prepare myself for this trial.\n
+\n
+Quick, the overseer is urging me to go down to the bowels of the hospital.\n
 """
 
 #Starting the program
