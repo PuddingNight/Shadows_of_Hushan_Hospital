@@ -250,8 +250,8 @@ Nature had time to claim the outskirts of the hospital. You cannot continue any 
 climbing_through_the_window_text = """
 You carefully stack the debris and manage to climb up to the window.\n
 As you peek inside, you see what looks like a dark office stretching off into the distance.\n
-You can see rotten chairs, empy files and papers scattered all over the floor. A fait smell of iron floats in the air.\n
-You take a deep breath and climb through the broken window, entering the hospital through the side entrance.\n
+You can see rotten chairs, empy files and papers scattered all over the floor.\n
+You climb through the broken window, entering the hospital through the side entrance.\n
 """
 
 entering_staff_only_text = """
@@ -560,7 +560,7 @@ You are relieved to find the peaceful atmosphere of the second floor.\n
 """
 
 going_down_first_floor_stairs_text_new = """
-As strange as it might sound, you feel like you are living a comforting place.\n
+As strange as it might sound, you feel like you are leaving a comforting place.\n
 You descend the stairs leading to the first floor.\n
 On your way down, for a short moment, you can hear your mother singing softly.\n
 A strong smell of freshly baked cake fills the air, and vanishes, just like it camed.\n
@@ -571,6 +571,53 @@ What is this place doing to you ?\n
 going_down_first_floor_stairs_text_old = """
 You descend the stairs leading to the first floor.\n
 leaving the peaceful atmosphere of the second floor behind you.\n
+"""
+
+inside_administrative_offices_text_new = """
+As you make your way into the administrative office, you can't help but notice the eerie stillness that fills the air.\n
+The room is dimly lit, from some holes in the upper floor that let the light of the moon drip down in the office.\n
+Some dust lightly flows in the air, and wood creaks under your feet.\n
+The walls are lined with shelves, filled with dusty files and papers that haven't been touched in years.\n
+\n
+You notice a large wooden desk at the center of the room, with a flickering candle casting strange shadows on the walls.\n
+Are you alone? Did someone come here?\n
+As you approach the desk, you see a pile of documents stacked haphazardly on its surface.\n 
+Each one has a strange, secret-looking stamp on it, as if they were not meant to be seen by anyone outside of the hospital.\n
+\n
+You begin to sift through the documents, your eyes scanning the pages for any useful information.\n
+As you do, you come across a series of pictures showing patients before and after their stay in the hospital.\n
+The "after" pictures are particularly disturbing, showing the patients weak and emaciated, with haunted eyes that seem to stare right through you.\n
+\n
+Suddenly, a glowing folder sitting in the corner of the desk catches your eye.\n
+It seems to pulse with an otherworldly energy, beckoning you to inspect its contents.\n
+You hesitate for a moment, feeling a strange sense of dread in the pit of your stomach.\n
+Should you take a look inside?
+\n
+To your left, an open door lets a small breeze of cold air run throughout the office.\n
+"""
+
+inside_administrative_offices_text_old = """
+You enter the administrative office.\n
+Everything is quiet.\n
+Nothing seems to have changed since your last visit.\n
+"""
+
+inside_administrative_offices_text_no_folder = """
+You enter the administrative office.\n
+Everything is quiet.\n
+Nothing seems to have changed since your last visit.\n
+Though, you can't help but notice that the folder you found last time is still humming with an otherworldly energy.\n
+"""
+inside_administrative_offices_text_folder = """
+You enter the administrative office.\n
+Everything is quiet.\n
+Nothing seems to have changed since your last visit.\n
+The rooms semms to be darker than before now that the folder is gone.\n
+"""
+
+
+administrative_office_note = """
+
 """
 
 #Starting the program
@@ -940,7 +987,8 @@ def return_to_main_entrance():
 # in_the_administrative_offices() !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
 def climbing_through_the_window():
     typewritter(climbing_through_the_window_text)
-    #adding administrative offices function here !!!!!!!!
+    time.sleep(1)
+    in_the_administrative_offices()
 
 
 #Comming from the lobby leads to going_through_the_main_entrance or exploring outside
@@ -1473,14 +1521,21 @@ def going_to_the_storage_room():
     pass
 
 def going_up_the_lobby_stairs():
-    if check_visited_rooms("lobby_stairs") == False:
+    if check_visited_rooms("lobby_stairs_up") == False:
         typewritter(going_up_lobby_stairs_text_new)
         time.sleep(1)
-        visited_rooms.append("lobby_stairs")
+        visited_rooms.append("lobby_stairs_up")
+        lobby_stairs_decision()
     else:
         typewritter(going_up_lobby_stairs_text_old)
         time.sleep(1)
-#need to decide what to do with the stais stories old and new
+        lobby_stairs_decision()
+
+# coming from the lobby stairs, leads to:
+# administrative offices !!!!!!!!!!!!!!!!!!!
+# patients rooms !!!!!!!!!!!!!!!!!!!!!!!!!!!
+# second floor
+# lobby
 def lobby_stairs_decision():
     while True:
         print("What do you want to do?")
@@ -1512,11 +1567,92 @@ def lobby_stairs_decision():
         elif choice == "4":
             print("You decide to go down the stairs to the lobby.")
             time.sleep(2)
-            entering_Hospital_lobby()
+            going_down_lobby_stairs()
             break
         else:
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
+
+#coming lobby_stairs_decision() leads to:
+# entering_Hospital_lobby()
+def going_down_lobby_stairs():
+    if check_visited_rooms("lobby_stairs_down") == False:
+        typewritter(going_down_lobby_stairs_text_new)
+        time.sleep(1)
+        visited_rooms.append("lobby_stairs_down")
+        entering_Hospital_lobby()
+    else:
+        typewritter(going_down_lobby_stairs_text_old)
+        time.sleep(1)
+        entering_Hospital_lobby()
+
+
+def going_up_first_floor_stairs():
+    if check_visited_rooms("first_floor_stairs_up") == False:
+        typewritter(going_up_first_floor_stairs_text_new)
+        time.sleep(1)
+        visited_rooms.append("first_floor_stairs_up")
+        first_floor_stairs_decision()
+    else:
+        typewritter(going_up_first_floor_stairs_text_old)
+        time.sleep(1)
+        first_floor_stairs_decision()
+
+# coming from first_floor_stairs_decision() leads to:
+# psychiatric ward !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# surgical ward !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# hospital laboratory !!!!!!!!!!!!!!!!!!!!!!!!!!
+# going down the stairs to the first floor
+def first_floor_stairs_decision():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Go to the psychiatric ward.")
+        time.sleep(2)
+        print("2. Go to the surgical ward.")
+        time.sleep(2)
+        print("3. Go to the hospital laboratory.")
+        time.sleep(2)
+        print("4. Go down the stairs to the first floor.")
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to go to the psychiatric ward.")
+            time.sleep(2)
+            administrative_offices()
+            break
+        elif choice == "2":
+            print("You decide to go to the surgical ward.")
+            time.sleep(2)
+            patients_rooms()
+            break
+        elif choice == "3":
+            print("You decide to go to the laboratory.")
+            time.sleep(2)
+            second_floor()
+            break
+        elif choice == "4":
+            print("You decide to go down the stairs to the first floor.")
+            time.sleep(2)
+            going_down_first_floor_stairs()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+
+
+def going_down_first_floor_stairs():
+    if check_visited_rooms("first_floor_stairs_down") == False:
+        typewritter(going_down_first_floor_stairs_text_new)
+        time.sleep(1)
+        visited_rooms.append("first_floor_stairs_down")
+        lobby_stairs_decision()
+    else:
+        typewritter(going_down_first_floor_stairs_text_old)
+        time.sleep(1)
+        lobby_stairs_decision()
+
+
 
 
 
