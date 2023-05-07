@@ -503,22 +503,75 @@ Or you could head back to the morgue.\n
 Alternatively, you could descend down the dark stairs, risking whatever dangers lie in the depths of the hospital.\n
 """
 
-going_up_lobby_stairs_text = """
-
+going_up_lobby_stairs_text_new = """
+You ascend the sairs with anticipation.\n
+the stairs have a strange feeling to them, as if they are not quite solid.\n
+When you reach the top of the stairs, you step onto a dimly lit hallway.\n
+Holes in the upperfloor allow the light of the moon to cast eerie shadows along the walls.\n
+\n
+You notice signs hanging from the ceiling, indicating the different areas of the hospital.\n
+To your left, the administrative offices are marked with a faded sign bearing the hospital's name.\n
+To your right, the patients' rooms are labeled with numbers that seem to stretch on endlessly down the hallway.\n
+\n
+In front of you, another set of stairs leads further up into the unknown depths of the hospital.\n
+\n
+As you turn to look back down the stairs behind you, a shiver runs down your spine.\n
+You fight the urge to flee back down the stairs to the relative safety of the ground floor.\n
+But you know that you can't turn back now.\n
+You've come too far to give up, and you need to keep moving forward.\n
+You set your jaw and steel yourself for what lies ahead.\n
 """
 
-going_down_lobby_stairs_text = """
-
+going_up_lobby_stairs_text_old = """
+Once again, you climb the stairs leading to the first floor.\n
+Once you arrive in the hallway, the atmosphere feels different.\n
+You notice that the signs above the doors have shifted, leading to rooms that you don't remember being there before.\n
+Something feels off, something is playing tricks on your mind.\n
 """
 
-going_up_first_floor_stairs_text = """
-
+going_down_lobby_stairs_text_new = """
+You descend carefully down the stairs, wary of your every step.\n
+On the walls, the wallpaper makes some strange patterns.\n
+some of them look like faces, others like hands.\n
+You shake your head, trying to clear your mind.\n
 """
 
-going_down_first_floor_stairs_text = """
-
+going_down_lobby_stairs_text_old = """
+You descend the stairs leading to the lobby.\n
+The wallpaper seem to be different.\n
+As if it was changed while you were not looking.\n
+The colors are vivid.\n
 """
 
+going_up_first_floor_stairs_text_new = """
+You ascend the staircase to the second floor.\n
+The climb seems shorter than the previous one.\n
+\n
+As you step off the stairs, you're faced with a hallway that stretches out before you.\n
+Signs above the doors indicate the different rooms - to your left, the hospital psychiatric ward, straight ahead, the operating rooms and surgical ward, and to your right, the hospital laboratory.\n
+\n
+This place is awfully quiet.\n
+For a short time, you sense a feeling of peace and tranquility.\n
+"""
+
+going_up_first_floor_stairs_text_old = """
+You climb the stairs leading to the second floor.\n
+You are relieved to find the peaceful atmosphere of the second floor.\n
+"""
+
+going_down_first_floor_stairs_text_new = """
+As strange as it might sound, you feel like you are living a comforting place.\n
+You descend the stairs leading to the first floor.\n
+On your way down, for a short moment, you can hear your mother singing softly.\n
+A strong smell of freshly baked cake fills the air, and vanishes, just like it camed.\n
+You start to feel frightened.\n
+What is this place doing to you ?\n
+"""
+
+going_down_first_floor_stairs_text_old = """
+You descend the stairs leading to the first floor.\n
+leaving the peaceful atmosphere of the second floor behind you.\n
+"""
 
 #Starting the program
 
@@ -1419,7 +1472,8 @@ def returning_to_staff_only():
 def going_to_the_storage_room():
     pass
 
-
+def going_up_the_lobby_stairs():
+    pass
 
 #dummy intro launch that needs to be moved.
 intro()
