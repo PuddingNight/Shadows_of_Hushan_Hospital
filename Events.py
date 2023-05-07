@@ -1473,7 +1473,52 @@ def going_to_the_storage_room():
     pass
 
 def going_up_the_lobby_stairs():
-    pass
+    if check_visited_rooms("lobby_stairs") == False:
+        typewritter(going_up_lobby_stairs_text_new)
+        time.sleep(1)
+        visited_rooms.append("lobby_stairs")
+    else:
+        typewritter(going_up_lobby_stairs_text_old)
+        time.sleep(1)
+#need to decide what to do with the stais stories old and new
+def lobby_stairs_decision():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Go to adinistrative offices.")
+        time.sleep(2)
+        print("2. Go to the patients rooms.")
+        time.sleep(2)
+        print("3. Go to the second floor.")
+        time.sleep(2)
+        print("4. Go down the stairs to the lobby.")
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to go to the administrative offices.")
+            time.sleep(2)
+            administrative_offices()
+            break
+        elif choice == "2":
+            print("You decide to go to the patients rooms.")
+            time.sleep(2)
+            patients_rooms()
+            break
+        elif choice == "3":
+            print("You decide to go to the second floor.")
+            time.sleep(2)
+            second_floor()
+            break
+        elif choice == "4":
+            print("You decide to go down the stairs to the lobby.")
+            time.sleep(2)
+            entering_Hospital_lobby()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+
+
 
 #dummy intro launch that needs to be moved.
 intro()
