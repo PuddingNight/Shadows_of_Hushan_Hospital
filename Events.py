@@ -247,7 +247,7 @@ After a long walk, you almost broke your ankle due to some unseen holes in the g
 Nature had time to claim the outskirts of the hospital. You cannot continue any further.\n
 """
 
-climbing_through_the_window_text = """
+climbing_through_the_window_in_text = """
 You carefully stack the debris and manage to climb up to the window.\n
 As you peek inside, you see what looks like a dark office stretching off into the distance.\n
 You can see rotten chairs, empy files and papers scattered all over the floor.\n
@@ -528,6 +528,16 @@ Once you arrive in the hallway, the atmosphere feels different.\n
 You notice that the signs above the doors have shifted, leading to rooms that you don't remember being there before.\n
 Something feels off, something is playing tricks on your mind.\n
 """
+standing_in_front_of_lobby_stairs_text = """
+You stand in front of the stairs leading to the first floor.\n
+You can hear the faint sound of a piano playing, coming from somehere under the hospital.\n
+You notice signs hanging from the ceiling, indicating the different areas of the hospital.\n
+\n
+To your left, the administrative offices are marked with a faded sign bearing the hospital's name.\n
+To your right, the patients' rooms are labeled with numbers that seem to stretch on endlessly down the hallway.\n
+\n
+In front of you, another set of stairs leads further up into the unknown depths of the hospital.\n
+"""
 
 going_down_lobby_stairs_text_new = """
 You descend carefully down the stairs, wary of your every step.\n
@@ -573,6 +583,11 @@ You descend the stairs leading to the first floor.\n
 leaving the peaceful atmosphere of the second floor behind you.\n
 """
 
+standing_first_floor_stairs_text = """
+You stand in front of the stairs leading to the second floor.\n
+You are relieved to find the peaceful atmosphere of the second floor.\n
+"""
+
 inside_administrative_offices_text_new = """
 As you make your way into the administrative office, you can't help but notice the eerie stillness that fills the air.\n
 The room is dimly lit, from some holes in the upper floor that let the light of the moon drip down in the office.\n
@@ -603,15 +618,9 @@ Nothing seems to have changed since your last visit.\n
 """
 
 inside_administrative_offices_text_no_folder = """
-You enter the administrative office.\n
-Everything is quiet.\n
-Nothing seems to have changed since your last visit.\n
-Though, you can't help but notice that the folder you found last time is still humming with an otherworldly energy.\n
+You can't help but notice that the folder is still humming with an otherworldly energy.\n
 """
 inside_administrative_offices_text_folder = """
-You enter the administrative office.\n
-Everything is quiet.\n
-Nothing seems to have changed since your last visit.\n
 The rooms semms to be darker than before now that the folder is gone.\n
 """
 
@@ -643,14 +652,21 @@ The explanation of the unexplainable...\n
 The rationality of madness.\n
 \n
 I need to find a way to extend my life, to continue my research...\n
-Maybe a deal with the Overseer himself would be enough to grant me the knowledge that I need to buy me more time.\n
+Maybe a deal with the Overseer himself would be enough to grant me the knowledge that I need to buy me more time."\n
+\n
+You close the folder, and put it back where you found it.\n
+You feel like you should leave this place as soon as possible.\n
+But you can't help but wonder what the Overseer is, is that just some kind of elaborate hoax?\n
+\n
+You find yourself staring blankly at the folder, lost in thought.\n
+you should get moving.\n
 """
 
 
 
 
 journal_operating_room_text = """
-As I continue my research into the possibility of immortality, I have made a remarkable discovery.\n
+"As I continue my research into the possibility of immortality, I have made a remarkable discovery.\n
 It seems that the human soul contains a life essence that, when properly extracted, can be transformed into a fluid that has the power to extend one's life.\n
 \n
 At first, I was skeptical of such a claim. But as I began experimenting with patients in the hospital, I discovered that there was indeed something to this theory.\n
@@ -674,12 +690,12 @@ The process was painful for them, but it yielded a greater supply of the life-gi
 As I sit here, writing this note, I am wracked with guilt and horror at what I have done.\n
 But at the same time, I cannot deny the power and potential of this discovery.\n
 I must continue my research, no matter the cost. And if that means experimenting on the severed heads of patients to find a way to produce more fluid, then so be it.\n
-The quest for immortality is not for the faint of heart.\n
+The quest for immortality is not for the faint of heart."\n
 """
 
 
 journal_laboratory_text = """
-Now is the time to begin my greatest experiment, the culmination of all my research.\n
+"Now is the time to begin my greatest experiment, the culmination of all my research.\n
 I have gathered the necessary materials and prepared the rital chamber.\n
 It took me weeks to dig this pit in the storage room, but I could conduct my darkest works without fear of interruption.\n
 \n
@@ -704,7 +720,62 @@ But I digress.\n
 I will finally have the time to seek the knowledge I crave.\n
 I just need to prepare myself for this trial.\n
 \n
-Quick, the overseer is urging me to go down to the bowels of the hospital.\n
+Quick, the overseer is urging me to go down to the bowels of the hospital."\n
+"""
+
+
+climbing_through_the_window_out_text = """
+You climb through the window and find yourself on the edge of a small ledge that runs along the side of the building.\n
+You look down and see that you are several piled up boxes.\n
+You could probably jump down onto them without hurting yourself too badly.\n
+You take a deep breath and leap off the ledge, landing on the boxes below.\n
+You roll onto the ground and quickly get to your feet.\n
+"""
+
+patient_rooms_text_new = """
+As you walk down the corridor, you notice that most of the doors are boarded up with wooden planks.\n
+Strange messages are scrawled across the planks in what appears to be blood-red paint.\n
+You can make out phrases like "TO HELL WITH THIS CURSED PLACE" "DEATH LIVES HERE," and "DO NOT TRUST THE VISIONS"\n
+\n
+But one door stands out from the rest.\n
+It's slightly ajar, and you can hear a faint whispering coming from inside.\n
+As you approach the door, the whispering grows louder, until it sounds like a woman's voice.\n
+\n
+You push the door open and step inside.\n
+The room is pitch-black, and you can barely make out the shape of a figure in front of you.\n
+As your eyes adjust to the darkness, you realize that it's the body of an old woman.\n
+\n
+Her face is twisted in agony, and she looks like she's been dead for a long time.\n
+Her eyes glow with an otherworldly light, and her voice sounds like it's coming from all around you.\n
+\n
+"You!" she hisses. "You're not supposed to be here. This place is cursed."\n
+\n
+You try to back away, but the voices gets lounder and distorted, as if it's coming from inside your head.\n
+You feel a sharp pain in your chest, and you fall to the ground, clutching your heart.\n
+\n
+"I've been trapped here for so long," she continues.\n
+"Tortured and tormented by the doctors and nurses."\n
+"Each of my figers were cut off, one by one."\n
+"How can i play the piano now ?"\n
+\n
+"but i had a little tresure, a music box that i kept hidden from them."\n
+"It was the only thing that kept me sane."\n
+"But then they found it."\n
+"They ripped my music box away from me, the one thing that brought me comfort in my final moments."\n
+\n
+She pauses, her voice shaking with rage.\n
+\n
+"I want it back," she says.\n
+"I need to hear its music one last time before I can rest."\n
+"Find it for me. There is a piano in the basement of this forsaken place."\n
+"Play the music box on the piano, and I will be free."\n
+\n
+With that, the corpse starts to combust furiously, screaming in agony.\n
+\n
+You run out of the room, and slam the door shut behind you.\n
+You hear the sound of the corpse burning, and then silence.\n
+You stand there for a moment, trying to catch your breath.\n
+You peer through the keyhole, and see that the room is now completely empty.\n
 """
 
 #Starting the program
@@ -1018,7 +1089,7 @@ def continue_exploring_outside():
         choice = input("Enter the number of your choice: ")
 
         if choice == "1":
-            climbing_through_the_window()
+            climbing_through_the_window_in()
             break
         elif choice == "2":
             return_to_main_entrance()
@@ -1039,7 +1110,7 @@ def return_to_main_entrance():
         time.sleep(2)
         print("1. Try to climb up the window that leads to the first floor")
         time.sleep(2)
-        print("2. Investigate on the glowing window.")
+        print("2. Investigate on the gound floor window.")
         time.sleep("2")
         print("3. The main entrance might be a safer option.")
         time.sleep("2")
@@ -1050,7 +1121,7 @@ def return_to_main_entrance():
             time.sleep(2)
             print("You walk back to the place that had stacked debris and a broken window.")
             time.sleep(2)
-            climbing_through_the_window()
+            climbing_through_the_window_in()
             break
         elif choice == "2":
             print("You decide to go back to the window that wasn't boarded like the others on the ground floor.")
@@ -1072,8 +1143,8 @@ def return_to_main_entrance():
 
 #²coming from return_to_main_entrance() and climbing_through_the_window() Leads to :
 # in_the_administrative_offices() !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
-def climbing_through_the_window():
-    typewritter(climbing_through_the_window_text)
+def climbing_through_the_window_in():
+    typewritter(climbing_through_the_window_in_text)
     time.sleep(1)
     in_the_administrative_offices()
 
@@ -1639,7 +1710,7 @@ def lobby_stairs_decision():
         if choice == "1":
             print("You decide to go to the administrative offices.")
             time.sleep(2)
-            administrative_offices()
+            in_the_administrative_offices()
             break
         elif choice == "2":
             print("You decide to go to the patients rooms.")
@@ -1649,7 +1720,7 @@ def lobby_stairs_decision():
         elif choice == "3":
             print("You decide to go to the second floor.")
             time.sleep(2)
-            second_floor()
+            going_up_first_floor_stairs()
             break
         elif choice == "4":
             print("You decide to go down the stairs to the lobby.")
@@ -1659,6 +1730,13 @@ def lobby_stairs_decision():
         else:
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
+
+def standing_lobby_stairs():
+    typewritter(standing_in_front_of_lobby_stairs_text):
+    time.sleep(1)
+    lobby_stairs_decision()
+
+
 
 #coming lobby_stairs_decision() leads to:
 # entering_Hospital_lobby()
@@ -1706,7 +1784,7 @@ def first_floor_stairs_decision():
         if choice == "1":
             print("You decide to go to the psychiatric ward.")
             time.sleep(2)
-            administrative_offices()
+            in_the_administrative_offices()
             break
         elif choice == "2":
             print("You decide to go to the surgical ward.")
@@ -1716,7 +1794,7 @@ def first_floor_stairs_decision():
         elif choice == "3":
             print("You decide to go to the laboratory.")
             time.sleep(2)
-            second_floor()
+            labo()
             break
         elif choice == "4":
             print("You decide to go down the stairs to the first floor.")
@@ -1739,8 +1817,120 @@ def going_down_first_floor_stairs():
         time.sleep(1)
         lobby_stairs_decision()
 
+def standing_first_floor_stairs():
+    typewritter(standing_first_floor_stairs_text):
+    time.sleep(1)
+    first_floor_stairs_decision()
+
+def in_the_administrative_offices():
+    if check_visited_rooms("administrative_offices") == False:
+        typewritter(inside_administrative_offices_text_new)
+        time.sleep(1)
+        visited_rooms.append("administrative_offices")
+        administrative_offices_decision()
+    else:
+        typewritter(inside_administrative_offices_text_old)
+        time.sleep(1)
+        administrative_offices_decision()
 
 
+def administrative_offices_decision():
+    if check_events("administrative_journal") == False:
+        typewritter(inside_administrative_offices_text_no_folder)
+        time.sleep(1)
+        while True:
+            print("What do you want to do?")
+            time.sleep(2)
+            print("1. Go through the window.")
+            time.sleep(2)
+            print("2. Go through the door.")
+            time.sleep(2)
+            print("3. Pick up the folder.")
+            time.sleep(2)
+            choice = input("Enter the number of your choice: ")
+
+            if choice == "1":
+                print("You decide to go through the window.")
+                time.sleep(2)
+                climbing_through_the_window_out()
+                break
+            elif choice == "2":
+                print("You decide to go through the door.")
+                time.sleep(2)
+                print("You go through the door and find yourself in a dark corridor.")
+                time.sleep(2)
+                print("walk quietly, unsure of what you might find.")
+                time.sleep(2)
+                print("You finally see a sort of carrefour, and you decide to investigate there.")
+                time.sleep(2)
+                standing_lobby_stairs()
+                break
+            elif choice == "3":
+                print("You decide to pick up the folder.")
+                time.sleep(2)
+                picking_up_the_folder()
+                break
+            else:
+                print("Invalid choice. Please enter a valid number.")
+                time.sleep(2)
+    else:
+        typewritter(inside_administrative_offices_text_folder)
+        time.sleep(1)
+        while True:
+            print("What do you want to do?")
+            time.sleep(2)
+            print("1. Go through the window.")
+            time.sleep(2)
+            print("2. Go through the door.")
+            time.sleep(2)
+            choice = input("Enter the number of your choice: ")
+
+            if choice == "1":
+                print("You decide to go through the window.")
+                time.sleep(2)
+                climbing_through_the_window_out()
+                break
+            elif choice == "2":
+                print("You decide to go through the door.")
+                time.sleep(2)
+                print("You go through the door and find yourself in a dark corridor.")
+                time.sleep(2)
+                print("walk quietly, unsure of what you might find.")
+                time.sleep(2)
+                print("You finally see a sort of carrefour, and you decide to investigate there.")
+                time.sleep(2)
+                standing_lobby_stairs()
+                break
+            else:
+                print("Invalid choice. Please enter a valid number.")
+                time.sleep(2)
+
+
+
+
+
+def climbing_through_the_window_out():
+    typewritter(climbing_through_the_window_out_text)
+    time.sleep(1)
+    return_to_main_entrance()
+
+
+def picking_up_the_folder():
+    typewritter(administrative_office_note)
+    time.sleep(1)
+    events.append("administrative_journal")
+    administrative_offices_decision()
+
+def patient_rooms():
+    if check_visited_rooms("patient_rooms") == False:
+        typewritter(patient_rooms_text_new)
+        time.sleep(1)
+        visited_rooms.append("patient_rooms")
+        patient_rooms_decision()
+    else:
+        typewritter(patient_rooms_text_old)
+        time.sleep(1)
+        patient_rooms_decision()
 
 
 #dummy intro launch that needs to be moved.
