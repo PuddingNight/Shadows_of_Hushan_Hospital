@@ -1723,7 +1723,7 @@ def lobby_stairs_decision():
         elif choice == "2":
             print("You decide to go to the patients rooms.")
             time.sleep(2)
-            patients_rooms()
+            patient_rooms()
             break
         elif choice == "3":
             print("You decide to go to the second floor.")
@@ -1740,7 +1740,7 @@ def lobby_stairs_decision():
             time.sleep(2)
 
 def standing_lobby_stairs():
-    typewritter(standing_in_front_of_lobby_stairs_text):
+    typewritter(standing_in_front_of_lobby_stairs_text)
     time.sleep(1)
     lobby_stairs_decision()
 
@@ -1797,7 +1797,7 @@ def first_floor_stairs_decision():
         elif choice == "2":
             print("You decide to go to the surgical ward.")
             time.sleep(2)
-            patients_rooms()
+            patient_rooms()
             break
         elif choice == "3":
             print("You decide to go to the laboratory.")
@@ -1826,7 +1826,7 @@ def going_down_first_floor_stairs():
         lobby_stairs_decision()
 
 def standing_first_floor_stairs():
-    typewritter(standing_first_floor_stairs_text):
+    typewritter(standing_first_floor_stairs_text)
     time.sleep(1)
     first_floor_stairs_decision()
 
