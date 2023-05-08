@@ -778,6 +778,14 @@ You stand there for a moment, trying to catch your breath.\n
 You peer through the keyhole, and see that the room is now completely empty.\n
 """
 
+patient_rooms_text_old = """
+You walk down the corridor, passing by the several boarded up doors.\n
+You can hear faint whispers coming from behind them, but you ignore them.\n
+You reach the end of the corridor, and find yourself in the room where you encountered the pianist ghost.\n
+it's totally empty.\n
+the cold air makes you shiver.\n
+"""
+
 #Starting the program
 
 #leads to arriving_hospital()
@@ -1906,9 +1914,6 @@ def administrative_offices_decision():
                 time.sleep(2)
 
 
-
-
-
 def climbing_through_the_window_out():
     typewritter(climbing_through_the_window_out_text)
     time.sleep(1)
@@ -1932,6 +1937,13 @@ def patient_rooms():
         time.sleep(1)
         patient_rooms_decision()
 
+
+
+def patient_rooms_decision():
+    print("You decide that there is nothing more to do here, and you leave the room.")
+    time.sleep(2)
+    print("You walk back to the corridor.")
+    standing_lobby_stairs()
 
 #dummy intro launch that needs to be moved.
 intro()
