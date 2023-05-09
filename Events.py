@@ -786,6 +786,90 @@ it's totally empty.\n
 the cold air makes you shiver.\n
 """
 
+
+entering_the_psychiatric_ward_next_text = """
+As you make your way down the hallway towards the psychiatric ward, you can feel the hairs on the back of your neck standing on end.\n
+The air gets colder and colder as you approach the ward, and you can hear strange noises coming from inside.\n
+\n
+You reach the entrance to the ward, a small window in the door is allowing you to see inside.\n
+It's a windowless room, the walls are covered in a cushioned material that decayed over time.\n
+In some area, you can see scratches and scuff marks where patients have fought against the walls.\n
+\n
+You open the door and step inside.\n
+The room gets even colder, and you can see your breath in the air.\n
+The room is empty, except for a single chair in the middle of the room.\n
+Then, you hear a repetitive noise coming from behind you.\n
+\n
+As you turn around to see what it might be, you see an old man, slamming his head against the wall tha was peeled off.\n
+He is bleeding profusely, but he doesn't seem to care.\n
+He just keeps slamming his head against the wall, over and over again.\n
+\n
+Then, he stops, and turns to look at you.\n
+His eyes are completely white, and he has a huge grin on his face.\n
+He starts to laugh, a deep, guttural laugh that sends chills down your spine.\n
+\n
+"Welcome to my humble abode !"\n
+"I have a samll riddle for you, if you can solve it, i will teach you the sentece that this horrendous doctor used to accomplish his evil deeds."\n
+He clears his throat, and begins to speak.\n
+\n
+"Here is the riddle :"\n
+\n
+"I am the dream of the ages, the hope of the hopeless, \n
+A gift that many desire, but few can cope with. \n
+I am a promise of life, beyond mortal bounds, \n
+But what I offer is not what it sounds.\n
+\n
+For those who seek me, I offer a curse,\n
+A life unending, with nothing but worse.\n
+Eternity is my name, but so is the pain,\n
+And those who dare to seek me, must be insane.\n
+\n
+For with me comes madness, and a hunger unquenched,\n
+A thirst for life that can never be drenched.\n
+I am the gift that none should ever receive,\n
+For those who gain me, forever grieve."\n
+\n
+What am I ?"\n
+"""
+
+entering_the_psychiatric_ward_old_no_clue_text = """
+You step back into the psychiatric ward, and find yourself in the same room as before.\n
+The spirit is still there, looking deeply into your eyes.\n
+\n
+"Have you found the answer to my riddle ?"\n
+\n
+"Here is the riddle :\n
+\n
+"I am the dream of the ages, the hope of the hopeless,\n
+A gift that many desire, but few can cope with.\n
+I am a promise of life, beyond mortal bounds,\n
+But what I offer is not what it sounds.\n
+\n
+For those who seek me, I offer a curse,\n
+A life unending, with nothing but worse.\n
+Eternity is my name, but so is the pain,\n
+And those who dare to seek me, must be insane.\n
+\n
+For with me comes madness, and a hunger unquenched,\n
+A thirst for life that can never be drenched.\n
+I am the gift that none should ever receive,\n
+For those who gain me, forever grieve."\n
+\n
+What am I ?"\n
+"""
+
+entering_the_psychiatric_ward_old_clue_text = """
+You step back into the psychiatric ward, and find yourself in the same room as before.\n
+The spirit is still there, looking deeply into your eyes.\n
+\n
+"Your fate is sealed, go accomplish your deed."\n
+\n
+A force pushes you out of the room, and you find yourself back in the corridor.\n
+You step back to the stairs of the second floor.\n
+"""
+
+
+
 #Starting the program
 
 #leads to arriving_hospital()
@@ -1792,12 +1876,12 @@ def first_floor_stairs_decision():
         if choice == "1":
             print("You decide to go to the psychiatric ward.")
             time.sleep(2)
-            in_the_administrative_offices()
+            entering_the_psychiatric_ward()
             break
         elif choice == "2":
             print("You decide to go to the surgical ward.")
             time.sleep(2)
-            patient_rooms()
+            entering_the_surgical_ward()
             break
         elif choice == "3":
             print("You decide to go to the laboratory.")
@@ -1807,7 +1891,7 @@ def first_floor_stairs_decision():
         elif choice == "4":
             print("You decide to go down the stairs to the first floor.")
             time.sleep(2)
-            going_down_first_floor_stairs()
+            entering_hospital_laboratory()
             break
         else:
             print("Invalid choice. Please enter a valid number.")
@@ -1831,11 +1915,13 @@ def standing_first_floor_stairs():
     first_floor_stairs_decision()
 
 def in_the_administrative_offices():
+    # If the player has not visited this room before, display the new text.
     if check_visited_rooms("administrative_offices") == False:
         typewritter(inside_administrative_offices_text_new)
         time.sleep(1)
         visited_rooms.append("administrative_offices")
         administrative_offices_decision()
+    # If the player has visited this room before, display the old text.
     else:
         typewritter(inside_administrative_offices_text_old)
         time.sleep(1)
@@ -1938,12 +2024,18 @@ def patient_rooms():
         patient_rooms_decision()
 
 
-
 def patient_rooms_decision():
     print("You decide that there is nothing more to do here, and you leave the room.")
     time.sleep(2)
     print("You walk back to the corridor.")
     standing_lobby_stairs()
+
+
+def entering_the_psychiatric_ward():
+    pass
+
+
+
 
 #dummy intro launch that needs to be moved.
 intro()
