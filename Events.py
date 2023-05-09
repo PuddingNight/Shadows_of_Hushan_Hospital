@@ -868,6 +868,34 @@ A force pushes you out of the room, and you find yourself back in the corridor.\
 You step back to the stairs of the second floor.\n
 """
 
+getting_out_of_the_psychiatric_ward_no_clue_text = """
+You decide to leave the ghost alone, and head back to the stairs.\n
+As soon as you leave the room you can hear the stomping sound of his head against the wall.\n
+"""
+
+
+answering_the_riddle_right_text = """
+The ghost's eyes widen as you provide the correct answer to the riddle.\n
+"Immortality," he whispers, his voice barely audible.\n
+"Yes, that's it. You have proven yourself worthy to know the truth."\n
+\n
+The ghost then leans in closer, and his voice takes on a more urgent tone.\n
+"Listen carefully, for what I'm about to tell you is of utmost importance.\n
+The secret incantations you seek are hidden in the words of the ancients, in a language long forgotten by man.\n
+But fear not, for I have heard these words before, spoken by the chief doctor himself, hidden away in the storage room."\n
+\n
+The ghost pauses, and his eyes seem to glaze over as if he's lost in thought.\n
+"Repeat after me," he begins, reciting a series of strange syllables and guttural sounds.\n
+"These are the words you'll need to invoke the ritual.\n
+But beware, for the forces you're about to call upon are not to be trifled with.\n
+The chief doctor paid a terrible price for his discovery, and his soul is now forever bound to the darkness of this hospital."\n
+\n
+The ghost falls silent, his words echoing in the stillness of the room.\n
+It's up to you now to decide what to do with this knowledge, and whether you're willing to pay the price for immortality.\n
+\n
+After some time, you decide to leave the ghost alone, and head back to the stairs.\n
+As soon as you leave the room you can hear the stomping sound of his head against the wall.\n
+"""
 
 
 #Starting the program
@@ -2032,10 +2060,93 @@ def patient_rooms_decision():
 
 
 def entering_the_psychiatric_ward():
-    pass
+    if check_visited_rooms("psychiatric_ward") == False:
+        typewritter(entering_the_psychiatric_ward_next_text)
+        time.sleep(1)
+        visited_rooms.append("psychiatric_ward")
+        psychiatric_ward_decision()
+    else:
+        if check_events("psychiatric_ward_clue") == False:
+            typewritter(entering_the_psychiatric_ward_old_no_clue_text)
+            time.sleep(1)
+            psychiatric_ward_decision()
+        else:
+            typewritter(entering_the_psychiatric_ward_old_clue_text)
+            time.sleep(1)
+            psychiatric_ward_decision()
+
+def psychiatric_ward_decision():
+    while True:
+        if check_events("psychiatric_ward_clue") == False:
+            print("What do you want to do?")
+            time.sleep(2)
+            print("1. Answer the riddle.")
+            time.sleep(2)
+            print("2. Go back stairs.")
+            time.sleep(2)
+            choice = input("Enter the number of your choice: ")
+
+            if choice == "1":
+                print("You decide to go answer the riddle.")
+                time.sleep(2)
+                answering_the_riddle()
+                break
+            elif choice == "2":
+                print("You decide to go back to the stairs.")
+                time.sleep(2)
+                going_out_the_psychiatric_ward()
+                break
+            else:
+                print("Invalid choice. Please enter a valid number.")
+                time.sleep(2)
+        else:
+            print("What do you want to do?")
+            time.sleep(2)
+            print("1. Go back stairs.")
+            time.sleep(2)
+            choice = input("Enter the number of your choice: ")
+
+            if choice == "1":
+                print("You decide to go back to the stairs.")
+                time.sleep(2)
+                standing_lobby_stairs()
+                break
+            else:
+                print("Invalid choice. Please enter a valid number.")
+                time.sleep(2)
+
+def going_out_the_psychiatric_ward():
+    typewritter(getting_out_of_the_psychiatric_ward_no_clue_text)
+    time.sleep(1)
+    standing_lobby_stairs()
+
+def answering_the_riddle():
+    typewritter(answering_the_riddle_text)
+    time.sleep(1)
+    while True:
+        time.sleep(2)
+        choice = input("Enter in full letter your answer (if you wish to exit this prompt enter 1): ")
+
+        if choice == "1":
+            print("You decide that you need more time to think about it, and you leave the room.")
+            time.sleep(2)
+            getting_out_of_the_psychiatric_ward_no_clue_text()
+            break
+        elif choice.lower == "immortality":
+            print("The gost smiles at you and says: 'You are correct.")
+            time.sleep(2)
+            events.append("psychiatric_ward_clue")
+            riddle_dialogue()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
 
 
-
+def riddle_dialogue():
+    typewritter(answering_the_riddle_right_text)
+    time.sleep(1)
+    standing_lobby_stairs()
 
 #dummy intro launch that needs to be moved.
 intro()
