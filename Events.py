@@ -666,6 +666,11 @@ you should get moving.\n
 
 
 journal_operating_room_text = """
+As you open the journal, you realize that it belonged to one of the surgeons who worked in this ward.\n
+The entries are filled with detailed descriptions of surgical procedures, some of which are so graphic and disturbing that you can barely bring yourself to read them.\n
+\n
+But as you continue to flip through the pages, you come across an entry that stands out.\n
+\n
 "As I continue my research into the possibility of immortality, I have made a remarkable discovery.\n
 It seems that the human soul contains a life essence that, when properly extracted, can be transformed into a fluid that has the power to extend one's life.\n
 \n
@@ -686,11 +691,14 @@ It seemed like a logical step, a necessary evil in order to continue my research
 \n
 I began experimenting with the living patients, using a modified version of the machine to extract their souls without killing them.\n
 The process was painful for them, but it yielded a greater supply of the life-giving fluid.\n
+The operation room became my laboratory, and the patients became my test subjects.\n
 \n
 As I sit here, writing this note, I am wracked with guilt and horror at what I have done.\n
 But at the same time, I cannot deny the power and potential of this discovery.\n
 I must continue my research, no matter the cost. And if that means experimenting on the severed heads of patients to find a way to produce more fluid, then so be it.\n
 The quest for immortality is not for the faint of heart."\n
+\n
+You realize that this journal could be the key to uncovering the truth about what happened in this hospital, and you tuck it away in your bag, determined to continue your investigation.\n
 """
 
 
@@ -897,6 +905,42 @@ After some time, you decide to leave the ghost alone, and head back to the stair
 As soon as you leave the room you can hear the stomping sound of his head against the wall.\n
 """
 
+entering_the_surgical_ward_new_text = """
+As you step into the surgical ward, the pungent smell of disinfectant and blood fills your nostrils.\n
+The floor is sticky with some kind of dark liquid that almost dried up.\n
+You can see the outline of a surgical table in the center of the room.\n
+Scatted all around the place are various surgical tools, some of which are bent and broken.\n
+\n
+As you walk further into the room, you begin to feel a sense of unease.\n
+It feels as if someone forced on those tools, and used them for some kind of twisted purpose.\n
+\n
+As you approach one of the surgical tables, you have a sudden vision of a patient writhing in pain, their flesh being cut open by the surgeon's scalpel.\n
+You can almost hear their screams echoing through the room.\n
+\n
+Shaken, you continue to explore the ward, searching for any clues or signs of what happened here.\n
+Finally, you spot a small journal tucked away in one of the cabinets. Its cover is stained with blood, and it appears to have been hidden away for some time.\n
+\n
+Should you read it ? or carry on exploring ?\n
+"""
+
+enteting_the_surgical_ward_old_No_Journal_text = """
+You step back into the surgical ward, and find yourself in the same room as before.\n
+The smell of blood and disinfectant is still strong, and the floor is still sticky with some kind of dark liquid.\n
+You can't help but wonder what does this journal contains.\n
+\n
+Should you read it ? or carry on exploring ?\n
+"""
+
+entering_the_surgical_ward_journal_text = """
+You step back into the surgical ward, and find yourself in the same room as before.\n
+The smell of blood and disinfectant is still strong, and the floor is still sticky with some kind of dark liquid.\n
+What horrors could have happened on this operating table ?\n
+\n
+You rummage through the cabinets, in hopes of finding anything else that could help you.\n
+But all you can find are some old surgical tools, and some rotten bandages.\n
+You should probably leave this place, before you get sick.\n
+\n
+"""
 
 #Starting the program
 
@@ -2147,6 +2191,9 @@ def riddle_dialogue():
     typewritter(answering_the_riddle_right_text)
     time.sleep(1)
     standing_lobby_stairs()
+
+
+
 
 #dummy intro launch that needs to be moved.
 intro()
