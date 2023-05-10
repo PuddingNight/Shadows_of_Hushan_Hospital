@@ -974,7 +974,7 @@ Your attention is drawn to a particularly worn-looking journal, hidden beneath a
 """
 
 entering_the_lab_old_text = """
-
+You get 
 """
 #Starting the program
 
@@ -2277,6 +2277,8 @@ def surgical_ward_decision():
         else:
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
+
+#to do : make entering lab new / old - after picking the journal, notice the candles and ask if the player wants to pick them
 
 
 #dummy intro launch that needs to be moved.
