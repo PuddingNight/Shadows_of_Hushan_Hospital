@@ -8,7 +8,7 @@ Shadows of Hushan Hospital is a text-based adventure game that takes you on a ha
 
 As you progress through the game, you will encounter ghosts, discover clues, and interact with objects that will help you piece together the hospital's eerie history. Some decision you make will affect the outcome of the game, adding an element of unpredictability.
 
-The game was developed in just two days (which turned into a week) using Python and just the time and random librairies. The code may be considered messy, but it was created as a personal challenge to produce a functioning game in atimely manner without external help or research.
+The game was developed in two days (which turned into a week) using Python and just the time and random librairies. The code may be considered messy, but it was created as a personal challenge to produce a functioning game in a timely manner without external help or research.
 
 Explore the hospital, uncover its secrets, and discover the truth behind the Shadows of Hushan Hospital.
 
