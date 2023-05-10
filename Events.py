@@ -703,12 +703,18 @@ You realize that this journal could be the key to uncovering the truth about wha
 
 
 journal_laboratory_text = """
+Flipping through the pages of the journal, you discover that the author was a former doctor of the hospital who became increasingly obsessed with using the power of the occult to extend his life.\n
+He describes in great detail the various rituals and experiments he conducted, and the horrific things he did in the name of science.\n
+\n
+As you read on, you come across a page with a strange symbol scrawled across it in blood-red ink. Beneath it, note reads,\n
+\n
 "Now is the time to begin my greatest experiment, the culmination of all my research.\n
 I have gathered the necessary materials and prepared the rital chamber.\n
 It took me weeks to dig this pit in the storage room, but I could conduct my darkest works without fear of interruption.\n
 \n
 I cannot stop shaking as I write this.\n
 I will have to put the ashes of the tortured souls into the pentagram, and then put candles at each point of the star.\n
+I'll yell the sentence that the overseer murmured into my mind.\n
 I then will dig a hole in the middle of the pentagram, put the machine in it...\n
 and...\n
 Gods, I'm so nervous.\n
@@ -729,6 +735,16 @@ I will finally have the time to seek the knowledge I crave.\n
 I just need to prepare myself for this trial.\n
 \n
 Quick, the overseer is urging me to go down to the bowels of the hospital."\n
+\n
+\n
+You slowly close the journal, and put it in your bag.\n
+\n
+You wonder where this ritual could have taken place.\n
+What about those ingredients...?\n
+Some ashes... Candles...A sentence...?\n
+How does this makes sense...?\n
+\n
+You decide to leave the Hospital Laboratory to head back to the second floor stairs.\n
 """
 
 
@@ -942,6 +958,24 @@ You should probably leave this place, before you get sick.\n
 \n
 """
 
+entering_the_lab_new_text = """
+Entering the laboratory, you're immediately struck by the overwhelming stench of formaldehyde and rot.
+The shelves that line the walls are cluttered with countless jars, each filled with macabre specimens: organs, brains, limbs, even entire fetuses.
+Some are labeled with scientific names, others with more sinister-sounding titles.
+
+The tables in the center of the room are covered in arcane symbols and a variety of mysterious tools and implements, some of which look like they've been repurposed from surgical equipment.
+The air is thick with a strange energy, almost as if you're standing in the midst of some otherworldly ceremony.
+
+As you begin to explore the room, you notice a collection of books and papers scattered haphazardly about.
+Some of them are written in ancient languages you can't even begin to decipher, while others are in modern tongues but seem to be discussing unspeakable things.
+You find instructions for ritual sacrifices, drawings of strange creatures, and detailed descriptions of bizarre ceremonies.
+
+Your attention is drawn to a particularly worn-looking journal, hidden beneath a pile of dusty papers.
+"""
+
+entering_the_lab_old_text = """
+
+"""
 #Starting the program
 
 #leads to arriving_hospital()
@@ -2153,7 +2187,7 @@ def psychiatric_ward_decision():
             if choice == "1":
                 print("You decide to go back to the stairs.")
                 time.sleep(2)
-                standing_lobby_stairs()
+                standing_first_floor_stairs_text()
                 break
             else:
                 print("Invalid choice. Please enter a valid number.")
@@ -2162,7 +2196,7 @@ def psychiatric_ward_decision():
 def going_out_the_psychiatric_ward():
     typewritter(getting_out_of_the_psychiatric_ward_no_clue_text)
     time.sleep(1)
-    standing_lobby_stairs()
+    standing_first_floor_stairs_text()
 
 def answering_the_riddle():
     typewritter(answering_the_riddle_text)
@@ -2190,7 +2224,7 @@ def answering_the_riddle():
 def riddle_dialogue():
     typewritter(answering_the_riddle_right_text)
     time.sleep(1)
-    standing_lobby_stairs()
+    standing_first_floor_stairs_text()
 
 def entering_the_surgical_ward():
     if check_visited_rooms("Surgical_ward") == False:
@@ -2225,7 +2259,7 @@ def surgical_ward_decision():
         elif choice == "2":
             print("You decide to go back to the stairs.")
             time.sleep(2)
-            standing_lobby_stairs()
+            standing_first_floor_stairs_text()
         else:
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
@@ -2239,7 +2273,7 @@ def surgical_ward_decision():
         if choice == "1":
             print("You decide to go back to the stairs.")
             time.sleep(2)
-            standing_lobby_stairs()
+            standing_first_floor_stairs_text()
         else:
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
