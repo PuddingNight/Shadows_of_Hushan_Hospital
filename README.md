@@ -1,4 +1,4 @@
-# Shadows_of_Hushan_Hospital
+# Shadows of Hushan Hospital
 <p align="center">
 <img src="https://github.com/PuddingNight/Shadows_of_Hushan_Hospital/blob/master/hospital2.png" width="250" height="250">
 </p>
