@@ -3,20 +3,28 @@
 <img src="https://github.com/PuddingNight/Shadows_of_Hushan_Hospital/blob/master/hospital2.png" width="250" height="250">
 </p>
 
+## Presentation :
+Shadows of Hushan Hospital is a text-based adventure game that takes you on a haunting journey through an abandoned hospital. You must explore the hospital, uncover its dark secrets, and put an end to the supernatural forces that still linger within its walls.
 
-This was a two days project (that turned into one week) to make an old school text based adventure game where you make your own decisions in order to uncover the mysteries of a spooky hospital.
+As you progress through the game, you will encounter ghosts, discover clues, and interact with objects that will help you piece together the hospital's eerie history. Some decision you make will affect the outcome of the game, adding an element of unpredictability.
 
-As the player progresses, they find clues and interact with various objects that help piece together the story of the hospital's dark past. The player also encounters several ghosts who provide additional information and backstory.
+The game was developed in just two days (which turned into a week) using Python and just the time and random librairies. The code may be considered messy, but it was created as a personal challenge to produce a functioning game in atimely manner without external help or research.
 
-The ultimate goal of the game is to discover the secrets of the hospital and put an end to the supernatural forces that still haunt the abandoned building.
+Explore the hospital, uncover its secrets, and discover the truth behind the Shadows of Hushan Hospital.
 
 ---
 
-Everything is meant to run in the Python terminal. Only time and random libraries were used. The code is dirty as it was a challenge to get everything out in a timely manner, without looking how other people did it.
+## How to play :
+
+---
 
 If you want to read more about how it was made, head up to :
 
+---
 
 <p align="center">
 <img src="https://github.com/PuddingNight/Shadows_of_Hushan_Hospital/blob/master/map_low_res.jpg">
 </p>
+
+
+
