@@ -1,5 +1,5 @@
 # Shadows_of_Hushan_Hospital
-![Hospital_Logo](https://github.com/PuddingNight/Shadows_of_Hushan_Hospital/blob/master/hospital2.png =250x250)
+![Hospital_Logo](https://github.com/PuddingNight/Shadows_of_Hushan_Hospital/blob/master/hospital2.png=250x250)
 This was a two days project (that turned into one week) to make an old school text based adventure game where you make your own decisions in order to uncover the mysteries of a spooky hospital.
 
 Everything is meant to run in the Python terminal. Only time and random libraries were used. The code is dirty as it was a challenge to get everything out in a timely manner, without looking how other people did it.
