@@ -12,13 +12,12 @@ The game was developed in two days (which turned into a week) using Python and j
 
 Explore the hospital, uncover its secrets, and discover the truth behind the Shadows of Hushan Hospital.
 
----
 
 ## How to play :
 
----
 
-If you want to read more about how it was made, head up to :
+
+## If you want to read more about how it was made, head up to :
 
 ---
 
