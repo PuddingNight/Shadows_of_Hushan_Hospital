@@ -2192,7 +2192,57 @@ def riddle_dialogue():
     time.sleep(1)
     standing_lobby_stairs()
 
+def entering_the_surgical_ward():
+    if check_visited_rooms("Surgical_ward") == False:
+        typewritter(entering_the_surgical_ward_new_text)
+        time.sleep(1)
+        visited_rooms.append("Surgical_ward")
+        surgical_ward_decision()
+    else:
+        if check_events("surgical_journal") == False:
+            typewritter(enteting_the_surgical_ward_old_No_Journal_text)
+            time.sleep(1)
+            surgical_ward_decision()
+        else:
+            typewritter(entering_the_surgical_ward_journal_text)
+            time.sleep(1)
+            surgical_ward_decision()
 
+def surgical_ward_decision():
+    if check_events("surgical_journal") == False:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Pick up the journal.")
+        time.sleep(2)
+        print("2. Go back stairs.")
+        time.sleep(2)
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to pick up the journal.")
+            time.sleep(2)
+            picking_up_the_journal()
+        elif choice == "2":
+            print("You decide to go back to the stairs.")
+            time.sleep(2)
+            standing_lobby_stairs()
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+    else:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Go back stairs.")
+        time.sleep(2)
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to go back to the stairs.")
+            time.sleep(2)
+            standing_lobby_stairs()
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
 
 
 #dummy intro launch that needs to be moved.
