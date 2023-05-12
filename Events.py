@@ -2082,7 +2082,7 @@ def first_floor_stairs_decision():
         elif choice == "4":
             print("You decide to go down the stairs to the first floor.")
             time.sleep(2)
-            entering_hospital_laboratory()
+            entering_the_lab()
             break
         else:
             print("Invalid choice. Please enter a valid number.")
@@ -2292,8 +2292,6 @@ def going_out_the_psychiatric_ward():
 
 
 def answering_the_riddle():
-    typewritter(answering_the_riddle_text)
-    time.sleep(1)
     while True:
         time.sleep(2)
         choice = input(
@@ -2381,7 +2379,7 @@ def entering_the_lab():
         typewritter(entering_the_lab_new_text)
         time.sleep(1)
         visited_rooms.append("lab")
-        lab_decision()
+        lab_decision_1()
     else:
         if check_inventory("lab_candles") == False and check_events("Lab_Journal") == False:
             typewritter(entering_the_lab_No_candles_No_journal_old_text)
