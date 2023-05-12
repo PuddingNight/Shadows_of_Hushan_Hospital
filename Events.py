@@ -1,20 +1,22 @@
 import time
 import random
 
+
 def typewritter(string):
-    for char in string: 
+    for char in string:
         print(char, end="", flush=True)
         time.sleep(0.04)
-        if char == "\n": 
+        if char == "\n":
             time.sleep(0.08)
     print("\n")
 
 
-
-#Make an inventory that will hold the items the player will find
+# Make an inventory that will hold the items the player will find
 inventory = []
 
-#make a general function that cheks if the player has an item in their inventory
+# make a general function that cheks if the player has an item in their inventory
+
+
 def check_inventory(item):
     if item in inventory:
         return True
@@ -22,20 +24,25 @@ def check_inventory(item):
         return False
 
 
-#make a list that tracks the encounters the player had
+# make a list that tracks the encounters the player had
 encounters = []
 
-#make a general function that checks if the player has encountered a ghost
+# make a general function that checks if the player has encountered a ghost
+
+
 def check_encounters(ghost):
     if ghost in encounters:
         return True
     else:
         return False
 
-#make a list that tracks the events the player has already experienced
+
+# make a list that tracks the events the player has already experienced
 events = []
 
-#make a general function that checks if the player has experienced an event
+# make a general function that checks if the player has experienced an event
+
+
 def check_events(event):
     if event in events:
         return True
@@ -43,10 +50,12 @@ def check_events(event):
         return False
 
 
-#make a list that tracks the rooms with long descriptions of rooms that the player has already visited
+# make a list that tracks the rooms with long descriptions of rooms that the player has already visited
 visited_rooms = []
 
-#make a general function that checks if the player has visited a room
+# make a general function that checks if the player has visited a room
+
+
 def check_visited_rooms(room):
     if room in visited_rooms:
         return True
@@ -54,8 +63,7 @@ def check_visited_rooms(room):
         return False
 
 
-
-#make an object for the player
+# make an object for the player
 class Player:
     def __init__(self, name, health, inventory):
         self.name = name
@@ -63,30 +71,27 @@ class Player:
         self.inventory = inventory
 
 
-#instantiating the player
+# instantiating the player
 player = Player("Luo Mei Ling", 100, inventory)
 
-#make a class for the ghosts they do not have health but they have a name and a description
+# make a class for the ghosts they do not have health but they have a name and a description
+
+
 class Ghost:
     def __init__(self, name, description):
         self.name = name
         self.description = description
 
 
-#making a class for the morgue killer
+# making a class for the morgue killer
 class Killer:
     def __init__(self, health, description):
         self.health = health
         self.description = description
 
-#instantiating the morgue killer
+
+# instantiating the morgue killer
 creepy_cultist = Killer(100, "A creepy cultist")
-
-
-
-
-
-    
 
 
 intro_text = """
@@ -185,7 +190,7 @@ You can see a set of toilets, covered in dust and cobwebs.\n
 Now that the glow of the music box is gone, you can feel a sense of dread.\n
 """
 
-continue_exploring_outside_text ="""
+continue_exploring_outside_text = """
 You continue exploring the exterior of the hospital, searching for another way inside.\n
 As you make your way around the side of the building, you spot a small window on the first floor that looks like it's been broken.\n
 You notice a small pile of debris nearby that looks like it could be used to climb up and reach the window.\n
@@ -663,8 +668,6 @@ you should get moving.\n
 """
 
 
-
-
 journal_operating_room_text = """
 As you open the journal, you realize that it belonged to one of the surgeons who worked in this ward.\n
 The entries are filled with detailed descriptions of surgical procedures, some of which are so graphic and disturbing that you can barely bring yourself to read them.\n
@@ -703,6 +706,7 @@ You realize that this journal could be the key to uncovering the truth about wha
 
 
 journal_laboratory_text = """
+You carefully pick up the journal and open it.\n
 Flipping through the pages of the journal, you discover that the author was a former doctor of the hospital who became increasingly obsessed with using the power of the occult to extend his life.\n
 He describes in great detail the various rituals and experiments he conducted, and the horrific things he did in the name of science.\n
 \n
@@ -744,7 +748,7 @@ What about those ingredients...?\n
 Some ashes... Candles...A sentence...?\n
 How does this makes sense...?\n
 \n
-You decide to leave the Hospital Laboratory to head back to the second floor stairs.\n
+You decide to put the journal in your bag.\n
 """
 
 
@@ -959,26 +963,80 @@ You should probably leave this place, before you get sick.\n
 """
 
 entering_the_lab_new_text = """
-Entering the laboratory, you're immediately struck by the overwhelming stench of formaldehyde and rot.
-The shelves that line the walls are cluttered with countless jars, each filled with macabre specimens: organs, brains, limbs, even entire fetuses.
-Some are labeled with scientific names, others with more sinister-sounding titles.
-
-The tables in the center of the room are covered in arcane symbols and a variety of mysterious tools and implements, some of which look like they've been repurposed from surgical equipment.
-The air is thick with a strange energy, almost as if you're standing in the midst of some otherworldly ceremony.
-
-As you begin to explore the room, you notice a collection of books and papers scattered haphazardly about.
-Some of them are written in ancient languages you can't even begin to decipher, while others are in modern tongues but seem to be discussing unspeakable things.
-You find instructions for ritual sacrifices, drawings of strange creatures, and detailed descriptions of bizarre ceremonies.
-
-Your attention is drawn to a particularly worn-looking journal, hidden beneath a pile of dusty papers.
+Entering the laboratory, you're immediately struck by the overwhelming stench of formaldehyde and rot.\n
+The shelves that line the walls are cluttered with countless jars, each filled with macabre specimens: organs, brains, limbs, even entire fetuses.\n
+Some are labeled with scientific names, others with more sinister-sounding titles.\n
+\n
+The tables in the center of the room are covered in arcane symbols and a variety of mysterious tools and implements, some of which look like they've been repurposed from surgical equipment.\n
+The air is thick with a strange energy, almost as if you're standing in the midst of some otherworldly ceremony.\n
+\n
+As you begin to explore the room, you notice a collection of books and papers scattered haphazardly about.\n
+Some of them are written in ancient languages you can't even begin to decipher, while others are in modern tongues but seem to be discussing unspeakable things.\n
+You find instructions for ritual sacrifices, drawings of strange creatures, and detailed descriptions of bizarre ceremonies.\n
+\n
+Your attention is drawn to a particularly worn-looking journal, hidden beneath a pile of dusty papers.\n
+It emanates a gentle glow, as if it's calling out to you.\n
+\n
+A big pile of candles is sitting on the table, and you can see a lighter next to it.\n
 """
 
-entering_the_lab_old_text = """
-You get 
+entering_the_lab_No_candles_No_journal_old_text = """
+You get into the laboratory. after a quick look around, you only find the candles and the lighter.\n
+Some of them have a thick layer of dust on them, but they should still work.\n
+After searching around, your attention is drawn to the particularly worn-looking journal, hidden beneath a pile of dusty papers.\n
+other than that, you cannot find anything interesting after searching the room.\n
 """
-#Starting the program
 
-#leads to arriving_hospital()
+entering_the_lab_journal_no_candles_old_text = """
+You get into the laboratory. after a quick look around, the only thing of interest seems to be the candles.\n
+The candles are still sitting on the table, and you can see a lighter next to it.\n
+\n
+From the door, you can hear some strange noises of paper being shuffled around.\n
+"""
+
+entering_the_lab_no_journal_candles_old_text = """
+You can feel the candles in your bag as you enter the laboratory.\n
+After searching around, your attention is drawn to the particularly worn-looking journal, hidden beneath a pile of dusty papers.\n
+Nothing else seems to be of interest in this room.\n
+"""
+
+entering_the_lab_candles_journal_old_text = """
+You get into the laboratory. Here nothing has changed since the last time you were here.\n
+You cannot find anything interesting, you've already picked up the candles and read the journal.\n
+You should probably leave this place.\n
+"""
+
+stanging_in_the_lab_No_candles_No_Journal_text = """
+You stand in the middle of the room, surrounded by the strange symbols and arcane tools.\n
+The candles are still sitting on the table, and you can see a lighter next to it.\n
+After searching around, your attention is drawn to the particularly worn-looking journal, hidden beneath a pile of dusty papers.\n
+
+\n
+From the door, you can hear some strange noises of paper being shuffled around.\n
+"""
+
+standing_in_the_lab_candles_no_journal_text = """
+The candles in your bag start to feel heavy as you stand in the middle of the room, surrounded by the strange symbols and arcane tools.\n
+The desk have a big mark on it, where the candles used to be.\n
+After searching around, your attention is drawn to the particularly worn-looking journal, hidden beneath a pile of dusty papers.\n
+"""
+
+standing_in_the_lab_journal_no_candles_text = """
+You still remember the disturbing contents of the journal as you stand in the middle of the room, surrounded by the strange symbols and arcane tools.\n
+The candles are still sitting on the table, and you can see a lighter next to it.\n
+After searching around, you cannot find anything else interesting.\n
+"""
+
+picking_up_the_candles_text = """
+You reach out and pick up the candles, their cold wax sending a shiver down your spine.\n
+As you hold them in your hand, you notice strange symbols etched into the wax, almost as if they're whispering to you.\n
+A faint odor of decay emanates from the candles, filling the air with an unsettling presence.\n
+You can't help but feel a sense of unease, but you know these candles may hold the key to your survival.\n
+"""
+
+# Starting the program
+
+# leads to arriving_hospital()
 def intro():
     typewritter(intro_text)
     time.sleep(1)
@@ -993,9 +1051,11 @@ def intro():
         else:
             print("Invalid input, please check you entered \"Continue\"")
 
-#Coming for intro() leads to :
-# going_through_main_entrance() 
+# Coming for intro() leads to :
+# going_through_main_entrance()
 # exploring_outside()
+
+
 def arriving_hospital():
     typewritter(arriving_at_hospital_text)
     time.sleep(1)
@@ -1011,7 +1071,8 @@ def arriving_hospital():
         if choice == "1":
             print("You cautiously approach the main entrance, taking care not to step on any broken glass or loose debris.")
             time.sleep(4)
-            print("The doors groan as you push them open, revealing a dark and ominous interior.")
+            print(
+                "The doors groan as you push them open, revealing a dark and ominous interior.")
             time.sleep(3)
             going_through_main_entrance()
             break
@@ -1022,16 +1083,17 @@ def arriving_hospital():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
-#coming from arriving_hospital leads to :
+# coming from arriving_hospital leads to :
 # entering_hospital_lobby
+
+
 def going_through_main_entrance():
     typewritter(going_through_main_entrance_text)
     time.sleep(1)
     entering_Hospital_lobby()
-    
 
 
-#Coming from arriving_hospital. leads to :
+# Coming from arriving_hospital. leads to :
 # glowing_window()
 # continue_exploring_outside()
 def exploring_outside():
@@ -1056,8 +1118,7 @@ def exploring_outside():
             time.sleep(2)
 
 
-
-#coming from exploring_outside() leads to :
+# coming from exploring_outside() leads to :
 # entering_the_toilets_from_window()
 # continue_exploring_outside()
 def glowing_window():
@@ -1102,10 +1163,12 @@ def glowing_window():
                 print("Invalid choice. Please enter a valid number.")
                 time.sleep(2)
 
-#Coming from glowing_window() leads to :
+# Coming from glowing_window() leads to :
 # opening_the_music_box()
 # entering_Hospital_lobby()
 # continue_exploring_outside()
+
+
 def entering_the_toilets_from_window():
     if check_inventory("Music Box") == False:
         typewritter(entering_the_toilets_from_window_text_no_MB)
@@ -1126,7 +1189,8 @@ def entering_the_toilets_from_window():
                 entering_Hospital_lobby()
                 break
             elif choice == "3":
-                print("You decide to hop back outside, you feel that something is not right.")
+                print(
+                    "You decide to hop back outside, you feel that something is not right.")
                 time.sleep(4)
                 continue_exploring_outside()
                 break
@@ -1134,28 +1198,25 @@ def entering_the_toilets_from_window():
                 print("Invalid choice. Please enter a valid number.")
                 time.sleep(2)
     else:
-     typewritter(entering_the_toilets_from_window_text_MB)
-     while True:
-        print("What do you want to do?")
-        time.sleep(2)
-        print("1. Continue through the door.")
-        time.sleep(2)
-        print("2. Go back outside from the window.")
-        choice = input("Enter the number of your choice: ")
-
-        if choice == "1":
-            entering_Hospital_lobby()
-        elif choice == "2":
-            print("You decide to hop back outside, you feel that something is not right.")
-            time.sleep(4)
-            continue_exploring_outside()
-        else:
-            print("Invalid choice. Please enter a valid number.")
+        typewritter(entering_the_toilets_from_window_text_MB)
+        while True:
+            print("What do you want to do?")
             time.sleep(2)
-    
+            print("1. Continue through the door.")
+            time.sleep(2)
+            print("2. Go back outside from the window.")
+            choice = input("Enter the number of your choice: ")
 
-
-
+            if choice == "1":
+                entering_Hospital_lobby()
+            elif choice == "2":
+                print(
+                    "You decide to hop back outside, you feel that something is not right.")
+                time.sleep(4)
+                continue_exploring_outside()
+            else:
+                print("Invalid choice. Please enter a valid number.")
+                time.sleep(2)
 
     typewritter(entering_the_toilets_from_window_text_no_MB)
     while True:
@@ -1183,14 +1244,15 @@ def entering_the_toilets_from_window():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
-#coming from entering_the_toilets_from_the_window() or entering_toilets_from_door() Leads to :
+# coming from entering_the_toilets_from_the_window() or entering_toilets_from_door() Leads to :
 # standing_in_the_toilets()
+
+
 def opening_the_music_box():
     typewritter(opening_the_music_box_text)
     inventory.append("Music Box")
     standing_in_the_toilets()
     time.sleep(1)
-
 
 
 def entering_the_toilets_from_door():
@@ -1213,7 +1275,8 @@ def entering_the_toilets_from_door():
                 entering_Hospital_lobby()
                 break
             elif choice == "3":
-                print("You decide to hop back outside, you feel that something is not right.")
+                print(
+                    "You decide to hop back outside, you feel that something is not right.")
                 time.sleep(4)
                 continue_exploring_outside()
                 break
@@ -1234,7 +1297,8 @@ def entering_the_toilets_from_door():
                 entering_Hospital_lobby()
                 break
             elif choice == "2":
-                print("You decide to hop back outside, you feel that something is not right.")
+                print(
+                    "You decide to hop back outside, you feel that something is not right.")
                 time.sleep(4)
                 continue_exploring_outside()
                 break
@@ -1243,8 +1307,7 @@ def entering_the_toilets_from_door():
                 time.sleep(2)
 
 
-
-#coming from opening_the_music_box() leads to :
+# coming from opening_the_music_box() leads to :
 # entering_Hospital_lobby()
 # continue_exploring_outside()
 def standing_in_the_toilets():
@@ -1267,13 +1330,11 @@ def standing_in_the_toilets():
         else:
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
-                                                 
 
 
-
-#coming from exploring_outside() or glowing_window() Leads to :
+# coming from exploring_outside() or glowing_window() Leads to :
 # climbing_through_the_window()
-# return_to_main_entrance() 
+# return_to_main_entrance()
 def continue_exploring_outside():
     typewritter(continue_exploring_outside_text)
     time.sleep(1)
@@ -1296,10 +1357,12 @@ def continue_exploring_outside():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
-#coming from continue_exploring_outside() Leads to :
+# coming from continue_exploring_outside() Leads to :
 # climbing_through_the_window()
 # glowing_window()
 # going_through_main_entrance()
+
+
 def return_to_main_entrance():
     typewritter(return_to_the_main_entrance_text)
     time.sleep(1)
@@ -1317,12 +1380,14 @@ def return_to_main_entrance():
         if choice == "1":
             print("You decide to go back to the window that leads to the first floor.")
             time.sleep(2)
-            print("You walk back to the place that had stacked debris and a broken window.")
+            print(
+                "You walk back to the place that had stacked debris and a broken window.")
             time.sleep(2)
             climbing_through_the_window_in()
             break
         elif choice == "2":
-            print("You decide to go back to the window that wasn't boarded like the others on the ground floor.")
+            print(
+                "You decide to go back to the window that wasn't boarded like the others on the ground floor.")
             time.sleep(2)
             print("You walk carefully and manage recall the position of this window.")
             time.sleep(2)
@@ -1339,7 +1404,7 @@ def return_to_main_entrance():
             print("Invalid choice. Please enter a valid number.")
 
 
-#²coming from return_to_main_entrance() and climbing_through_the_window() Leads to :
+# ²coming from return_to_main_entrance() and climbing_through_the_window() Leads to :
 # in_the_administrative_offices() !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
 def climbing_through_the_window_in():
     typewritter(climbing_through_the_window_in_text)
@@ -1347,7 +1412,7 @@ def climbing_through_the_window_in():
     in_the_administrative_offices()
 
 
-#Comming from the lobby leads to going_through_the_main_entrance or exploring outside
+# Comming from the lobby leads to going_through_the_main_entrance or exploring outside
 def return_to_front_hospital_trough_main_entrance():
     typewritter(return_to_front_hospital_trough_main_entrance_text)
     time.sleep(1)
@@ -1363,7 +1428,8 @@ def return_to_front_hospital_trough_main_entrance():
         if choice == "1":
             print("You cautiously approach the main entrance, taking care not to step on any broken glass or loose debris.")
             time.sleep(4)
-            print("The doors groan as you push them open, revealing a dark and ominous interior.")
+            print(
+                "The doors groan as you push them open, revealing a dark and ominous interior.")
             time.sleep(3)
             going_through_main_entrance()
             break
@@ -1375,13 +1441,11 @@ def return_to_front_hospital_trough_main_entrance():
             time.sleep(2)
 
 
-
-
-#Coming form going_through_main_entrance() leads to :
+# Coming form going_through_main_entrance() leads to :
 # return_to_front_hospital_trough_main_entrance()
 # entering_staff_only()
 # sairs_first_floor() !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
-# Entering_the_toilets_from_door() 
+# Entering_the_toilets_from_door()
 def entering_Hospital_lobby():
     if check_visited_rooms("Hospital lobby") == False:
         typewritter(entering_Hospital_lobby_text_new)
@@ -1393,7 +1457,9 @@ def entering_Hospital_lobby():
         typewritter(entering_Hospital_lobby_text_old)
         time.sleep(1)
         hospital_lobby_choice()
-#don't forget to add first floor stairs !!!!!!!!!
+# don't forget to add first floor stairs !!!!!!!!!
+
+
 def hospital_lobby_choice():
     while True:
         print("What do you want to do?")
@@ -1418,13 +1484,15 @@ def hospital_lobby_choice():
             entering_staff_only()
             break
         elif choice == "3":
-            print("You can feel the cold sweat on your forehead dripping down your black hair.")
+            print(
+                "You can feel the cold sweat on your forehead dripping down your black hair.")
             time.sleep(3)
             print("The stairs still are in a good condition.")
             time.sleep(2)
-            print("while you are climbing the stairs, you can feel a presence following your steps.")
+            print(
+                "while you are climbing the stairs, you can feel a presence following your steps.")
             time.sleep(2)
-            #adding the first floor function here !!!!!!!!
+            # adding the first floor function here !!!!!!!!
             break
         elif choice == "4":
             entering_the_toilets_from_door()
@@ -1434,7 +1502,7 @@ def hospital_lobby_choice():
             time.sleep(2)
 
 
-#Coming from entering_Hospital_lobby() leads to :
+# Coming from entering_Hospital_lobby() leads to :
 # going down the morgue
 # going to the storage room !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
 # going to entering_Hospital_lobby()
@@ -1471,10 +1539,12 @@ def entering_staff_only():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
-#Coming from entering_staff_only() leads to :
-# open the incinerator 
-# investigate on the last gurney 
-# reurn to returning_to_staff_only() 
+# Coming from entering_staff_only() leads to :
+# open the incinerator
+# investigate on the last gurney
+# reurn to returning_to_staff_only()
+
+
 def going_down_the_morgue():
     if check_visited_rooms("morgue") == False:
         typewritter(going_down_the_morgue_new_text)
@@ -1520,7 +1590,8 @@ def going_down_the_morgue():
             if events("investigated the body on the last gurney") == False and check_inventory("Ashes") == False:
                 print("What do you want to do?")
                 time.sleep(2)
-                print("1. Investigate on the last gurney that is draped with a white sheet.")
+                print(
+                    "1. Investigate on the last gurney that is draped with a white sheet.")
                 time.sleep(2)
                 print("2. Open the door of the incinerator.")
                 time.sleep(2)
@@ -1573,7 +1644,8 @@ def going_down_the_morgue():
             elif events("investigated the body on the last gurney") == False and check_inventory("Ashes") == True:
                 print("What do you want to do?")
                 time.sleep(2)
-                print("1. Investigate on the last gurney that is draped with a white sheet.")
+                print(
+                    "1. Investigate on the last gurney that is draped with a white sheet.")
                 time.sleep(2)
                 print("2. Go back to the staff only room.")
                 time.sleep(2)
@@ -1599,7 +1671,7 @@ def going_down_the_morgue():
                 print("1. Go back to the staff only room.")
                 time.sleep(2)
                 choice = input("Enter the number of your choice: ")
-                
+
                 if choice == "1":
                     print("You decide to go back to the lobby.")
                     time.sleep(2)
@@ -1609,9 +1681,11 @@ def going_down_the_morgue():
                     print("Invalid choice. Please enter a valid number.")
                     time.sleep(2)
 
-#coming from the morgue, leads to:
+# coming from the morgue, leads to:
 # getting the ashes
-#standing in the morgue
+# standing in the morgue
+
+
 def opening_the_incinerator():
     typewritter(opening_the_incinerator_text)
     time.sleep(1)
@@ -1630,21 +1704,23 @@ def opening_the_incinerator():
             getting_the_ashes()
             break
         elif choice == "2":
-            print("You decide to leave the incinerator and explore the rest of the morgue.")
+            print(
+                "You decide to leave the incinerator and explore the rest of the morgue.")
             time.sleep(2)
             standing_in_the_morgue()
             break
 
-#coming from the opening the incinerator, leads to:
+# coming from the opening the incinerator, leads to:
 # standing in the morgue
+
+
 def getting_the_ashes():
     typewritter(getting_the_ashes_text)
     time.sleep(1)
     standing_in_the_morgue()
 
 
-
-#coming from the opening the incenerator, getting ashes, the investigation of the last gurney, leads to:
+# coming from the opening the incenerator, getting ashes, the investigation of the last gurney, leads to:
 def standing_in_the_morgue():
     typewritter(standing_in_the_morgue_text)
     time.sleep(1)
@@ -1668,12 +1744,12 @@ def standing_in_the_morgue():
             elif choice == "2":
                 print("You decide to open the door of the incinerator.")
                 time.sleep(2)
-                #add a function to open the door of the incinerator
+                # add a function to open the door of the incinerator
                 break
             elif choice == "3":
                 print("You decide to go back to the lobby.")
                 time.sleep(2)
-                #add a return to the staff only room
+                # add a return to the staff only room
                 break
             else:
                 print("Invalid choice. Please enter a valid number.")
@@ -1689,12 +1765,12 @@ def standing_in_the_morgue():
             if choice == "1":
                 print("You decide to open the door of the incinerator.")
                 time.sleep(2)
-                #add a function to open the door of the incinerator
+                # add a function to open the door of the incinerator
                 break
             elif choice == "2":
                 print("You decide to go back to the lobby.")
                 time.sleep(2)
-                #add a return to the staff only room
+                # add a return to the staff only room
                 break
             else:
                 print("Invalid choice. Please enter a valid number.")
@@ -1711,12 +1787,12 @@ def standing_in_the_morgue():
             if choice == "1":
                 print("You decide to investigate on the last gurney.")
                 time.sleep(2)
-                #add a function to investigate on the last gurney
+                # add a function to investigate on the last gurney
                 break
             elif choice == "2":
                 print("You decide to go back to the lobby.")
                 time.sleep(2)
-                #add a return to the staff only room
+                # add a return to the staff only room
                 break
             else:
                 print("Invalid choice. Please enter a valid number.")
@@ -1727,18 +1803,18 @@ def standing_in_the_morgue():
             print("1. Go back to the staff only room.")
             time.sleep(2)
             choice = input("Enter the number of your choice: ")
-            
+
             if choice == "1":
                 print("You decide to go back to the lobby.")
                 time.sleep(2)
-                #add a return to the staff only room
+                # add a return to the staff only room
                 break
             else:
                 print("Invalid choice. Please enter a valid number.")
                 time.sleep(2)
 
 
-#coming from the standing in the morgue, leads to:
+# coming from the standing in the morgue, leads to:
 def investigating_the_last_gurney():
     typewritter(pulling_the_sheet_text)
     time.sleep(1)
@@ -1765,9 +1841,11 @@ def investigating_the_last_gurney():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
-#coming from investigating the last gurney, leads to:
+# coming from investigating the last gurney, leads to:
 # hiding from the morgue killer
 # fighting the morgue killer
+
+
 def grabbing_the_journal():
     typewritter(reading_the_journal_morgue_text)
     time.sleep(1)
@@ -1796,9 +1874,11 @@ def grabbing_the_journal():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
-#coming from grabbing_the_journal()
-#leads to standing_in_the_morgue()
-#leads to intro() if you die and choose to play again
+# coming from grabbing_the_journal()
+# leads to standing_in_the_morgue()
+# leads to intro() if you die and choose to play again
+
+
 def fight_morgue_killer():
     outcome = random.randint(1, 2, 3)
     if outcome == 1:
@@ -1827,7 +1907,7 @@ def fight_morgue_killer():
         standing_in_the_morgue()
 
 
-#coming from grabbing the journal leads to :
+# coming from grabbing the journal leads to :
 # standing in the morgue
 def hiding_from_the_morgue_killer():
     typewritter(hidding_morgue_text)
@@ -1839,7 +1919,7 @@ def hiding_from_the_morgue_killer():
     standing_in_the_morgue()
 
 
-#Need to add the storage room !!!!!!!!!!!!!!!!!!!!!!!!
+# Need to add the storage room !!!!!!!!!!!!!!!!!!!!!!!!
 def returning_to_staff_only():
     typewritter(returning_to_staff_only_text)
     time.sleep(1)
@@ -1861,7 +1941,7 @@ def returning_to_staff_only():
         elif choice == "2":
             print("You decide to go down the dark sairs.")
             time.sleep(2)
-            #add a return to the storage room
+            # add a return to the storage room
             break
         elif choice == "3":
             print("You decide to go to the morgue.")
@@ -1875,6 +1955,7 @@ def returning_to_staff_only():
 
 def going_to_the_storage_room():
     pass
+
 
 def going_up_the_lobby_stairs():
     if check_visited_rooms("lobby_stairs_up") == False:
@@ -1892,6 +1973,8 @@ def going_up_the_lobby_stairs():
 # patients rooms !!!!!!!!!!!!!!!!!!!!!!!!!!!
 # second floor
 # lobby
+
+
 def lobby_stairs_decision():
     while True:
         print("What do you want to do?")
@@ -1929,14 +2012,14 @@ def lobby_stairs_decision():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
+
 def standing_lobby_stairs():
     typewritter(standing_in_front_of_lobby_stairs_text)
     time.sleep(1)
     lobby_stairs_decision()
 
 
-
-#coming lobby_stairs_decision() leads to:
+# coming lobby_stairs_decision() leads to:
 # entering_Hospital_lobby()
 def going_down_lobby_stairs():
     if check_visited_rooms("lobby_stairs_down") == False:
@@ -1966,6 +2049,8 @@ def going_up_first_floor_stairs():
 # surgical ward !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # hospital laboratory !!!!!!!!!!!!!!!!!!!!!!!!!!
 # going down the stairs to the first floor
+
+
 def first_floor_stairs_decision():
     while True:
         print("What do you want to do?")
@@ -1992,7 +2077,7 @@ def first_floor_stairs_decision():
         elif choice == "3":
             print("You decide to go to the laboratory.")
             time.sleep(2)
-            labo()
+            entering_the_lab()
             break
         elif choice == "4":
             print("You decide to go down the stairs to the first floor.")
@@ -2015,10 +2100,12 @@ def going_down_first_floor_stairs():
         time.sleep(1)
         lobby_stairs_decision()
 
+
 def standing_first_floor_stairs():
     typewritter(standing_first_floor_stairs_text)
     time.sleep(1)
     first_floor_stairs_decision()
+
 
 def in_the_administrative_offices():
     # If the player has not visited this room before, display the new text.
@@ -2061,7 +2148,8 @@ def administrative_offices_decision():
                 time.sleep(2)
                 print("walk quietly, unsure of what you might find.")
                 time.sleep(2)
-                print("You finally see a sort of carrefour, and you decide to investigate there.")
+                print(
+                    "You finally see a sort of carrefour, and you decide to investigate there.")
                 time.sleep(2)
                 standing_lobby_stairs()
                 break
@@ -2097,7 +2185,8 @@ def administrative_offices_decision():
                 time.sleep(2)
                 print("walk quietly, unsure of what you might find.")
                 time.sleep(2)
-                print("You finally see a sort of carrefour, and you decide to investigate there.")
+                print(
+                    "You finally see a sort of carrefour, and you decide to investigate there.")
                 time.sleep(2)
                 standing_lobby_stairs()
                 break
@@ -2117,6 +2206,7 @@ def picking_up_the_folder():
     time.sleep(1)
     events.append("administrative_journal")
     administrative_offices_decision()
+
 
 def patient_rooms():
     if check_visited_rooms("patient_rooms") == False:
@@ -2152,6 +2242,7 @@ def entering_the_psychiatric_ward():
             typewritter(entering_the_psychiatric_ward_old_clue_text)
             time.sleep(1)
             psychiatric_ward_decision()
+
 
 def psychiatric_ward_decision():
     while True:
@@ -2193,20 +2284,24 @@ def psychiatric_ward_decision():
                 print("Invalid choice. Please enter a valid number.")
                 time.sleep(2)
 
+
 def going_out_the_psychiatric_ward():
     typewritter(getting_out_of_the_psychiatric_ward_no_clue_text)
     time.sleep(1)
     standing_first_floor_stairs_text()
+
 
 def answering_the_riddle():
     typewritter(answering_the_riddle_text)
     time.sleep(1)
     while True:
         time.sleep(2)
-        choice = input("Enter in full letter your answer (if you wish to exit this prompt enter 1): ")
+        choice = input(
+            "Enter in full letter your answer (if you wish to exit this prompt enter 1): ")
 
         if choice == "1":
-            print("You decide that you need more time to think about it, and you leave the room.")
+            print(
+                "You decide that you need more time to think about it, and you leave the room.")
             time.sleep(2)
             getting_out_of_the_psychiatric_ward_no_clue_text()
             break
@@ -2226,6 +2321,7 @@ def riddle_dialogue():
     time.sleep(1)
     standing_first_floor_stairs_text()
 
+
 def entering_the_surgical_ward():
     if check_visited_rooms("Surgical_ward") == False:
         typewritter(entering_the_surgical_ward_new_text)
@@ -2241,6 +2337,7 @@ def entering_the_surgical_ward():
             typewritter(entering_the_surgical_ward_journal_text)
             time.sleep(1)
             surgical_ward_decision()
+
 
 def surgical_ward_decision():
     if check_events("surgical_journal") == False:
@@ -2278,8 +2375,137 @@ def surgical_ward_decision():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
-#to do : make entering lab new / old - after picking the journal, notice the candles and ask if the player wants to pick them
+
+def entering_the_lab():
+    if check_visited_rooms("lab") == False:
+        typewritter(entering_the_lab_new_text)
+        time.sleep(1)
+        visited_rooms.append("lab")
+        lab_decision()
+    else:
+        if check_inventory("lab_candles") == False and check_events("Lab_Journal") == False:
+            typewritter(entering_the_lab_No_candles_No_journal_old_text)
+            time.sleep(1)
+            lab_decision_1()
+        elif check_events("Lab_Journal") == False and check_inventory("lab_candles") == True:
+            typewritter(entering_the_lab_no_journal_candles_old_text)
+            time.sleep(1)
+            lab_decision_2()
+        elif check_events("Lab_Journal") == True and check_inventory("lab_candles") == False:
+            typewritter(entering_the_lab_journal_no_candles_old_text)
+            time.sleep(1)
+            lab_decision_3()
+        else:
+            typewritter(entering_the_lab_candles_journal_old_text)
+            time.sleep(1)
+            lab_decision_4()
 
 
-#dummy intro launch that needs to be moved.
+def lab_decision_1():
+    print("What do you want to do?")
+    time.sleep(2)
+    print("1. Pick up the candles.")
+    time.sleep(2)
+    print("2. pick up the journal.")
+    time.sleep(2)
+    print("3. Go back stairs.")
+    time.sleep(2)
+    choice = input("Enter the number of your choice: ")
+
+    if choice == "1":
+        print("You decide to pick up the candles.")
+        time.sleep(2)
+        picking_up_the_candles()
+    elif choice == "2":
+        print("You decide to pick up the journal.")
+        time.sleep(2)
+        picking_up_the_journal()
+    elif choice == "3":
+        print("You decide to go back to the stairs.")
+        time.sleep(2)
+        standing_first_floor_stairs_text()
+    else:
+        print("Invalid choice. Please enter a valid number.")
+        time.sleep(2)
+
+
+def lab_decision_2():
+    print("What do you want to do?")
+    time.sleep(2)
+    print("1. Pick up the journal.")
+    time.sleep(2)
+    print("2. Go back stairs.")
+    time.sleep(2)
+    choice = input("Enter the number of your choice: ")
+
+    if choice == "1":
+        print("You decide to pick up the journal.")
+        time.sleep(2)
+        picking_up_the_journal()
+    elif choice == "2":
+        print("You decide to go back to the stairs.")
+        time.sleep(2)
+        standing_first_floor_stairs_text()
+    else:
+        print("Invalid choice. Please enter a valid number.")
+        time.sleep(2)
+
+def lab_decision_3():
+    print("What do you want to do?")
+    time.sleep(2)
+    print("1. Pick up the candles.")
+    time.sleep(2)
+    print("2. Go back stairs.")
+    time.sleep(2)
+    choice = input("Enter the number of your choice: ")
+
+    if choice == "1":
+        print("You decide to pick up the candles.")
+        time.sleep(2)
+        picking_up_the_candles()
+    elif choice == "2":
+        print("You decide to go back to the stairs.")
+        time.sleep(2)
+        standing_first_floor_stairs_text()
+    else:
+        print("Invalid choice. Please enter a valid number.")
+        time.sleep(2)
+
+def lab_decision_4():
+    print("What do you want to do?")
+    time.sleep(2)
+    print("1. Go back stairs.")
+    time.sleep(2)
+    choice = input("Enter the number of your choice: ")
+
+    if choice == "1":
+        print("You decide to go back to the stairs.")
+        time.sleep(2)
+        standing_first_floor_stairs_text()
+    else:
+        print("Invalid choice. Please enter a valid number.")
+        time.sleep(2)
+
+    
+def picking_up_the_candles():
+    typewritter(picking_up_the_candles_text)
+    time.sleep(1)
+    inventory.append("lab_candles")
+    if check_events("lab_journal") == False:
+        lab_decision_2()
+    else:
+        lab_decision_4()
+
+def picking_up_the_journal():
+    typewritter(journal_laboratory_text)
+    time.sleep(1)
+    events.append("Lab_Journal")
+    if check_inventory("lab_candles") == False:
+        lab_decision_3()
+    else:
+        lab_decision_4()
+
+
+
+    # dummy intro launch that needs to be moved.
 intro()
