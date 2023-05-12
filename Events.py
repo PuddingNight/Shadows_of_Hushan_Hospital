@@ -1,7 +1,7 @@
 import time
 import random
 
-
+#Function that allows the text to be printed out one character at a time
 def typewritter(string):
     for char in string:
         print(char, end="", flush=True)
@@ -11,12 +11,10 @@ def typewritter(string):
     print("\n")
 
 
-# Make an inventory that will hold the items the player will find
+# inventory that will hold the items the player will find
 inventory = []
 
-# make a general function that cheks if the player has an item in their inventory
-
-
+# function that cheks if the player has an item in their inventory
 def check_inventory(item):
     if item in inventory:
         return True
@@ -24,12 +22,10 @@ def check_inventory(item):
         return False
 
 
-# make a list that tracks the encounters the player had
+# list that tracks the encounters the player had
 encounters = []
 
-# make a general function that checks if the player has encountered a ghost
-
-
+# function that checks if the player has encountered a ghost
 def check_encounters(ghost):
     if ghost in encounters:
         return True
@@ -37,12 +33,10 @@ def check_encounters(ghost):
         return False
 
 
-# make a list that tracks the events the player has already experienced
+#list that tracks the events the player has already experienced
 events = []
 
-# make a general function that checks if the player has experienced an event
-
-
+#general function that checks if the player has experienced an event
 def check_events(event):
     if event in events:
         return True
@@ -50,12 +44,10 @@ def check_events(event):
         return False
 
 
-# make a list that tracks the rooms with long descriptions of rooms that the player has already visited
+# list that tracks the rooms with long descriptions of rooms that the player has already visited
 visited_rooms = []
 
-# make a general function that checks if the player has visited a room
-
-
+#function that checks if the player has visited a room
 def check_visited_rooms(room):
     if room in visited_rooms:
         return True
@@ -70,25 +62,17 @@ class Player:
         self.health = health
         self.inventory = inventory
 
-
 # instantiating the player
 player = Player("Luo Mei Ling", 100, inventory)
 
-# make a class for the ghosts they do not have health but they have a name and a description
 
 
-class Ghost:
-    def __init__(self, name, description):
-        self.name = name
-        self.description = description
 
-
-# making a class for the morgue killer
+# class for the morgue killer
 class Killer:
     def __init__(self, health, description):
         self.health = health
         self.description = description
-
 
 # instantiating the morgue killer
 creepy_cultist = Killer(100, "A creepy cultist")
@@ -1036,7 +1020,7 @@ You can't help but feel a sense of unease, but you know these candles may hold t
 
 # Starting the program
 
-# leads to arriving_hospital()
+
 def intro():
     typewritter(intro_text)
     time.sleep(1)
@@ -1050,10 +1034,6 @@ def intro():
             break
         else:
             print("Invalid input, please check you entered \"Continue\"")
-
-# Coming for intro() leads to :
-# going_through_main_entrance()
-# exploring_outside()
 
 
 def arriving_hospital():
@@ -1083,8 +1063,7 @@ def arriving_hospital():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
-# coming from arriving_hospital leads to :
-# entering_hospital_lobby
+
 
 
 def going_through_main_entrance():
@@ -1093,9 +1072,7 @@ def going_through_main_entrance():
     entering_Hospital_lobby()
 
 
-# Coming from arriving_hospital. leads to :
-# glowing_window()
-# continue_exploring_outside()
+
 def exploring_outside():
     typewritter(exploring_outside_text)
     time.sleep(1)
@@ -1118,9 +1095,7 @@ def exploring_outside():
             time.sleep(2)
 
 
-# coming from exploring_outside() leads to :
-# entering_the_toilets_from_window()
-# continue_exploring_outside()
+
 def glowing_window():
     if check_inventory("Music Box") == False:
         typewritter(glowing_window_text_no_MB)
@@ -1163,10 +1138,7 @@ def glowing_window():
                 print("Invalid choice. Please enter a valid number.")
                 time.sleep(2)
 
-# Coming from glowing_window() leads to :
-# opening_the_music_box()
-# entering_Hospital_lobby()
-# continue_exploring_outside()
+
 
 
 def entering_the_toilets_from_window():
@@ -1244,8 +1216,6 @@ def entering_the_toilets_from_window():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
-# coming from entering_the_toilets_from_the_window() or entering_toilets_from_door() Leads to :
-# standing_in_the_toilets()
 
 
 def opening_the_music_box():
@@ -1307,9 +1277,7 @@ def entering_the_toilets_from_door():
                 time.sleep(2)
 
 
-# coming from opening_the_music_box() leads to :
-# entering_Hospital_lobby()
-# continue_exploring_outside()
+
 def standing_in_the_toilets():
     typewritter(standing_in_the_toilets_text)
     while True:
@@ -1332,9 +1300,7 @@ def standing_in_the_toilets():
             time.sleep(2)
 
 
-# coming from exploring_outside() or glowing_window() Leads to :
-# climbing_through_the_window()
-# return_to_main_entrance()
+
 def continue_exploring_outside():
     typewritter(continue_exploring_outside_text)
     time.sleep(1)
@@ -1357,10 +1323,6 @@ def continue_exploring_outside():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
-# coming from continue_exploring_outside() Leads to :
-# climbing_through_the_window()
-# glowing_window()
-# going_through_main_entrance()
 
 
 def return_to_main_entrance():
@@ -1404,15 +1366,14 @@ def return_to_main_entrance():
             print("Invalid choice. Please enter a valid number.")
 
 
-# ²coming from return_to_main_entrance() and climbing_through_the_window() Leads to :
-# in_the_administrative_offices() !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
+
 def climbing_through_the_window_in():
     typewritter(climbing_through_the_window_in_text)
     time.sleep(1)
     in_the_administrative_offices()
 
 
-# Comming from the lobby leads to going_through_the_main_entrance or exploring outside
+
 def return_to_front_hospital_trough_main_entrance():
     typewritter(return_to_front_hospital_trough_main_entrance_text)
     time.sleep(1)
@@ -1441,11 +1402,7 @@ def return_to_front_hospital_trough_main_entrance():
             time.sleep(2)
 
 
-# Coming form going_through_main_entrance() leads to :
-# return_to_front_hospital_trough_main_entrance()
-# entering_staff_only()
-# sairs_first_floor() !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
-# Entering_the_toilets_from_door()
+
 def entering_Hospital_lobby():
     if check_visited_rooms("Hospital lobby") == False:
         typewritter(entering_Hospital_lobby_text_new)
@@ -1457,7 +1414,6 @@ def entering_Hospital_lobby():
         typewritter(entering_Hospital_lobby_text_old)
         time.sleep(1)
         hospital_lobby_choice()
-# don't forget to add first floor stairs !!!!!!!!!
 
 
 def hospital_lobby_choice():
@@ -1502,10 +1458,7 @@ def hospital_lobby_choice():
             time.sleep(2)
 
 
-# Coming from entering_Hospital_lobby() leads to :
-# going down the morgue
-# going to the storage room !!!!!!!!!!!!!!!! Need to add it !!!!!!!!!!!!
-# going to entering_Hospital_lobby()
+
 def entering_staff_only():
     typewritter(entering_staff_only_text)
     time.sleep(1)
@@ -1539,10 +1492,7 @@ def entering_staff_only():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
-# Coming from entering_staff_only() leads to :
-# open the incinerator
-# investigate on the last gurney
-# reurn to returning_to_staff_only()
+
 
 
 def going_down_the_morgue():
@@ -1681,9 +1631,7 @@ def going_down_the_morgue():
                     print("Invalid choice. Please enter a valid number.")
                     time.sleep(2)
 
-# coming from the morgue, leads to:
-# getting the ashes
-# standing in the morgue
+
 
 
 def opening_the_incinerator():
@@ -1710,8 +1658,7 @@ def opening_the_incinerator():
             standing_in_the_morgue()
             break
 
-# coming from the opening the incinerator, leads to:
-# standing in the morgue
+
 
 
 def getting_the_ashes():
@@ -1720,7 +1667,6 @@ def getting_the_ashes():
     standing_in_the_morgue()
 
 
-# coming from the opening the incenerator, getting ashes, the investigation of the last gurney, leads to:
 def standing_in_the_morgue():
     typewritter(standing_in_the_morgue_text)
     time.sleep(1)
@@ -1814,7 +1760,6 @@ def standing_in_the_morgue():
                 time.sleep(2)
 
 
-# coming from the standing in the morgue, leads to:
 def investigating_the_last_gurney():
     typewritter(pulling_the_sheet_text)
     time.sleep(1)
@@ -1841,9 +1786,6 @@ def investigating_the_last_gurney():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
-# coming from investigating the last gurney, leads to:
-# hiding from the morgue killer
-# fighting the morgue killer
 
 
 def grabbing_the_journal():
@@ -1874,9 +1816,6 @@ def grabbing_the_journal():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
-# coming from grabbing_the_journal()
-# leads to standing_in_the_morgue()
-# leads to intro() if you die and choose to play again
 
 
 def fight_morgue_killer():
@@ -1907,8 +1846,7 @@ def fight_morgue_killer():
         standing_in_the_morgue()
 
 
-# coming from grabbing the journal leads to :
-# standing in the morgue
+
 def hiding_from_the_morgue_killer():
     typewritter(hidding_morgue_text)
     time.sleep(1)
@@ -1919,7 +1857,6 @@ def hiding_from_the_morgue_killer():
     standing_in_the_morgue()
 
 
-# Need to add the storage room !!!!!!!!!!!!!!!!!!!!!!!!
 def returning_to_staff_only():
     typewritter(returning_to_staff_only_text)
     time.sleep(1)
@@ -1968,12 +1905,6 @@ def going_up_the_lobby_stairs():
         time.sleep(1)
         lobby_stairs_decision()
 
-# coming from the lobby stairs, leads to:
-# administrative offices !!!!!!!!!!!!!!!!!!!
-# patients rooms !!!!!!!!!!!!!!!!!!!!!!!!!!!
-# second floor
-# lobby
-
 
 def lobby_stairs_decision():
     while True:
@@ -2019,8 +1950,7 @@ def standing_lobby_stairs():
     lobby_stairs_decision()
 
 
-# coming lobby_stairs_decision() leads to:
-# entering_Hospital_lobby()
+
 def going_down_lobby_stairs():
     if check_visited_rooms("lobby_stairs_down") == False:
         typewritter(going_down_lobby_stairs_text_new)
@@ -2043,12 +1973,6 @@ def going_up_first_floor_stairs():
         typewritter(going_up_first_floor_stairs_text_old)
         time.sleep(1)
         first_floor_stairs_decision()
-
-# coming from first_floor_stairs_decision() leads to:
-# psychiatric ward !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# surgical ward !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# hospital laboratory !!!!!!!!!!!!!!!!!!!!!!!!!!
-# going down the stairs to the first floor
 
 
 def first_floor_stairs_decision():
