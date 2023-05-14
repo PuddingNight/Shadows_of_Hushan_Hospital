@@ -2427,7 +2427,8 @@ def picking_up_the_journal():
     else:
         lab_decision_4()
 
-
+def testing():
+    pass
 
     # dummy intro launch that needs to be moved.
 intro()
