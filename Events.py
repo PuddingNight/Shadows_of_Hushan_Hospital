@@ -2168,6 +2168,9 @@ def inspect_the_piano():
         typewritter(activating_the_piano_text)
         time.sleep(1)
         standing_storage_room()
+#to do: add 
+def look_at_the_storage_shelves():
+    pass
 
 def going_up_the_lobby_stairs():
     if check_visited_rooms("lobby_stairs_up") == False:
