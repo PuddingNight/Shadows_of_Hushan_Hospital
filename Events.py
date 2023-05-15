@@ -1215,10 +1215,10 @@ After a while of rummaging through useless junk, you decide to move on.\n
 
 going_through_secret_hole_text = """
 With cautious determination, you crawl through the narrow hole in the concrete wall, guided by a mix of trepidation and curiosity.\n
-The passage is cramped and claustrophobic, the dampness and coldness of the surroundings sending shivers down your spine.\n
+The passage is cramped and claustrophobic, the dampness and coldness of the surroundings seeping into your bones.\n
 \n
 As you emerge on the other side, the sight that greets you fills your heart with dread.\n
-The room before you is suffused with an eerie darkness, barely illuminated by faint moonlight filtering through small cracks in the decaying walls.\n
+The room before you is suffused with an eerie darkness, barely illuminated by a faint ethereal glow.\n
 The air hangs heavy with a sense of foreboding, as if the very atmosphere holds a weight of malevolence.\n
 \n
 Your eyes adjust to the dimness, revealing the ghastly scene that lies within.\n
@@ -1226,7 +1226,7 @@ Dominating the room is a colossal pentagram etched onto the floor, its lines wor
 Each corner of the pentagram is marked by weathered candles, long since extinguished, their waxy remnants twisted and deformed.\n
 \n
 The room exudes an oppressive silence, broken only by your own labored breathing.\n
-A sense of unease settles upon you as you gaze upon a macabre sight—a pile of skeletal remains, jumbled and scattered haphazardly, as if the remnants of twisted rituals past.\n
+A sense of unease settles upon you as you gaze upon a macabre sight — a pile of skeletal remains, jumbled and scattered haphazardly, as if the remnants of twisted rituals past.\n
 These human bones bear witness to dark sacrifices, their presence a haunting reminder of the horrors that unfolded within these walls.\n
 \n
 You can't help but feel a profound sense of dread and an overwhelming urge to turn away from this place of forbidden rituals.\n
@@ -1238,7 +1238,7 @@ The eerie stillness is only broken by the sound of your own footsteps echoing th
 As you stand amidst the desecrated remains and the faded symbols of dark magic, a chilling realization washes over you.\n
 You are now entwined in a web of ancient secrets and unspeakable acts.\n
 The path ahead is uncertain, and the perils that lie in wait remain unknown.\n
-But with every step you take, you inch closer to the heart of the mysteries that haunt Hushan Hospital, and the truth that may set both the living and the dead free.\n
+But with every step you take, you inch closer to the heart of the mysteries that haunt Hushan Hospital.\n
 """
 
 # Starting the program
@@ -2173,7 +2173,7 @@ def storage_room_decision2():
         else:
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
-#need to add the ability to go through the pathway
+
 def storage_room_decision3():
     while True:
         print("What do you want to do?")
@@ -2203,7 +2203,7 @@ def storage_room_decision3():
         else:
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
-#need to add the ability to go through the pathway
+
 def storage_room_decision4():
     while True:
         print("What do you want to do?")
@@ -2251,8 +2251,11 @@ def look_at_the_storage_shelves():
     typewritter(inspecting_the_storage_room_shelves_text)
     time.sleep(1)
     standing_storage_room()
-
-
+#Need to add the ritual room (make it a stand in so that it can be changed later)
+def going_through_the_pathway():
+    typewritter(going_through_secret_hole_text)
+    time.sleep(1)
+    ritual_room()
 
 def going_up_the_lobby_stairs():
     if check_visited_rooms("lobby_stairs_up") == False:
