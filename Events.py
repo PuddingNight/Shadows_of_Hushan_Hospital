@@ -1018,6 +1018,58 @@ A faint odor of decay emanates from the candles, filling the air with an unsettl
 You can't help but feel a sense of unease, but you know these candles may hold the key to your survival.\n
 """
 
+going_down_storage_room_stairs_new_text = """
+As you descend the stairs, a sense of foreboding envelops you.\n
+Each step seems to echo with a weighty significance, and their sound resonates deep down the stairwell.\n
+The dim light from above fades, leaving you in near darkness, with only a faint glow to guide your way.\n
+\n
+The darkness ahead is suffocating, and the air feels heavy with an unsettling presence.
+You can't see far into the depths of the descent, but you can hear faint scurrying sounds running along the walls.\n
+\n
+The stairs creak beneath your weight, their age and weariness evident.\n
+The musty scent of mold and wet earth hits your nostrils, mingling with the dampness that clings to the air.\n
+Whispers, like ethereal whispers, brush against your ears, carrying hints of forgotten secrets.\n
+\n
+The descent feels never-ending, as if you are descending into the depths of the unknown.\n
+Your hand brushes against the cool, rough texture of the worn handrail, offering a sliver of stability in this unsettling descent.\n
+The sound of your own footsteps seems muffled, drowned out by a sense of anticipation that hangs heavy in the air.\n
+\n
+As you reach the bottom of the stairs, the dim light reveals a narrow corridor, lined with shelves upon shelves of dusty and forgotten items.\n
+The atmosphere feels heavy with a silent history, as if each object holds a story waiting to be unraveled.\n
+\n
+Ahead, through the clutter and disarray, you catch a glimpse of something peculiar:\n
+An old piano, partially covered in a sheet, stands as an enigmatic centerpiece in this forgotten storage room.\n
+\n
+It beckons to you, its presence both intriguing and unsettling.\n
+\n
+With each step, the tension grows, the anticipation mounting.\n
+You stand at the threshold of this mysterious room, knowing that something awaits you within its shadowed depths.\n
+Determination fuels your curiosity as you prepare to uncover the secrets that lie hidden within this forsaken storage room.\n
+"""
+
+going_down_storage_room_stairs_old_text = """
+As you descend the familiar stairs once more, the air grows heavy with a damp chill.\n
+The musty scent of mold and wet earth fills your nostrils, adding to the unsettling atmosphere.\n
+Shadows envelop the narrow corridor, obscuring your surroundings in darkness.\n
+\n
+Among the clutter and disarray, your eyes are drawn to the old piano, partially covered by a worn sheet.\n
+Its presence evokes both intrigue and a sense of unease.\n
+It stands as a silent sentinel in this forsaken storage room, holding secrets yet to be revealed.\n
+\n
+You take a moment to steady yourself, knowing that within these shadowed depths lies the key to unraveling the mysteries that haunt this place.\n
+With determination, you step forward, ready to confront what awaits you once more in this enigmatic realm.\n
+"""
+
+going_up_storage_room_stairs_text = """
+You ascend the stairs, each step echoing in the silence of the dimly lit corridor.\n
+As you reach the top, you find yourself standing before the staff-only door, its presence imposing and mysterious.\n
+The air around you feels heavy, carrying a sense of foreboding that sends a shiver down your spine.\n
+\n
+You take a moment to steady yourself, wondering where you shoud head next.\n
+"""
+
+
+
 # Starting the program
 
 
@@ -2426,6 +2478,7 @@ def picking_up_the_journal():
         lab_decision_3()
     else:
         lab_decision_4()
+
 
 
 
