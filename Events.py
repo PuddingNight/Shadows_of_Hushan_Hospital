@@ -1,7 +1,9 @@
 import time
 import random
 
-#Function that allows the text to be printed out one character at a time
+# Function that allows the text to be printed out one character at a time
+
+
 def typewritter(string):
     for char in string:
         print(char, end="", flush=True)
@@ -15,6 +17,8 @@ def typewritter(string):
 inventory = []
 
 # function that cheks if the player has an item in their inventory
+
+
 def check_inventory(item):
     if item in inventory:
         return True
@@ -26,6 +30,8 @@ def check_inventory(item):
 encounters = []
 
 # function that checks if the player has encountered a ghost
+
+
 def check_encounters(ghost):
     if ghost in encounters:
         return True
@@ -33,10 +39,12 @@ def check_encounters(ghost):
         return False
 
 
-#list that tracks the events the player has already experienced
+# list that tracks the events the player has already experienced
 events = []
 
-#general function that checks if the player has experienced an event
+# general function that checks if the player has experienced an event
+
+
 def check_events(event):
     if event in events:
         return True
@@ -47,7 +55,9 @@ def check_events(event):
 # list that tracks the rooms with long descriptions of rooms that the player has already visited
 visited_rooms = []
 
-#function that checks if the player has visited a room
+# function that checks if the player has visited a room
+
+
 def check_visited_rooms(room):
     if room in visited_rooms:
         return True
@@ -62,10 +72,9 @@ class Player:
         self.health = health
         self.inventory = inventory
 
+
 # instantiating the player
 player = Player("Luo Mei Ling", 100, inventory)
-
-
 
 
 # class for the morgue killer
@@ -73,6 +82,7 @@ class Killer:
     def __init__(self, health, description):
         self.health = health
         self.description = description
+
 
 # instantiating the morgue killer
 creepy_cultist = Killer(100, "A creepy cultist")
@@ -1068,7 +1078,106 @@ The air around you feels heavy, carrying a sense of foreboding that sends a shiv
 You take a moment to steady yourself, wondering where you shoud head next.\n
 """
 
+activationg_the_piano_text = """
+As you approach the old piano, your attention is fixated on the small hole on its top.\n
+It is a seemingly insignificant feature, yet something deep within tells you there is more to it than meets the eye.\n
+Instinctively, you reach into your pocket and retrieve the music box you found in the lobby room.\n
+\n
+Gently, you hold the music box up to the hole, and a sense of anticipation washes over you.\n
+As if guided by an unseen force, the music box fits perfectly within the aperture.\n
+It is a revelation, a realization that these two objects were meant to be united.\n
+\n
+With a trembling hand, you begin to turn the small metal handle of the music box.\n
+As the familiar melody starts to play, the room seems to come alive with a soft, ethereal glow.\n
+The notes resonate through the air, filling the storage room with an otherworldly harmony.\n
+\n
+As the melody reaches its crescendo, a magical transformation takes place.\n
+The piano, once weathered and worn, now radiates with an inner light.\n
+It shimmers and vibrates in harmony with the music, as if infused with a newfound vitality.\n
+\n
+In this surreal moment, you understand the significance of the music box and the piano.\n
+They are conduits, linked by a shared history and purpose.\n
+The ghost's words echo in your mind, confirming that this ritual was the key to freeing her spirit.\n
+\n
+A mixture of awe and trepidation fills your heart as you realize the magnitude of what you have uncovered.\n
+\n
+Suddenly, the music stops, and the piano falls silent.\n
+The glow fades, and the piano returns to its former state, as if nothing had happened.\n
+\n
+You stand there, stunned by what you have witnessed.\n
+And then, you hear a faint whisper, a voice calling out to you from the darkness.\n
+\n
+"Thank you..."\n
+\n
+The voice is soft and gentle, yet filled with a sense of longing.\n
+It is the voice of that ghost, the one you met in the patient room.\n
+\n
+You turn around, searching for the source of the voice.\n
+But there is nothing there, only the empty shelves and the old piano.\n
+\n
+Suddenly, some shelves begin to shake, as if moved by an unseen force.\n
+You watch in awe as they slide apart, revealing a hidden passageway.\n
+\n
+"There... He went there..."\n
+\n
+"And then... Darkness..."\n
+\n
+The voice fades away, leaving you alone in the silence of the storage room.\n
+You take a moment to collect your thoughts, wondering what to do next.\n
+The passageway beckons to you, its dark depths filled with mystery and intrigue.\n
+"""
 
+inspecting_the_piano_text = """
+As you approach the old piano, you notice a small hole on its top.\n
+It is a seemingly insignificant feature, yet something deep within tells you there is more to it than meets the eye.\n
+\n
+You take a moment to examine the piano, running your fingers along its weathered surface.\n
+It is an old instrument, worn by time and neglect.\n
+Yet, there is something about it that draws you in, as if it holds a secret waiting to be revealed.\n
+\n
+You wonder what this piano could tell you, if only it could speak.\n
+Lost in your thoughts, you stay there for a while, pondering the mysteries of this forsaken storage room.\n
+\n
+After a while, you decide to move on.\n
+"""
+
+inspecting_the_storage_room_shelves_text = """
+The shelves are filled with various items, ranging from old books to dusty boxes.\n
+You take a moment to examine them, wondering what secrets they might hold.\n
+\n
+Nothing seems out of the ordinary, and the records of the patients are nowhere to be found.\n
+You wonder if they were moved to another location, or if they were destroyed.\n
+\n
+After a while of rummaging through useless junk, you decide to move on.\n
+"""
+
+going_through_secret_hole_text = """
+With cautious determination, you crawl through the narrow hole in the concrete wall, guided by a mix of trepidation and curiosity.\n
+The passage is cramped and claustrophobic, the dampness and coldness of the surroundings sending shivers down your spine.\n
+\n
+As you emerge on the other side, the sight that greets you fills your heart with dread.\n
+The room before you is suffused with an eerie darkness, barely illuminated by faint moonlight filtering through small cracks in the decaying walls.\n
+The air hangs heavy with a sense of foreboding, as if the very atmosphere holds a weight of malevolence.\n
+\n
+Your eyes adjust to the dimness, revealing the ghastly scene that lies within.\n
+Dominating the room is a colossal pentagram etched onto the floor, its lines worn and faded with time.\n
+Each corner of the pentagram is marked by weathered candles, long since extinguished, their waxy remnants twisted and deformed.\n
+\n
+The room exudes an oppressive silence, broken only by your own labored breathing.\n
+A sense of unease settles upon you as you gaze upon a macabre sight—a pile of skeletal remains, jumbled and scattered haphazardly, as if the remnants of twisted rituals past.\n
+These human bones bear witness to dark sacrifices, their presence a haunting reminder of the horrors that unfolded within these walls.\n
+\n
+You can't help but feel a profound sense of dread and an overwhelming urge to turn away from this place of forbidden rituals.\n
+Yet, a nagging curiosity tugs at your being, urging you to explore further, to uncover the truth that lies hidden within the heart of this forbidden chamber.\n
+\n
+With hesitant steps, you venture deeper into the room, your senses heightened and every nerve on edge.\n
+The eerie stillness is only broken by the sound of your own footsteps echoing through the chamber, as if disturbing the restless spirits that linger here.\n
+\n
+As you stand amidst the desecrated remains and the faded symbols of dark magic, a chilling realization washes over you.\n
+You are now entwined in a web of ancient secrets and unspeakable acts.\n
+The path ahead is uncertain, and the perils that lie in wait remain unknown.\n
+But with every step you take, you inch closer to the heart of the mysteries that haunt Hushan Hospital, and the truth that may set both the living and the dead free.\n
+"""
 
 # Starting the program
 
@@ -1116,13 +1225,10 @@ def arriving_hospital():
             time.sleep(2)
 
 
-
-
 def going_through_main_entrance():
     typewritter(going_through_main_entrance_text)
     time.sleep(1)
     entering_Hospital_lobby()
-
 
 
 def exploring_outside():
@@ -1145,7 +1251,6 @@ def exploring_outside():
         else:
             print("Invalid choice. please enter a valid number.")
             time.sleep(2)
-
 
 
 def glowing_window():
@@ -1189,8 +1294,6 @@ def glowing_window():
             else:
                 print("Invalid choice. Please enter a valid number.")
                 time.sleep(2)
-
-
 
 
 def entering_the_toilets_from_window():
@@ -1269,7 +1372,6 @@ def entering_the_toilets_from_window():
             time.sleep(2)
 
 
-
 def opening_the_music_box():
     typewritter(opening_the_music_box_text)
     inventory.append("Music Box")
@@ -1329,7 +1431,6 @@ def entering_the_toilets_from_door():
                 time.sleep(2)
 
 
-
 def standing_in_the_toilets():
     typewritter(standing_in_the_toilets_text)
     while True:
@@ -1350,7 +1451,6 @@ def standing_in_the_toilets():
         else:
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
-
 
 
 def continue_exploring_outside():
@@ -1374,7 +1474,6 @@ def continue_exploring_outside():
         else:
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
-
 
 
 def return_to_main_entrance():
@@ -1418,12 +1517,10 @@ def return_to_main_entrance():
             print("Invalid choice. Please enter a valid number.")
 
 
-
 def climbing_through_the_window_in():
     typewritter(climbing_through_the_window_in_text)
     time.sleep(1)
     in_the_administrative_offices()
-
 
 
 def return_to_front_hospital_trough_main_entrance():
@@ -1452,7 +1549,6 @@ def return_to_front_hospital_trough_main_entrance():
         else:
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
-
 
 
 def entering_Hospital_lobby():
@@ -1510,7 +1606,6 @@ def hospital_lobby_choice():
             time.sleep(2)
 
 
-
 def entering_staff_only():
     typewritter(entering_staff_only_text)
     time.sleep(1)
@@ -1543,8 +1638,6 @@ def entering_staff_only():
         else:
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
-
-
 
 
 def going_down_the_morgue():
@@ -1684,8 +1777,6 @@ def going_down_the_morgue():
                     time.sleep(2)
 
 
-
-
 def opening_the_incinerator():
     typewritter(opening_the_incinerator_text)
     time.sleep(1)
@@ -1709,8 +1800,6 @@ def opening_the_incinerator():
             time.sleep(2)
             standing_in_the_morgue()
             break
-
-
 
 
 def getting_the_ashes():
@@ -1839,7 +1928,6 @@ def investigating_the_last_gurney():
             time.sleep(2)
 
 
-
 def grabbing_the_journal():
     typewritter(reading_the_journal_morgue_text)
     time.sleep(1)
@@ -1869,7 +1957,6 @@ def grabbing_the_journal():
             time.sleep(2)
 
 
-
 def fight_morgue_killer():
     outcome = random.randint(1, 2, 3)
     if outcome == 1:
@@ -1896,7 +1983,6 @@ def fight_morgue_killer():
         typewritter(fight_text_3)
         time.sleep(2)
         standing_in_the_morgue()
-
 
 
 def hiding_from_the_morgue_killer():
@@ -2000,7 +2086,6 @@ def standing_lobby_stairs():
     typewritter(standing_in_front_of_lobby_stairs_text)
     time.sleep(1)
     lobby_stairs_decision()
-
 
 
 def going_down_lobby_stairs():
@@ -2424,6 +2509,7 @@ def lab_decision_2():
         print("Invalid choice. Please enter a valid number.")
         time.sleep(2)
 
+
 def lab_decision_3():
     print("What do you want to do?")
     time.sleep(2)
@@ -2445,6 +2531,7 @@ def lab_decision_3():
         print("Invalid choice. Please enter a valid number.")
         time.sleep(2)
 
+
 def lab_decision_4():
     print("What do you want to do?")
     time.sleep(2)
@@ -2460,7 +2547,7 @@ def lab_decision_4():
         print("Invalid choice. Please enter a valid number.")
         time.sleep(2)
 
-    
+
 def picking_up_the_candles():
     typewritter(picking_up_the_candles_text)
     time.sleep(1)
@@ -2470,6 +2557,7 @@ def picking_up_the_candles():
     else:
         lab_decision_4()
 
+
 def picking_up_the_journal():
     typewritter(journal_laboratory_text)
     time.sleep(1)
@@ -2478,9 +2566,6 @@ def picking_up_the_journal():
         lab_decision_3()
     else:
         lab_decision_4()
-
-
-
 
     # dummy intro launch that needs to be moved.
 intro()
