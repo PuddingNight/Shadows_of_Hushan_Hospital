@@ -1104,7 +1104,7 @@ The music box is still enchassed in the hole on the top of the piano.\n
 The pathway in the wall is faitly calling you.\n
 """
 
-activationg_the_piano_text = """
+activating_the_piano_text = """
 As you approach the old piano, your attention is fixated on the small hole on its top.\n
 It is a seemingly insignificant feature, yet something deep within tells you there is more to it than meets the eye.\n
 Instinctively, you reach into your pocket and retrieve the music box you found in the lobby room.\n
@@ -1164,6 +1164,42 @@ Yet, there is something about it that draws you in, as if it holds a secret wait
 You wonder what this piano could tell you, if only it could speak.\n
 Lost in your thoughts, you stay there for a while, pondering the mysteries of this forsaken storage room.\n
 \n
+After a while, you decide to move on.\n
+"""
+
+inspecting_the_piano_ghost_text = """
+As you approach the old piano, you notice a small hole on its top.\n
+It is a seemingly insignificant feature, yet something deep within tells you there is more to it than meets the eye.\n
+\n
+You take a moment to examine the piano, running your fingers along its weathered surface.\n
+It is an old instrument, worn by time and neglect.\n
+Yet, there is something about it that draws you in, as if it holds a secret waiting to be revealed.\n
+\n
+You then remember the ghost's words, and wonder if this piano could be the key to freeing her spirit.\n
+\n
+You try to play a few notes, but the piano remains silent.\n
+You look around, searching for a clue, but there is nothing here that could help you.\n
+\n
+After a while, you decide to move on.\n
+"""
+
+inspecting_the_piano_music_box_text = """
+As you approach the old piano, you notice a small hole on its top.\n
+It is a seemingly insignificant feature, yet something deep within tells you there is more to it than meets the eye.\n
+\n
+You take a moment to examine the piano, running your fingers along its weathered surface.\n
+It is an old instrument, worn by time and neglect.\n
+Yet, there is something about it that draws you in, as if it holds a secret waiting to be revealed.\n
+\n
+You then notice that the hole on the top of the piano is the perfect size for the music box you found in the lobby room.\n
+\n
+You take the music box out of you bag and hold it up to the hole.\n
+It fits perfectly, as if it was meant to be.\n
+\n
+You wonder what will happen if you turn the handle of the music box.\n
+Sadly, you can't seem to be able to turn the key, as if it was stuck.\n
+\n
+There must be more to this piano than meets the eye.\n
 After a while, you decide to move on.\n
 """
 
@@ -2059,32 +2095,79 @@ def going_to_the_storage_room():
         typewritter(going_down_storage_room_stairs_new_text)
         time.sleep(1)
         visited_rooms.append("storage_room")
-        stanging_storage_room()
+        standing_storage_room()
     else:
         typewritter(going_down_storage_room_stairs_old_text)
         time.sleep(1)
-        stanging_storage_room()
+        standing_storage_room()
 
 
-def stanging_storage_room():
+def standing_storage_room():
     if check_events("Piano Activated") == False and check_events("Storage Shelves") == False:
         typewritter(standing_storage_room_text)
         time.sleep(1)
-        storage_room_decision()
+        storage_room_decision1()
     elif check_events("Piano Activated") == False and check_events("Storage Shelves") == True:
         typewritter(standing_storage_room_shelves_text)
         time.sleep(1)
-        storage_room_decision()
+        storage_room_decision2()
     elif check_events("Piano Activated") == True and check_events("Storage Shelves") == False:
         typewritter(standing_storage_room_piano_text)
         time.sleep(1)
-        storage_room_decision()
+        storage_room_decision3()
     else:
         typewritter(standing_storage_room_piano_shelves_text)
         time.sleep(1)
-        storage_room_decision()
+        storage_room_decision4()
 
 
+def storage_room_decision1():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Inspect the piano.")
+        time.sleep(2)
+        print("2. Inspect the storage shelves.")
+        time.sleep(2)
+        print("3. Go back up the stairs.")
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to inspect the piano")
+            time.sleep(2)
+            inspect_the_piano()
+            break
+        elif choice == "2":
+            print("You decide to inspect the storage shelves.")
+            time.sleep(2)
+            look_at_the_storage_shelves()
+            break
+        elif choice == "3":
+            print("You decide to go back up the stairs.")
+            time.sleep(2)
+            returning_to_staff_only()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+
+def inspect_the_piano():
+    if check_inventory("Music Box") == False and check_visited_rooms("patient_rooms") == False:
+        typewritter(inspecting_the_piano_text)
+        time.sleep(1)
+        standing_storage_room()
+    elif check_inventory("Music Box") == False and check_visited_rooms("patient_rooms") == True:
+        typewritter(inspecting_the_piano_ghost_text)
+        time.sleep(1)
+        standing_storage_room()
+    elif check_inventory("Music Box") == True and check_visited_rooms("patient_rooms") == False:
+        typewritter(inspecting_the_piano_music_box_text)
+        time.sleep(1)
+        standing_storage_room()
+    else:
+        typewritter(activating_the_piano_text)
+        time.sleep(1)
+        standing_storage_room()
 
 def going_up_the_lobby_stairs():
     if check_visited_rooms("lobby_stairs_up") == False:
