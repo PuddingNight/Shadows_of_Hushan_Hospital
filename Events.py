@@ -2151,6 +2151,83 @@ def storage_room_decision1():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
+def storage_room_decision2():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Inspect the piano.")
+        time.sleep(2)
+        print("2. Go back up the stairs.")
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to inspect the piano")
+            time.sleep(2)
+            inspect_the_piano()
+            break
+        elif choice == "2":
+            print("You decide to go back up the stairs.")
+            time.sleep(2)
+            returning_to_staff_only()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+#need to add the ability to go through the pathway
+def storage_room_decision3():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Inspect the storage shelves.")
+        time.sleep(2)
+        print("2. Go Through the pathway.")
+        time.sleep(2)
+        print("3. Go back up the stairs.")
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to inspect the storage shelves.")
+            time.sleep(2)
+            look_at_the_storage_shelves()
+            break
+        elif choice == "2":
+            print("You decide to go through the pathway.")
+            time.sleep(2)
+            #TO ADD
+            break
+        elif choice == "3":
+            print("You decide to go back up the stairs.")
+            time.sleep(2)
+            returning_to_staff_only()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+#need to add the ability to go through the pathway
+def storage_room_decision4():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Go Through the pathway.")
+        time.sleep(2)
+        print("2. Go back up the stairs.")
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to go through the pathway.")
+            time.sleep(2)
+            #TO ADD
+            break
+        elif choice == "2":
+            print("You decide to go back up the stairs.")
+            time.sleep(2)
+            returning_to_staff_only()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+
+
 def inspect_the_piano():
     if check_inventory("Music Box") == False and check_visited_rooms("patient_rooms") == False:
         typewritter(inspecting_the_piano_text)
@@ -2168,9 +2245,14 @@ def inspect_the_piano():
         typewritter(activating_the_piano_text)
         time.sleep(1)
         standing_storage_room()
-#to do: add 
+
+
 def look_at_the_storage_shelves():
-    pass
+    typewritter(inspecting_the_storage_room_shelves_text)
+    time.sleep(1)
+    standing_storage_room()
+
+
 
 def going_up_the_lobby_stairs():
     if check_visited_rooms("lobby_stairs_up") == False:
