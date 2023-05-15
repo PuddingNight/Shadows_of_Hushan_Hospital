@@ -1078,6 +1078,32 @@ The air around you feels heavy, carrying a sense of foreboding that sends a shiv
 You take a moment to steady yourself, wondering where you shoud head next.\n
 """
 
+standing_storage_room_text = """
+You now stand in the middle of the storage room, surrounded by shelves upon shelves of dusty and forgotten items.\n
+In front of you, partially covered by a worn sheet, is an old piano.\n
+"""
+
+standing_storage_room_shelves_text = """
+You now stand in the middle of the storage room, the contents of the shelves are scattered all over the floor.\n
+In front of you, partially covered by a worn sheet, is an old piano.\n
+"""
+
+standing_storage_room_piano_text = """
+You now stand in the middle of the storage room, surrounded by shelves upon shelves of dusty and forgotten items.\n
+In front of you, the old piano sits silently, its presence both intriguing and unsettling.\n
+The music box is still enchassed in the hole on the top of the piano.\n
+\n
+The pathway in the wall is faitly calling you.\n
+"""
+
+standing_storage_room_piano_shelves_text = """
+You now stand in the middle of the storage room, the contents of the shelves are scattered all over the floor.\n
+In front of you, the old piano sits silently, its presence both intriguing and unsettling.\n
+The music box is still enchassed in the hole on the top of the piano.\n
+\n
+The pathway in the wall is faitly calling you.\n
+"""
+
 activationg_the_piano_text = """
 As you approach the old piano, your attention is fixated on the small hole on its top.\n
 It is a seemingly insignificant feature, yet something deep within tells you there is more to it than meets the eye.\n
@@ -2029,7 +2055,35 @@ def returning_to_staff_only():
 
 
 def going_to_the_storage_room():
-    pass
+    if check_visited_rooms("storage_room") == False:
+        typewritter(going_down_storage_room_stairs_new_text)
+        time.sleep(1)
+        visited_rooms.append("storage_room")
+        stanging_storage_room()
+    else:
+        typewritter(going_down_storage_room_stairs_old_text)
+        time.sleep(1)
+        stanging_storage_room()
+
+
+def stanging_storage_room():
+    if check_events("Piano Activated") == False and check_events("Storage Shelves") == False:
+        typewritter(standing_storage_room_text)
+        time.sleep(1)
+        storage_room_decision()
+    elif check_events("Piano Activated") == False and check_events("Storage Shelves") == True:
+        typewritter(standing_storage_room_shelves_text)
+        time.sleep(1)
+        storage_room_decision()
+    elif check_events("Piano Activated") == True and check_events("Storage Shelves") == False:
+        typewritter(standing_storage_room_piano_text)
+        time.sleep(1)
+        storage_room_decision()
+    else:
+        typewritter(standing_storage_room_piano_shelves_text)
+        time.sleep(1)
+        storage_room_decision()
+
 
 
 def going_up_the_lobby_stairs():
