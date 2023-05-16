@@ -1310,7 +1310,25 @@ The bones are scattered around the place where you found the note.\n
 You cleaned the candles, now the corners of the pentagram are empty.
 """
 
+#ashes
+standing_in_the_ritual_chamber_puzzle_state_1_text = """
 
+"""
+
+#candles
+standing_in_the_ritual_chamber_puzzle_state_2_text = """
+
+"""
+
+#chant
+standing_in_the_ritual_chamber_puzzle_state_3_text = """
+
+"""
+
+#failed puzzle
+standing_in_the_ritual_chamber_puzzle_failed_text = """
+
+"""
 
 # Starting the program
 
