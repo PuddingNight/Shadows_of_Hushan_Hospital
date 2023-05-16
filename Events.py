@@ -1241,6 +1241,77 @@ The path ahead is uncertain, and the perils that lie in wait remain unknown.\n
 But with every step you take, you inch closer to the heart of the mysteries that haunt Hushan Hospital.\n
 """
 
+
+
+standing_in_the_ritual_chamber_text = """
+You now stand at the center of the foreboding room, surrounded by the lingering echoes of dark rituals and the remnants of forbidden practices.\n
+The colossal pentagram etched onto the floor looms ominously, its faded lines a testament to the malevolent energies that once thrived here.\n
+\n
+Amidst the oppressive silence, your attention is drawn to a peculiar sight—the metal box positioned at the heart of the pentagram.\n
+Its surface gleams with an unsettling aura, emanating a faint vibration that resonates through the air, accompanied by a low, haunting hum.\n
+The box is tightly closed, its purpose shrouded in mystery. It beckons you, tempting you to unlock its secrets, but a sense of caution lingers.\n
+\n
+Intriguingly, amidst the scattered skeletal remains, you notice a half-burned piece of paper partially concealed beneath the bones.\n
+Its edges are charred, hinting at a past encounter with fire.\n
+Though much of the text has been lost to the ravages of time, there are still fragments of words that survive, tantalizingly teasing at the knowledge they once held.\n
+\n
+As your gaze shifts to the candles at the corners of the pentagram, a sense of curiosity piques within you.\n
+These candles, long extinguished, bear an otherworldly quality.\n
+Their wax, once molten, now appears strange and otherworldly, as if derived from an unknown source.\n
+Their origin and purpose remain a mystery, leaving you to wonder at the nature of the dark arts that were practiced within this unhallowed chamber.\n
+\n
+Surrounded by enigmas and confronted with choices, you find yourself standing at the precipice of a decision.\n
+The metal box's vibrations and haunting hum beckon you to unravel its secrets, while the half-burned paper promises fragments of lost knowledge.\n
+And yet, as you survey the room with trepidation, a shiver runs down your spine, reminding you of the perils that lie within this chamber of shadows.\n
+The choice is yours, but tread carefully, for the path you choose may lead to revelation or further descent into the abyss of darkness.\n
+"""
+
+
+standing_in_the_ritual_chamber_text = """
+You now stand at the center of the foreboding room, surrounded by the lingering echoes of dark rituals and the remnants of forbidden practices.\n
+The colossal pentagram etched onto the floor looms ominously, its faded lines a testament to the malevolent energies that once thrived here.\n
+\n
+The metal box is still there, tightly closed.
+\n
+The small note is still there, partially concealed beneath the bones.
+\n
+The candles still stand at the corners of the pentagram, their wax molten.
+"""
+
+standing_in_the_ritual_chamber_note_text = """
+You now stand at the center of the foreboding room, surrounded by the lingering echoes of dark rituals and the remnants of forbidden practices.\n
+The colossal pentagram etched onto the floor looms ominously, its faded lines a testament to the malevolent energies that once thrived here.\n
+\n
+The metal box is still there, tightly closed.
+\n
+The bones are scattered around the place where you found the note.\n
+\n
+The candles still stand at the corners of the pentagram, their wax molten.
+"""
+
+
+standing_in_the_ritual_chamber_candles_text = """
+You now stand at the center of the foreboding room, surrounded by the lingering echoes of dark rituals and the remnants of forbidden practices.\n
+The colossal pentagram etched onto the floor looms ominously, its faded lines a testament to the malevolent energies that once thrived here.\n
+\n
+The metal box is still there, tightly closed.
+\n
+The small note is still there, partially concealed beneath the bones.
+\n
+You cleaned the candles, now the corners of the pentagram are empty.
+"""
+
+standing_in_the_ritual_chamber_candles_note_text = """
+You now stand at the center of the foreboding room, surrounded by the lingering echoes of dark rituals and the remnants of forbidden practices.\n
+The colossal pentagram etched onto the floor looms ominously, its faded lines a testament to the malevolent energies that once thrived here.\n
+\n
+The bones are scattered around the place where you found the note.\n
+\n
+You cleaned the candles, now the corners of the pentagram are empty.
+"""
+
+
+
 # Starting the program
 
 
@@ -2089,7 +2160,7 @@ def returning_to_staff_only():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
-
+#Add this to the bottom of the file
 def going_to_the_storage_room():
     if check_visited_rooms("storage_room") == False:
         typewritter(going_down_storage_room_stairs_new_text)
@@ -2256,6 +2327,11 @@ def going_through_the_pathway():
     typewritter(going_through_secret_hole_text)
     time.sleep(1)
     ritual_room()
+
+
+def standing_in_ritual_room():
+    pass
+
 
 def going_up_the_lobby_stairs():
     if check_visited_rooms("lobby_stairs_up") == False:
