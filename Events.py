@@ -1494,6 +1494,122 @@ attempting_ritual_again_text = """
 After a moment of reflection, you gather the ritual items and prepare to start anew.\n
 """
 
+ritual_completed_text = """
+As the final words of the eldritch chant leave your lips, a surge of otherworldly energy courses through the room.\n
+The air crackles with arcane power, and the pentagram at your feet glows with an ethereal radiance.\n
+In a moment of both awe and terror, a swirling portal materializes before you, its dark depths shimmering with eldritch energies.\n
+From within the portal emerges a grotesque and indescribable horror, a being of nightmarish proportions and otherworldly aura.\n
+Its form defies comprehension, with writhing tentacles, multiple eyes that pierce your soul, and a presence that exudes unspeakable malevolence.\n
+\n
+As the portal pulsates with unholy energy, the metal box at the center of the pentagram slowly opens, revealing a sight that freezes your blood.\n
+Within the box is a severed head, still connected to a grotesque machine, its eyes flickering with a desperate gleam of life.\n
+It gasps for air, each motion of its quivering lips accompanied by a haunting plea, beckoning you to come closer.\n
+\n
+The eldritch horror, its voice echoing in your mind with both menace and temptation, offers you a deal – power, knowledge, and unimaginable gifts in exchange for your servitude.\n
+The severed head, its eyes filled with desperation and longing, begs you to free it from its torment, to end its suffering and grant it the peace of death.\n
+\n
+"You have summoned me, and I have come. My servant has made a pact with me, and I have fulfilled my end of the bargain.\n
+Immortality, power, and knowledge beyond your wildest dreams await you, but you must pledge your allegiance to me.\n
+Just as he did, get free from your fleshly prison and join me in the realm of the unseen.\n
+Pierce your eyes, sever your head, and plug yourself into the machine.\n
+Everything you desire is within your grasp, but you must make the ultimate sacrifice."\n
+\n
+As the severed head begs and the eldritch horror waits for your response, you are faced with a choice that will shape your destiny.\n
+\n
+Do you dare approach the machine, succumbing to the allure of its offers ?\n
+Or do you heed the severed head's plea, freeing it from its torment and ending its suffering by unplugging it from the machine ?\n
+"""
+
+
+good_ending_text = """
+A heavy silence hangs in the air as you stand before the grotesque machine, its malevolent presence seeping into your very being.\n
+You steel yourself, drawing upon a wellspring of courage, as you approach the severed head hooked up to the contraption.\n
+Its eyes, flickering with a desperate glimmer, lock onto yours with a mix of hope and trepidation.\n
+\n
+With a trembling hand, you reach for the cords that connect the head to the machine, your heart pounding with a mixture of fear and determination.\n
+As your fingers wrap around the cables, you can feel a surge of energy pulsating through them, as if the very essence of life flows within.\n
+\n
+A moment of hesitation washes over you, the weight of the choice bearing down upon your conscience.\n
+But in that instant, you find solace in your decision, driven by a sense of empathy and the desire to grant the severed head the release it seeks.\n
+\n
+With a firm tug, you disconnect the cables, severing the connection that has bound the head to the machine.\n
+A shudder runs through the contraption, and a gasp escapes the lips of the severed head as it is freed from its torment.\n
+Its eyes, once filled with desperation, now radiate gratitude and a profound sense of peace.\n
+\n
+As the head's breathing steadies and it embraces the serenity of its newfound freedom, a profound change washes over the room.\n
+The eldritch horror's presence diminishes, its monstrous form fading into the ether.\n
+The swirling portal wavers, its dark depths collapsing in on themselves until nothing remains but a faint trace of arcane energy.\n
+\n
+You stand amidst the remnants of the ritual chamber, the severed head now lifeless in your hands.\n
+Though surrounded by the echoes of dark magic and ancient secrets, a sense of peace settles upon you, an assurance that you have made the right choice.\n
+\n
+The severed head's sacrifice has not been in vain. In freeing it from its torment, you have broken the chains that bind the eldritch horror to this realm.\n
+A momentary respite washes over you, a reprieve from the malevolence that once consumed this forsaken hospital.\n
+\n
+But you soon realize that you are still trapped within the confines of this cursed place.\n
+You rush to the door, hoping to escape the blocked pathways in the hopes of finding a way out.\n
+Sadly, your efforts are in vain, and after hours of searching, prying and screaming, you realize that you are trapped.\n
+\n
+As you sit in the darkness, the severed head at your side, you start to contemplate your fate.\n
+Tears stream down your face as you realize that you will never see your loved ones again, that you will never again feel the warmth of the sun on your skin.\n
+\n
+Emptyness, madness, and despair slowly start to consume you.\n
+How low has it been ? Days ? your mouth is parched, your stomach empty, and your mind is slowly slipping away.\n
+\n
+Before passing away, you know deep down that you have made the right choice.\n
+You have freed the severed head from its torment, and in doing so, you have broken the chains that bind the eldritch horror to this realm.\n
+\n
+You have sacrificed your life, but you have saved countless others.\n
+"""
+
+bad_ending_text = """
+A sense of trepidation tugs at your being as you heed the eldritch horror's call, inching closer to the grotesque machine.\n
+Its insidious whispers entwine with your thoughts, seducing you with promises of unimaginable power and forbidden knowledge.\n
+The severed head, its eyes filled with a mix of despair and resignation, watches with a profound sorrow as you embrace your impending fate.\n
+\n
+You feel an otherworldly energy surge through your veins as you approach the machine, each step resonating with a sinister resonance.\n
+The pulsating hum grows louder, drowning out the voice of reason as it entangles itself within the depths of your mind.\n
+\n
+With trembling hands, you pierce your eyes with a sacrificial blade, an act of surrender to the eldritch forces that surround you.\n
+As your vision fades to darkness, a sickening sensation consumes your being, as if the very essence of your soul is being extracted.\n
+\n
+A vortex of agonizing pain envelops you, your senses overwhelmed by a maddening cacophony of shrieks and tormented cries.\n
+The eldritch horror, now revealed in all its grotesque glory, revels in your anguish, its tendrils snaking around your body with sadistic delight.\n
+\n
+Time loses all meaning as you become an eternal prisoner of torment, trapped within the clutches of the eldritch horror's domain.\n
+Your existence becomes a perpetual nightmare, each moment stretching into an eternity of unending suffering.\n
+\n
+The eldritch horror feasts upon your essence, gnawing at the fragments of your shattered soul with insatiable hunger.\n
+It relishes in the perverse pleasure of your pain, distorting your perception until reality itself becomes a twisted mockery.\n
+\n
+Your screams echo through the void, reverberating endlessly as a testament to the horror that has befallen you.\n
+Your identity, once defined by hope and determination, is now consumed by the darkness that consumes your very essence.\n
+\n
+The metal box, now stained with the essence of your sacrifice, cackles with unholy glee, its purpose fulfilled at the cost of your eternal damnation.\n
+As your consciousness fades into oblivion, you are left with the bitter realization that your quest for power has led to your own undoing.\n
+\n
+In the depths of Hushan Hospital, the eldritch horror reigns supreme, forever ensnaring the souls of those who dare to dabble in forbidden rituals.\n
+Your fate is sealed, condemned to an eternity of torment and despair, a mere pawn in the eldritch horror's cruel game.\n
+\n
+The shadows of Hushan Hospital claim yet another victim, their whispers forever lost to the winds of forgotten nightmares.\n
+"""
+
+
+credits_text = """
+Thank you for playing Shadows of Hushan Hospital, a captivating text-based adventure game that takes you on a journey through the dark corridors of a haunted hospital.\n
+\n
+I would like to express my gratitude to all the players who embarked on this chilling adventure.\n
+\n
+This project was a labor of love, and I am thrilled to have brought this eerie and atmospheric old text based game to life.\n
+\n
+I hope you enjoyed playing this game as much as I enjoyed creating it.\n
+\n
+If you would like to support my projects, please consider starring this repository and following me on GitHub.\n
+\n
+Have a wonderful day, and I hope to see you again soon !\n
+\n
+PuddingNight\n
+"""
 
 # Starting the program
 
@@ -2291,7 +2407,7 @@ def fight_morgue_killer():
                 intro()
                 break
             elif play_again.capitalize == "N":
-                print("Thanks for playing!")
+                credits()
                 time.sleep(2)
                 exit()
                 break
@@ -2614,7 +2730,7 @@ def performing_ritual3():
         if choice == "1":
             print("You decide to chant the words that the ghost told you after the riddle.")
             time.sleep(2)
-            chanting_text()
+            chanting_eldritch_text()
             time.sleep(1)
             ritual_completed()
             break
@@ -2629,7 +2745,50 @@ def attempting_ritual_again():
     performing_ritual1()
 
 def ritual_completed():
-    pass
+    typewritter(ritual_completed_text)
+    time.sleep(1)
+    final_choice()
+
+
+def final_choice():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Accept the offer.")
+        time.sleep(2)
+        print("2. Unplug the severed head from the machine.")
+        time.sleep(2)
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to accept the offer.")
+            time.sleep(2)
+            ending1()
+            break
+        elif choice == "2":
+            print("You decide to unplug the severed head from the machine.")
+            time.sleep(2)
+            ending2()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+
+
+def ending1():
+    typewritter(bad_ending_text)
+    time.sleep(1)
+    credits()
+
+def ending2():
+    typewritter(good_ending_text)
+    time.sleep(1)
+    credits()
+
+def credits():
+    typewritter(credits_text)
+    time.sleep(20)
+    exit()
 
 def not_enough_ingredients():
     while True:
