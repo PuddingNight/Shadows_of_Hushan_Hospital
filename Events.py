@@ -12,6 +12,39 @@ def typewritter(string):
             time.sleep(0.08)
     print("\n")
 
+# Function that allows the text to be printed out one character at a time, but with a random delay for notes
+def read_notes(string):
+    for char in string:
+        print(char, end="", flush=True)
+        time.sleep(random.randint(1, 3) / 100)
+        if char == "\n":
+            time.sleep(random.randint(1, 3) / 10)
+        if char == ".":
+            time.sleep(random.randint(1, 3) / 10)
+        if char == "?":
+            time.sleep(random.randint(1, 3) / 10)
+        if char == "!":
+            time.sleep(random.randint(1, 3) / 10)
+        if char == ",":
+            time.sleep(random.randint(1, 3) / 10)
+        if char == "(":
+            time.sleep(random.randint(1, 3) / 10)
+        if char == ")":
+            time.sleep(random.randint(1, 3) / 10)
+        if char == ";":
+            time.sleep(random.randint(1, 3) / 10)
+        if char == ":":
+            time.sleep(random.randint(1, 3) / 10)
+        if char == "'":
+            time.sleep(random.randint(1, 3) / 10)
+        if char == '"':
+            time.sleep(random.randint(1, 3) / 10)
+        if char == "-":
+            time.sleep(random.randint(1, 3) / 10)
+        if char == "...":
+            time.sleep(random.randint(1, 3) / 10)
+    print("\n")
+
 
 # inventory that will hold the items the player will find
 inventory = []
@@ -1212,7 +1245,7 @@ You wonder if they were moved to another location, or if they were destroyed.\n
 \n
 After a while of rummaging through useless junk, you decide to move on.\n
 """
-
+#working on this
 going_through_secret_hole_text = """
 With cautious determination, you crawl through the narrow hole in the concrete wall, guided by a mix of trepidation and curiosity.\n
 The passage is cramped and claustrophobic, the dampness and coldness of the surroundings seeping into your bones.\n
@@ -1224,6 +1257,7 @@ The air hangs heavy with a sense of foreboding, as if the very atmosphere holds 
 Your eyes adjust to the dimness, revealing the ghastly scene that lies within.\n
 Dominating the room is a colossal pentagram etched onto the floor, its lines worn and faded with time.\n
 Each corner of the pentagram is marked by weathered candles, long since extinguished, their waxy remnants twisted and deformed.\n
+At the center of the pentagram lies a small metal box, its surface tarnished and rusted.\n
 \n
 The room exudes an oppressive silence, broken only by your own labored breathing.\n
 A sense of unease settles upon you as you gaze upon a macabre sight — a pile of skeletal remains, jumbled and scattered haphazardly, as if the remnants of twisted rituals past.\n
@@ -1241,19 +1275,70 @@ The path ahead is uncertain, and the perils that lie in wait remain unknown.\n
 But with every step you take, you inch closer to the heart of the mysteries that haunt Hushan Hospital.\n
 """
 
+inspecting_the_bones_text = """
+Swallowing down your fear, you approach the pile of bones, your eyes drawn to the skull that lies at the top of the heap.\n
+You can't help but wonder who this person was, and what fate befell them.\n
+\n
+You notice that a lot of the bones are broken, as if they were shattered by some great force.\n
+Some present signs of burns, while others are covered in strange markings.\n
+Teeth marks are visible on some of the bones, as if they were gnawed on\n
+\n
+You rummage through the pile, searching for anything that might give you a clue as to what happened here.\n
+\n
+Intriguingly, amidst the scattered skeletal remains, you notice a half-burned piece of paper partially concealed beneath the bones.\n
+Its edges are charred, hinting at a past encounter with fire.\n
+Though much of the text has been lost to the ravages of time, there are still fragments of words that survive, tantalizingly teasing at the knowledge they once held.\n
+"""
 
+reading_bones_note_text = """
+\n
+\n
+"Prepare, oh fragile vessel, for the ritual that shall grant me eternal power and ascendancy.\n
+\n
+New candles, pristine and untainted, must adorn each corner of the pentagram.\n
+Their flames, fueled by the essence of forbidden knowledge, shall dance with infernal delight.\n
+\n
+The circle of ashes, the remnants of tortured souls, must connect each point of the pentagram.\n
+A macabre link, binding the elements of the ritual in a sinister embrace.\n
+\n
+And now, with the preparations complete, the incantation must be unleashed, the words that defy reality.\n
+\n
+Oh, sweet madness, guide my tongue as I scream the eldritch sentence into the void.\n
+The very fabric of existence shall tremble at its resonance, and the Overseer shall awaken.\n
+\n
+But beware, oh pitiful mortal, for the consequences are grave, and the path once chosen cannot be undone.\n
+Choose wisely, whether to surrender to the allure of the unknown or to flee from the abyss that beckons.\n
+\n
+May these words, etched upon this parchment, serve as a reminder of the ritual's dark design.\n
+The time is nigh, the ritual awaits, and the Overseer yearns to be summoned from its slumber."\n
+\n
+\n
+You shudder as you read the words, your mind reeling from the implications of the ritual.\n
+The Overseer, the entity that was sought to be summoned, must be the source of the evil that has plagued Hushan Hospital.\n
+\n
+Your shivering hands drop the note, and you take a moment to compose yourself.\n
+"""
+
+inspecting_the_pentagram_candles_text = """
+
+"""
+
+inspecting_the_pentagram_box_text = """
+As you get closer to the metal box positioned at the heart of the pentagram, you notice that it is covered in strange symbols.\n
+Its surface gleams with an unsettling aura, emanating a faint vibration that resonates through the air, accompanied by a low, haunting hum.\n
+The box is tightly closed, its purpose shrouded in mystery. It beckons you, tempting you to unlock its secrets, but after multiple attempts, you realize that it is sealed shut.\n
+\n
+You wonder if there is a way to open it, but you can't seem to find any clues in this room.\n
+After a while, you decide to move on.\n
+"""
 
 standing_in_the_ritual_chamber_text = """
 You now stand at the center of the foreboding room, surrounded by the lingering echoes of dark rituals and the remnants of forbidden practices.\n
 The colossal pentagram etched onto the floor looms ominously, its faded lines a testament to the malevolent energies that once thrived here.\n
 \n
-Amidst the oppressive silence, your attention is drawn to a peculiar sight—the metal box positioned at the heart of the pentagram.\n
-Its surface gleams with an unsettling aura, emanating a faint vibration that resonates through the air, accompanied by a low, haunting hum.\n
-The box is tightly closed, its purpose shrouded in mystery. It beckons you, tempting you to unlock its secrets, but a sense of caution lingers.\n
+
 \n
-Intriguingly, amidst the scattered skeletal remains, you notice a half-burned piece of paper partially concealed beneath the bones.\n
-Its edges are charred, hinting at a past encounter with fire.\n
-Though much of the text has been lost to the ravages of time, there are still fragments of words that survive, tantalizingly teasing at the knowledge they once held.\n
+
 \n
 As your gaze shifts to the candles at the corners of the pentagram, a sense of curiosity piques within you.\n
 These candles, long extinguished, bear an otherworldly quality.\n
@@ -2349,6 +2434,8 @@ def going_through_the_pathway():
 
 def standing_in_ritual_room():
     pass
+
+
 
 
 def going_up_the_lobby_stairs():
