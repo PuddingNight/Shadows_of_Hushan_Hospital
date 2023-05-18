@@ -1246,7 +1246,7 @@ You wonder if they were moved to another location, or if they were destroyed.\n
 After a while of rummaging through useless junk, you decide to move on.\n
 """
 #working on this
-going_through_secret_hole_text = """
+going_through_secret_hole_new_text = """
 With cautious determination, you crawl through the narrow hole in the concrete wall, guided by a mix of trepidation and curiosity.\n
 The passage is cramped and claustrophobic, the dampness and coldness of the surroundings seeping into your bones.\n
 \n
@@ -1273,6 +1273,17 @@ As you stand amidst the desecrated remains and the faded symbols of dark magic, 
 You are now entwined in a web of ancient secrets and unspeakable acts.\n
 The path ahead is uncertain, and the perils that lie in wait remain unknown.\n
 But with every step you take, you inch closer to the heart of the mysteries that haunt Hushan Hospital.\n
+"""
+
+going_through_secret_hole_old_text = """
+Once again, you find yourself standing before the secret passage, the narrow hole in the concrete wall beckoning you to explore further.\n
+With cautious determination, you crawl through the passage, guided by a mix of trepidation and curiosity.\n
+You emerge on the other side.\n
+"""
+
+going_back_to_storage_room_text = """
+You decide to go back to the storage room.\n
+You crawl back through the narrow hole in the concrete wall and emerge on the other side.\n
 """
 
 inspecting_the_bones_text = """
@@ -1308,19 +1319,35 @@ The very fabric of existence shall tremble at its resonance, and the Overseer sh
 \n
 But beware, oh pitiful mortal, for the consequences are grave, and the path once chosen cannot be undone.\n
 Choose wisely, whether to surrender to the allure of the unknown or to flee from the abyss that beckons.\n
+But remember, all of these elements should be assembled at the same time, lest the ritual fail.\n
 \n
 May these words, etched upon this parchment, serve as a reminder of the ritual's dark design.\n
 The time is nigh, the ritual awaits, and the Overseer yearns to be summoned from its slumber."\n
 \n
 \n
+"""
+
+after_reading_bones_note_text = """
 You shudder as you read the words, your mind reeling from the implications of the ritual.\n
 The Overseer, the entity that was sought to be summoned, must be the source of the evil that has plagued Hushan Hospital.\n
 \n
-Your shivering hands drop the note, and you take a moment to compose yourself.\n
+Your shivering hands puts the note in your backpack, and you take a moment to compose yourself.\n
+You should find all the ingredients for the ritual and only then, try to perform it.\n
+Assembling the candles, the ashes, and the incantation should be done at the same time.\n
 """
 
 inspecting_the_pentagram_candles_text = """
+As your gaze shifts to the candles at the corners of the pentagram, a sense of curiosity piques within you.\n
+You get closer to the candles, examining them with a mixture of trepidation and fascination.\n
+But as you reach to touch them, they start to crumble into dust, collapsing into a pile of wax and wick.\n
+\n
+You are most certainly not able to use them.\n
+You need to find some other way to light the candles.\n
+"""
 
+inspecting_the_pentagram_candles_old_text = """
+You cannot do anything with these candles, they are too old and fragile.\n
+Maybe you can find some other candles to use.\n
 """
 
 inspecting_the_pentagram_box_text = """
@@ -1332,67 +1359,45 @@ You wonder if there is a way to open it, but you can't seem to find any clues in
 After a while, you decide to move on.\n
 """
 
-standing_in_the_ritual_chamber_text = """
-You now stand at the center of the foreboding room, surrounded by the lingering echoes of dark rituals and the remnants of forbidden practices.\n
-The colossal pentagram etched onto the floor looms ominously, its faded lines a testament to the malevolent energies that once thrived here.\n
-\n
+inspecting_the_pentagram_box_old_text = """
+The metal box is tightly closed, its purpose shrouded in mystery.\n
+You wonder if there is a way to open it, but you can't seem to find any clues in this room.\n
+"""
 
-\n
 
-\n
-As your gaze shifts to the candles at the corners of the pentagram, a sense of curiosity piques within you.\n
-These candles, long extinguished, bear an otherworldly quality.\n
-Their wax, once molten, now appears strange and otherworldly, as if derived from an unknown source.\n
-Their origin and purpose remain a mystery, leaving you to wonder at the nature of the dark arts that were practiced within this unhallowed chamber.\n
-\n
-Surrounded by enigmas and confronted with choices, you find yourself standing at the precipice of a decision.\n
-The metal box's vibrations and haunting hum beckon you to unravel its secrets, while the half-burned paper promises fragments of lost knowledge.\n
-And yet, as you survey the room with trepidation, a shiver runs down your spine, reminding you of the perils that lie within this chamber of shadows.\n
-The choice is yours, but tread carefully, for the path you choose may lead to revelation or further descent into the abyss of darkness.\n
+inspecting_the_bones_old_text = """
+The bones are scattered around the room, as if they were thrown around by some great force.\n
+Sadly, you cannot find anything useful among them.\n
 """
 
 
 standing_in_the_ritual_chamber_text = """
 You now stand at the center of the foreboding room, surrounded by the lingering echoes of dark rituals and the remnants of forbidden practices.\n
 The colossal pentagram etched onto the floor looms ominously, its faded lines a testament to the malevolent energies that once thrived here.\n
-\n
-The metal box is still there, tightly closed.
-\n
-The small note is still there, partially concealed beneath the bones.
-\n
-The candles still stand at the corners of the pentagram, their wax molten.
-"""
-
-standing_in_the_ritual_chamber_note_text = """
-You now stand at the center of the foreboding room, surrounded by the lingering echoes of dark rituals and the remnants of forbidden practices.\n
-The colossal pentagram etched onto the floor looms ominously, its faded lines a testament to the malevolent energies that once thrived here.\n
-\n
-The metal box is still there, tightly closed.
-\n
-The bones are scattered around the place where you found the note.\n
-\n
-The candles still stand at the corners of the pentagram, their wax molten.
 """
 
 
-standing_in_the_ritual_chamber_candles_text = """
-You now stand at the center of the foreboding room, surrounded by the lingering echoes of dark rituals and the remnants of forbidden practices.\n
-The colossal pentagram etched onto the floor looms ominously, its faded lines a testament to the malevolent energies that once thrived here.\n
-\n
-The metal box is still there, tightly closed.
-\n
-The small note is still there, partially concealed beneath the bones.
-\n
-You cleaned the candles, now the corners of the pentagram are empty.
+standing_in_the_ritual_chamber_all_check_text = """
+You've seen everything there is to see in this room.\n
+You should go back to the pathway and try to find the required ingredients for the ritual.\n
 """
 
-standing_in_the_ritual_chamber_candles_note_text = """
-You now stand at the center of the foreboding room, surrounded by the lingering echoes of dark rituals and the remnants of forbidden practices.\n
-The colossal pentagram etched onto the floor looms ominously, its faded lines a testament to the malevolent energies that once thrived here.\n
+all_ingridients_text = """
+While you finish getting out from the pathway, the ground starts to shake.\n
+You look back and see the pentagram glowing, bones start to rise from the ground.\n
+Suddently, the concrete wall starts to crask, and soon after, it collapses.\n
 \n
-The bones are scattered around the place where you found the note.\n
+The bones falls on the ground, and the pentagram stops glowing.\n
+You are now trapped in the ritual chamber.\n
 \n
-You cleaned the candles, now the corners of the pentagram are empty.
+You check your backpack, and see that you have all the ingridients to perform the ritual.\n
+\n
+This might be your only chance to get out of here.\n
+\n
+Shivering, you repeat the words written on the note.\n
+Candles. Ashes. Chant.\n
+\n
+Candles. Ashes. Chant.\n
 """
 
 #ashes
@@ -2425,17 +2430,125 @@ def look_at_the_storage_shelves():
     typewritter(inspecting_the_storage_room_shelves_text)
     time.sleep(1)
     standing_storage_room()
+
+ 
 #Need to add the ritual room (make it a stand in so that it can be changed later)
 def going_through_the_pathway():
-    typewritter(going_through_secret_hole_text)
-    time.sleep(1)
-    ritual_room()
-
+    if check_visited_rooms("pathway") == False:
+        typewritter(going_through_secret_hole_new_text)
+        time.sleep(1)
+        visited_rooms.append("pathway")
+        standing_in_ritual_room()
+    else:
+        typewritter(going_through_secret_hole_old_text)
+        time.sleep(1)
+        #need to add the standing in the ritual room function
 
 def standing_in_ritual_room():
-    pass
+    if check_inventory("lab_candles") == True and check_inventory("Ashes") == True and check_events("psychiatric_ward_clue") == True:
+        typewritter(all_ingridients_text)
+        time.sleep(1)
+        performing_ritual()
+    else:
+        if check_events("ritual_old_candles") == True and check_inventory("ritual_note") == True and check_events("Metal_Box_Ritual") == True:
+            typewritter(standing_in_the_ritual_chamber_all_check_text)
+            time.sleep(1)
+            not_enough_ingridients()
+        else:
+            typewritter(standing_in_the_ritual_chamber_text)
+            time.sleep(1)
+            not_enough_ingridients()
 
 
+
+
+
+def not_enough_ingridients():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Go back through the pathway.")
+        time.sleep(2)
+        print("2. Inspect the the deformed candles.")
+        time.sleep(2)
+        print("3. Inspect the pile of bones.")
+        time.sleep(2)
+        print("4. Inspect the metal box.")
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to go back through the pathway.")
+            time.sleep(2)
+            going_back_to_storage_room()
+            break
+        elif choice == "2":
+            print("You decide to inspect the deformed candles.")
+            time.sleep(2)
+            inspect_ritual_candles()
+            break
+        elif choice == "3":
+            print("You decide to inspect the pile of bones.")
+            time.sleep(2)
+            inspecting_the_pile_of_bones()
+            break
+        elif choice == "4":
+            print("You decide to inspect the metal box.")
+            time.sleep(2)
+            inspect_metal_box()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+
+
+def going_back_to_storage_room():
+    typewritter(going_back_to_storage_room_text)
+    time.sleep(1)
+    standing_storage_room()
+
+
+def inspect_ritual_candles():
+    if check_events("ritual_old_candles") == False:
+        typewritter(inspecting_the_pentagram_candles_text)
+        time.sleep(1)
+        standing_in_ritual_room()
+        events.append("ritual_old_candles")
+    else:
+        typewritter(inspecting_the_pentagram_candles_old_text)
+        time.sleep(1)
+        standing_in_ritual_room()
+
+def inspecting_the_pile_of_bones():
+    if check_inventory("ritual_note") == False:
+        typewritter(inspecting_the_bones_text)
+        time.sleep(1)
+        read_notes(reading_bones_note_text)
+        time.sleep(1)
+        typewritter(after_reading_bones_note_text)
+        inventory.append("ritual_note")
+        time.sleep(1)
+        standing_in_ritual_room()
+    else:
+        typewritter(inspecting_the_bones_old_text)
+        time.sleep(1)
+        standing_in_ritual_room()
+
+def inspect_metal_box():
+    if check_events("Metal_Box_Ritual") == False:
+        typewritter(inspecting_the_pentagram_box_text)
+        time.sleep(1)
+        standing_in_ritual_room()
+        events.append("Metal_Box_Ritual")
+    else:
+        typewritter(inspecting_the_pentagram_box_old_text)
+        time.sleep(1)
+        standing_in_ritual_room()
+
+
+#def standing_in_ritual_room():
+    #if check_inventory("lab_candles") == False and check_inventory("ritual_note") == False and check_events("psychiatric_ward_clue") == False
+#add a check if all the ingredients for the ritual are in the inventory
+#if they are -> floor shaking blocking the player from leaving the room
 
 
 def going_up_the_lobby_stairs():
