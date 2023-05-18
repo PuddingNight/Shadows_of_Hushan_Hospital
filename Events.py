@@ -2460,417 +2460,6 @@ def returning_to_staff_only():
             time.sleep(2)
 
 #Add this to the bottom of the file
-def going_to_the_storage_room():
-    if check_visited_rooms("storage_room") == False:
-        typewritter(going_down_storage_room_stairs_new_text)
-        time.sleep(1)
-        visited_rooms.append("storage_room")
-        standing_storage_room()
-    else:
-        typewritter(going_down_storage_room_stairs_old_text)
-        time.sleep(1)
-        standing_storage_room()
-
-
-def standing_storage_room():
-    if check_events("Piano Activated") == False and check_events("Storage Shelves") == False:
-        typewritter(standing_storage_room_text)
-        time.sleep(1)
-        storage_room_decision1()
-    elif check_events("Piano Activated") == False and check_events("Storage Shelves") == True:
-        typewritter(standing_storage_room_shelves_text)
-        time.sleep(1)
-        storage_room_decision2()
-    elif check_events("Piano Activated") == True and check_events("Storage Shelves") == False:
-        typewritter(standing_storage_room_piano_text)
-        time.sleep(1)
-        storage_room_decision3()
-    else:
-        typewritter(standing_storage_room_piano_shelves_text)
-        time.sleep(1)
-        storage_room_decision4()
-
-
-def storage_room_decision1():
-    while True:
-        print("What do you want to do?")
-        time.sleep(2)
-        print("1. Inspect the piano.")
-        time.sleep(2)
-        print("2. Inspect the storage shelves.")
-        time.sleep(2)
-        print("3. Go back up the stairs.")
-        choice = input("Enter the number of your choice: ")
-
-        if choice == "1":
-            print("You decide to inspect the piano")
-            time.sleep(2)
-            inspect_the_piano()
-            break
-        elif choice == "2":
-            print("You decide to inspect the storage shelves.")
-            time.sleep(2)
-            look_at_the_storage_shelves()
-            break
-        elif choice == "3":
-            print("You decide to go back up the stairs.")
-            time.sleep(2)
-            returning_to_staff_only()
-            break
-        else:
-            print("Invalid choice. Please enter a valid number.")
-            time.sleep(2)
-
-def storage_room_decision2():
-    while True:
-        print("What do you want to do?")
-        time.sleep(2)
-        print("1. Inspect the piano.")
-        time.sleep(2)
-        print("2. Go back up the stairs.")
-        choice = input("Enter the number of your choice: ")
-
-        if choice == "1":
-            print("You decide to inspect the piano")
-            time.sleep(2)
-            inspect_the_piano()
-            break
-        elif choice == "2":
-            print("You decide to go back up the stairs.")
-            time.sleep(2)
-            returning_to_staff_only()
-            break
-        else:
-            print("Invalid choice. Please enter a valid number.")
-            time.sleep(2)
-
-def storage_room_decision3():
-    while True:
-        print("What do you want to do?")
-        time.sleep(2)
-        print("1. Inspect the storage shelves.")
-        time.sleep(2)
-        print("2. Go Through the pathway.")
-        time.sleep(2)
-        print("3. Go back up the stairs.")
-        choice = input("Enter the number of your choice: ")
-
-        if choice == "1":
-            print("You decide to inspect the storage shelves.")
-            time.sleep(2)
-            look_at_the_storage_shelves()
-            break
-        elif choice == "2":
-            print("You decide to go through the pathway.")
-            time.sleep(2)
-            going_through_the_pathway
-            break
-        elif choice == "3":
-            print("You decide to go back up the stairs.")
-            time.sleep(2)
-            returning_to_staff_only()
-            break
-        else:
-            print("Invalid choice. Please enter a valid number.")
-            time.sleep(2)
-
-def storage_room_decision4():
-    while True:
-        print("What do you want to do?")
-        time.sleep(2)
-        print("1. Go Through the pathway.")
-        time.sleep(2)
-        print("2. Go back up the stairs.")
-        choice = input("Enter the number of your choice: ")
-
-        if choice == "1":
-            print("You decide to go through the pathway.")
-            time.sleep(2)
-            going_through_the_pathway
-            break
-        elif choice == "2":
-            print("You decide to go back up the stairs.")
-            time.sleep(2)
-            returning_to_staff_only()
-            break
-        else:
-            print("Invalid choice. Please enter a valid number.")
-            time.sleep(2)
-
-
-def inspect_the_piano():
-    if check_inventory("Music Box") == False and check_visited_rooms("patient_rooms") == False:
-        typewritter(inspecting_the_piano_text)
-        time.sleep(1)
-        standing_storage_room()
-    elif check_inventory("Music Box") == False and check_visited_rooms("patient_rooms") == True:
-        typewritter(inspecting_the_piano_ghost_text)
-        time.sleep(1)
-        standing_storage_room()
-    elif check_inventory("Music Box") == True and check_visited_rooms("patient_rooms") == False:
-        typewritter(inspecting_the_piano_music_box_text)
-        time.sleep(1)
-        standing_storage_room()
-    else:
-        typewritter(activating_the_piano_text)
-        time.sleep(1)
-        standing_storage_room()
-
-
-def look_at_the_storage_shelves():
-    typewritter(inspecting_the_storage_room_shelves_text)
-    time.sleep(1)
-    standing_storage_room()
-
- 
-def going_through_the_pathway():
-    if check_visited_rooms("pathway") == False:
-        typewritter(going_through_secret_hole_new_text)
-        time.sleep(1)
-        visited_rooms.append("pathway")
-        standing_in_ritual_room()
-    else:
-        typewritter(going_through_secret_hole_old_text)
-        time.sleep(1)
-        standing_in_ritual_room()
-
-def standing_in_ritual_room():
-    if check_inventory("lab_candles") == True and check_inventory("Ashes") == True and check_events("psychiatric_ward_clue") == True:
-        typewritter(all_ingredients_text)
-        time.sleep(1)
-        trapped_in_ritual_room()
-    else:
-        if check_events("ritual_old_candles") == True and check_inventory("ritual_note") == True and check_events("Metal_Box_Ritual") == True:
-            typewritter(standing_in_the_ritual_chamber_all_check_text)
-            time.sleep(1)
-            not_enough_ingredients()
-        else:
-            typewritter(standing_in_the_ritual_chamber_text)
-            time.sleep(1)
-            not_enough_ingredients()
-
-
-def trapped_in_ritual_room():
-    typewritter(trapped_in_ritual_room_text)
-    time.sleep(1)
-    performing_ritual1()
-
-def performing_ritual1():
-    while True:
-        print("What do you want to do?")
-        time.sleep(2)
-        print("1. Chant the words that the ghost told you after the riddle.")
-        time.sleep(2)
-        print("2. Put the candles on each of the tips of the pentagram.")
-        time.sleep(2)
-        print("3. Draw a circle around the pentagram with the ashes.")
-        choice = input("Enter the number of your choice: ")
-
-        if choice == "1":
-            print("You decide to chant the words that the ghost told you after the riddle.")
-            time.sleep(2)
-            wrong_order_generic_text()
-            time.sleep(1)
-            attempting_ritual_again()
-            break
-        elif choice == "2":
-            print("You decide to put the candles on each of the tips of the pentagram.")
-            time.sleep(2)
-            placing_candles_text()
-            time.sleep(1)
-            performing_ritual2()
-            break
-        elif choice == "3":
-            print("You decide to draw a circle around the pentagram with the ashes.")
-            time.sleep(2)
-            wrong_order_generic_text()
-            time.sleep(1)
-            attempting_ritual_again()
-            break
-        else:
-            print("Invalid choice. Please enter a valid number.")
-            time.sleep(2)
-
-
-def performing_ritual2():
-    while True:
-        print("What do you want to do?")
-        time.sleep(2)
-        print("1. Chant the words that the ghost told you after the riddle.")
-        time.sleep(2)
-        print("2. Draw a circle around the pentagram with the ashes.")
-        choice = input("Enter the number of your choice: ")
-
-        if choice == "1":
-            print("You decide to chant the words that the ghost told you after the riddle.")
-            time.sleep(2)
-            wrong_order_generic_text()
-            time.sleep(1)
-            attempting_ritual_again()
-            break
-        elif choice == "2":
-            print("You decide to draw a circle around the pentagram with the ashes.")
-            time.sleep(2)
-            drawing_circle_text()
-            time.sleep(1)
-            performing_ritual3()
-            break
-        else:
-            print("Invalid choice. Please enter a valid number.")
-            time.sleep(2)
-
-
-def performing_ritual3():
-    while True:
-        print("What do you want to do?")
-        time.sleep(2)
-        print("1. Chant the words that the ghost told you after the riddle.")
-        choice = input("Enter the number of your choice: ")
-
-        if choice == "1":
-            print("You decide to chant the words that the ghost told you after the riddle.")
-            time.sleep(2)
-            chanting_eldritch_text()
-            time.sleep(1)
-            ritual_completed()
-            break
-        else:
-            print("Invalid choice. Please enter a valid number.")
-            time.sleep(2)
-
-
-def attempting_ritual_again():
-    typewritter(attempting_ritual_again_text)
-    time.sleep(1)
-    performing_ritual1()
-
-def ritual_completed():
-    typewritter(ritual_completed_text)
-    time.sleep(1)
-    final_choice()
-
-
-def final_choice():
-    while True:
-        print("What do you want to do?")
-        time.sleep(2)
-        print("1. Accept the offer.")
-        time.sleep(2)
-        print("2. Unplug the severed head from the machine.")
-        time.sleep(2)
-        choice = input("Enter the number of your choice: ")
-
-        if choice == "1":
-            print("You decide to accept the offer.")
-            time.sleep(2)
-            ending1()
-            break
-        elif choice == "2":
-            print("You decide to unplug the severed head from the machine.")
-            time.sleep(2)
-            ending2()
-            break
-        else:
-            print("Invalid choice. Please enter a valid number.")
-            time.sleep(2)
-
-
-def ending1():
-    typewritter(bad_ending_text)
-    time.sleep(1)
-    credits()
-
-def ending2():
-    typewritter(good_ending_text)
-    time.sleep(1)
-    credits()
-
-def credits():
-    typewritter(credits_text)
-    time.sleep(20)
-    exit()
-
-def not_enough_ingredients():
-    while True:
-        print("What do you want to do?")
-        time.sleep(2)
-        print("1. Go back through the pathway.")
-        time.sleep(2)
-        print("2. Inspect the the deformed candles.")
-        time.sleep(2)
-        print("3. Inspect the pile of bones.")
-        time.sleep(2)
-        print("4. Inspect the metal box.")
-        choice = input("Enter the number of your choice: ")
-
-        if choice == "1":
-            print("You decide to go back through the pathway.")
-            time.sleep(2)
-            going_back_to_storage_room()
-            break
-        elif choice == "2":
-            print("You decide to inspect the deformed candles.")
-            time.sleep(2)
-            inspect_ritual_candles()
-            break
-        elif choice == "3":
-            print("You decide to inspect the pile of bones.")
-            time.sleep(2)
-            inspecting_the_pile_of_bones()
-            break
-        elif choice == "4":
-            print("You decide to inspect the metal box.")
-            time.sleep(2)
-            inspect_metal_box()
-            break
-        else:
-            print("Invalid choice. Please enter a valid number.")
-            time.sleep(2)
-
-
-def going_back_to_storage_room():
-    typewritter(going_back_to_storage_room_text)
-    time.sleep(1)
-    standing_storage_room()
-
-
-def inspect_ritual_candles():
-    if check_events("ritual_old_candles") == False:
-        typewritter(inspecting_the_pentagram_candles_text)
-        time.sleep(1)
-        standing_in_ritual_room()
-        events.append("ritual_old_candles")
-    else:
-        typewritter(inspecting_the_pentagram_candles_old_text)
-        time.sleep(1)
-        standing_in_ritual_room()
-
-def inspecting_the_pile_of_bones():
-    if check_inventory("ritual_note") == False:
-        typewritter(inspecting_the_bones_text)
-        time.sleep(1)
-        read_notes(reading_bones_note_text)
-        time.sleep(1)
-        typewritter(after_reading_bones_note_text)
-        inventory.append("ritual_note")
-        time.sleep(1)
-        standing_in_ritual_room()
-    else:
-        typewritter(inspecting_the_bones_old_text)
-        time.sleep(1)
-        standing_in_ritual_room()
-
-def inspect_metal_box():
-    if check_events("Metal_Box_Ritual") == False:
-        typewritter(inspecting_the_pentagram_box_text)
-        time.sleep(1)
-        standing_in_ritual_room()
-        events.append("Metal_Box_Ritual")
-    else:
-        typewritter(inspecting_the_pentagram_box_old_text)
-        time.sleep(1)
-        standing_in_ritual_room()
-
 
 #def standing_in_ritual_room():
     #if check_inventory("lab_candles") == False and check_inventory("ritual_note") == False and check_events("psychiatric_ward_clue") == False
@@ -3412,6 +3001,422 @@ def picking_up_the_journal():
         lab_decision_3()
     else:
         lab_decision_4()
+
+
+def going_to_the_storage_room():
+    if check_visited_rooms("storage_room") == False:
+        typewritter(going_down_storage_room_stairs_new_text)
+        time.sleep(1)
+        visited_rooms.append("storage_room")
+        standing_storage_room()
+    else:
+        typewritter(going_down_storage_room_stairs_old_text)
+        time.sleep(1)
+        standing_storage_room()
+
+
+def standing_storage_room():
+    if check_events("Piano Activated") == False and check_events("Storage Shelves") == False:
+        typewritter(standing_storage_room_text)
+        time.sleep(1)
+        storage_room_decision1()
+    elif check_events("Piano Activated") == False and check_events("Storage Shelves") == True:
+        typewritter(standing_storage_room_shelves_text)
+        time.sleep(1)
+        storage_room_decision2()
+    elif check_events("Piano Activated") == True and check_events("Storage Shelves") == False:
+        typewritter(standing_storage_room_piano_text)
+        time.sleep(1)
+        storage_room_decision3()
+    else:
+        typewritter(standing_storage_room_piano_shelves_text)
+        time.sleep(1)
+        storage_room_decision4()
+
+
+def storage_room_decision1():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Inspect the piano.")
+        time.sleep(2)
+        print("2. Inspect the storage shelves.")
+        time.sleep(2)
+        print("3. Go back up the stairs.")
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to inspect the piano")
+            time.sleep(2)
+            inspect_the_piano()
+            break
+        elif choice == "2":
+            print("You decide to inspect the storage shelves.")
+            time.sleep(2)
+            look_at_the_storage_shelves()
+            break
+        elif choice == "3":
+            print("You decide to go back up the stairs.")
+            time.sleep(2)
+            returning_to_staff_only()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+
+def storage_room_decision2():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Inspect the piano.")
+        time.sleep(2)
+        print("2. Go back up the stairs.")
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to inspect the piano")
+            time.sleep(2)
+            inspect_the_piano()
+            break
+        elif choice == "2":
+            print("You decide to go back up the stairs.")
+            time.sleep(2)
+            returning_to_staff_only()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+
+def storage_room_decision3():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Inspect the storage shelves.")
+        time.sleep(2)
+        print("2. Go Through the pathway.")
+        time.sleep(2)
+        print("3. Go back up the stairs.")
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to inspect the storage shelves.")
+            time.sleep(2)
+            look_at_the_storage_shelves()
+            break
+        elif choice == "2":
+            print("You decide to go through the pathway.")
+            time.sleep(2)
+            going_through_the_pathway
+            break
+        elif choice == "3":
+            print("You decide to go back up the stairs.")
+            time.sleep(2)
+            returning_to_staff_only()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+
+def storage_room_decision4():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Go Through the pathway.")
+        time.sleep(2)
+        print("2. Go back up the stairs.")
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to go through the pathway.")
+            time.sleep(2)
+            going_through_the_pathway
+            break
+        elif choice == "2":
+            print("You decide to go back up the stairs.")
+            time.sleep(2)
+            returning_to_staff_only()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+
+
+def inspect_the_piano():
+    if check_inventory("Music Box") == False and check_visited_rooms("patient_rooms") == False:
+        typewritter(inspecting_the_piano_text)
+        time.sleep(1)
+        standing_storage_room()
+    elif check_inventory("Music Box") == False and check_visited_rooms("patient_rooms") == True:
+        typewritter(inspecting_the_piano_ghost_text)
+        time.sleep(1)
+        standing_storage_room()
+    elif check_inventory("Music Box") == True and check_visited_rooms("patient_rooms") == False:
+        typewritter(inspecting_the_piano_music_box_text)
+        time.sleep(1)
+        standing_storage_room()
+    else:
+        typewritter(activating_the_piano_text)
+        time.sleep(1)
+        standing_storage_room()
+
+
+def look_at_the_storage_shelves():
+    typewritter(inspecting_the_storage_room_shelves_text)
+    time.sleep(1)
+    standing_storage_room()
+
+ 
+def going_through_the_pathway():
+    if check_visited_rooms("pathway") == False:
+        typewritter(going_through_secret_hole_new_text)
+        time.sleep(1)
+        visited_rooms.append("pathway")
+        standing_in_ritual_room()
+    else:
+        typewritter(going_through_secret_hole_old_text)
+        time.sleep(1)
+        standing_in_ritual_room()
+
+def standing_in_ritual_room():
+    if check_inventory("lab_candles") == True and check_inventory("Ashes") == True and check_events("psychiatric_ward_clue") == True:
+        typewritter(all_ingredients_text)
+        time.sleep(1)
+        trapped_in_ritual_room()
+    else:
+        if check_events("ritual_old_candles") == True and check_inventory("ritual_note") == True and check_events("Metal_Box_Ritual") == True:
+            typewritter(standing_in_the_ritual_chamber_all_check_text)
+            time.sleep(1)
+            not_enough_ingredients()
+        else:
+            typewritter(standing_in_the_ritual_chamber_text)
+            time.sleep(1)
+            not_enough_ingredients()
+
+
+def trapped_in_ritual_room():
+    typewritter(trapped_in_ritual_room_text)
+    time.sleep(1)
+    performing_ritual1()
+
+def performing_ritual1():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Chant the words that the ghost told you after the riddle.")
+        time.sleep(2)
+        print("2. Put the candles on each of the tips of the pentagram.")
+        time.sleep(2)
+        print("3. Draw a circle around the pentagram with the ashes.")
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to chant the words that the ghost told you after the riddle.")
+            time.sleep(2)
+            wrong_order_generic_text()
+            time.sleep(1)
+            attempting_ritual_again()
+            break
+        elif choice == "2":
+            print("You decide to put the candles on each of the tips of the pentagram.")
+            time.sleep(2)
+            placing_candles_text()
+            time.sleep(1)
+            performing_ritual2()
+            break
+        elif choice == "3":
+            print("You decide to draw a circle around the pentagram with the ashes.")
+            time.sleep(2)
+            wrong_order_generic_text()
+            time.sleep(1)
+            attempting_ritual_again()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+
+
+def performing_ritual2():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Chant the words that the ghost told you after the riddle.")
+        time.sleep(2)
+        print("2. Draw a circle around the pentagram with the ashes.")
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to chant the words that the ghost told you after the riddle.")
+            time.sleep(2)
+            wrong_order_generic_text()
+            time.sleep(1)
+            attempting_ritual_again()
+            break
+        elif choice == "2":
+            print("You decide to draw a circle around the pentagram with the ashes.")
+            time.sleep(2)
+            drawing_circle_text()
+            time.sleep(1)
+            performing_ritual3()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+
+
+def performing_ritual3():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Chant the words that the ghost told you after the riddle.")
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to chant the words that the ghost told you after the riddle.")
+            time.sleep(2)
+            chanting_eldritch_text()
+            time.sleep(1)
+            ritual_completed()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+
+
+def attempting_ritual_again():
+    typewritter(attempting_ritual_again_text)
+    time.sleep(1)
+    performing_ritual1()
+
+def ritual_completed():
+    typewritter(ritual_completed_text)
+    time.sleep(1)
+    final_choice()
+
+
+def final_choice():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Accept the offer.")
+        time.sleep(2)
+        print("2. Unplug the severed head from the machine.")
+        time.sleep(2)
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to accept the offer.")
+            time.sleep(2)
+            ending1()
+            break
+        elif choice == "2":
+            print("You decide to unplug the severed head from the machine.")
+            time.sleep(2)
+            ending2()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+
+
+def ending1():
+    typewritter(bad_ending_text)
+    time.sleep(1)
+    credits()
+
+def ending2():
+    typewritter(good_ending_text)
+    time.sleep(1)
+    credits()
+
+def credits():
+    typewritter(credits_text)
+    time.sleep(20)
+    exit()
+
+def not_enough_ingredients():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Go back through the pathway.")
+        time.sleep(2)
+        print("2. Inspect the the deformed candles.")
+        time.sleep(2)
+        print("3. Inspect the pile of bones.")
+        time.sleep(2)
+        print("4. Inspect the metal box.")
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to go back through the pathway.")
+            time.sleep(2)
+            going_back_to_storage_room()
+            break
+        elif choice == "2":
+            print("You decide to inspect the deformed candles.")
+            time.sleep(2)
+            inspect_ritual_candles()
+            break
+        elif choice == "3":
+            print("You decide to inspect the pile of bones.")
+            time.sleep(2)
+            inspecting_the_pile_of_bones()
+            break
+        elif choice == "4":
+            print("You decide to inspect the metal box.")
+            time.sleep(2)
+            inspect_metal_box()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+
+
+def going_back_to_storage_room():
+    typewritter(going_back_to_storage_room_text)
+    time.sleep(1)
+    standing_storage_room()
+
+
+def inspect_ritual_candles():
+    if check_events("ritual_old_candles") == False:
+        typewritter(inspecting_the_pentagram_candles_text)
+        time.sleep(1)
+        standing_in_ritual_room()
+        events.append("ritual_old_candles")
+    else:
+        typewritter(inspecting_the_pentagram_candles_old_text)
+        time.sleep(1)
+        standing_in_ritual_room()
+
+def inspecting_the_pile_of_bones():
+    if check_inventory("ritual_note") == False:
+        typewritter(inspecting_the_bones_text)
+        time.sleep(1)
+        read_notes(reading_bones_note_text)
+        time.sleep(1)
+        typewritter(after_reading_bones_note_text)
+        inventory.append("ritual_note")
+        time.sleep(1)
+        standing_in_ritual_room()
+    else:
+        typewritter(inspecting_the_bones_old_text)
+        time.sleep(1)
+        standing_in_ritual_room()
+
+def inspect_metal_box():
+    if check_events("Metal_Box_Ritual") == False:
+        typewritter(inspecting_the_pentagram_box_text)
+        time.sleep(1)
+        standing_in_ritual_room()
+        events.append("Metal_Box_Ritual")
+    else:
+        typewritter(inspecting_the_pentagram_box_old_text)
+        time.sleep(1)
+        standing_in_ritual_room()
+
+
+
+
 
     # dummy intro launch that needs to be moved.
 intro()
