@@ -1382,7 +1382,7 @@ You've seen everything there is to see in this room.\n
 You should go back to the pathway and try to find the required ingredients for the ritual.\n
 """
 
-all_ingridients_text = """
+all_ingredients_text = """
 While you finish getting out from the pathway, the ground starts to shake.\n
 You look back and see the pentagram glowing, bones start to rise from the ground.\n
 Suddently, the concrete wall starts to crask, and soon after, it collapses.\n
@@ -1400,25 +1400,100 @@ Candles. Ashes. Chant.\n
 Candles. Ashes. Chant.\n
 """
 
-#ashes
-standing_in_the_ritual_chamber_puzzle_state_1_text = """
-
+trapped_in_ritual_room_text = """
+With trepidation, you cautiously make your way through the secret pathway.\n
+You finally have all the required ingredients for the ritual, and you are ready to perform it.\n
+\n
+As you step into the ritual room, a sudden rumble echoes through the chamber, reverberating through the walls.\n
+\n
+Your heart skips a beat as you turn to face the passage you just came through, only to find it blocked.\n
+the concrete wall has collapsed, and the pathway is now sealed off.\n
+\n
+Panic sets in as you realize that you are trapped in this forbidden chamber, cut off from the world outside.\n
+\n
+You frantically search for an escape route, your hands tracing the rough surface of the concrete barrier, but all your efforts prove futile.\n
+\n
+A sense of isolation and despair engulfs you as the reality sinks in – you are now at the mercy of the dark forces that reside within this chamber.\n
+Every corner of the room seems to whisper ancient secrets, and the bones strewn across the floor seem to mock your predicament.\n
+\n
+With no way out, you must confront the eerie stillness and perform the ritual.\n
+This is your only chance to escape this cursed place.\n
+\n
+You take a step forward, getting closer to the pentagram at the center of the room.\n
 """
 
-#candles
-standing_in_the_ritual_chamber_puzzle_state_2_text = """
 
+placing_candles_text = """
+With a steady hand and a touch of trepidation, you carefully position the candles at each corner of the pentagram.\n
+The cold metal of the candle holders sends a shiver up your spine as you align them precisely.\n
+The flickering flames cast eerie shadows on the faded lines of the pentagram, their otherworldly glow adding to the mystique of the room.\n
+\n
+As each candle finds its place, a faint energy stirs in the air, as if awakened by the proximity of the flames.\n
+You can almost feel the ancient power coursing through the room, eager to be harnessed.\n
+\n
+With the last candle in place, you step back and survey the arrangement, a macabre symphony of light amidst the darkness.\n
+The candles seem to flicker with anticipation, their collective presence invoking a sense of both dread and fascination.\n
+\n
+The stage is set, the elements aligned. The room hums with a palpable energy, awaiting the next step in the ritual.\n
+But remember, the path you tread is fraught with peril, and the consequences of your actions may be beyond comprehension.\n
+Proceed with caution, for the veil between worlds grows thin, and the Overseer's presence looms ever closer.\n
 """
 
-#chant
-standing_in_the_ritual_chamber_puzzle_state_3_text = """
-
+drawing_circle_text = """
+Taking the gathered ashes in your hand, you step forward to complete the ritual by drawing a circle that connects each tip of the pentagram.\n
+With deliberate movements, you release the ashes, watching as they cascade and settle on the floor, forming a sinuous line that unites the points of the pentagram.\n
+The ashes seem to have a life of their own, swirling and intertwining as if guided by unseen forces.\n
+\n
+As the circle takes shape, a hushed silence falls upon the room, as if the very air holds its breath in anticipation.\n
+The faint glow of the candles illuminates the ashen path, casting eerie shadows that dance along the edges of the pentagram.\n
+\n
+With each completed stroke, a surge of energy courses through your veins, an unmistakable connection forming between the ancient symbols and the ritual at hand.\n
+The room trembles with latent power, an arcane symphony that resonates in your very being.\n
+\n
+As the final line is drawn, the circle of ashes shimmers, a gateway between worlds, a conduit for the eldritch energies that pulse through the room.\n
+A sense of awe and trepidation washes over you, for you have initiated a process that transcends the boundaries of the known.\n
+The time draws near to invoke the Overseer, to bridge the gap between the mortal realm and the realm of the unseen.\n
+But be wary, for such summoning comes with great responsibility and untold consequences.\n
 """
 
-#failed puzzle
-standing_in_the_ritual_chamber_puzzle_failed_text = """
-
+chanting_eldritch_text = """
+You take a deep breath, your voice trembling with a mix of trepidation and determination.\n
+In the dimly lit chamber, surrounded by the symbols of the forbidden ritual, you begin to chant the eldritch words you learned from the ghost in the psychiatric ward.\n
+\n
+As the syllables escape your lips, they carry an otherworldly resonance, intertwining with the very fabric of the room.\n
+The air crackles with an electric energy, and the faint glow of the candles flickers, as if responding to the ancient incantation.\n
+\n
+With each uttered word, the chamber seems to vibrate, a palpable shift in the atmosphere that sends chills down your spine.\n
+The walls reverberate with the weight of the chant, and the room becomes a conduit for the supernatural forces you seek to harness.\n
+\n
+As you delve deeper into the incantation, your voice grows stronger and more resolute, invoking the power of the unseen realms.\n
+The words take on a life of their own, echoing through the chamber and beyond, piercing the boundaries that separate worlds.\n
+\n
+A growing sense of anticipation fills your being, for you know that the ritual is reaching its zenith, that the culmination draws near.\n
+The chant reverberates, a thread that connects you to the ethereal plane, a beacon that beckons the presence of the overseer.\n
+\n
+In this moment, you stand at the precipice of a profound encounter, where the boundaries of the mortal and the otherworldly intertwine.\n
+The outcome is uncertain, the consequences unknown, but you press on, driven by a thirst for knowledge and a desire to unlock the secrets that lie beyond.\n
 """
+
+wrong_order_generic_text = """
+As you proceed with the ritual, a growing sense of unease washes over you.\n
+A nagging feeling tugs at the back of your mind, and you begin to question the sequence of your actions.\n
+\n
+With each step taken, you become acutely aware that something is amiss, that the order is not as it should be.\n
+The air in the room feels heavy, charged with an unsettling energy.\n
+\n
+In the dim light, you survey the candles, the circle of ashes, and the eldritch chant, realizing that their arrangement is incorrect.\n
+A sense of disappointment and urgency fills your being as you understand the need to revisit the proper sequence of steps.\n
+\n
+With a determined resolve, you gather the ritual items, preparing to reset and embark on this eerie journey once again.\n
+Knowing that the correct order holds the key to unlocking the ritual's potential, you prepare to start anew.\n
+"""
+
+attempting_ritual_again_text = """
+After a moment of reflection, you gather the ritual items and prepare to start anew.\n
+"""
+
 
 # Starting the program
 
@@ -2372,7 +2447,7 @@ def storage_room_decision3():
         elif choice == "2":
             print("You decide to go through the pathway.")
             time.sleep(2)
-            #TO ADD
+            going_through_the_pathway
             break
         elif choice == "3":
             print("You decide to go back up the stairs.")
@@ -2395,7 +2470,7 @@ def storage_room_decision4():
         if choice == "1":
             print("You decide to go through the pathway.")
             time.sleep(2)
-            #TO ADD
+            going_through_the_pathway
             break
         elif choice == "2":
             print("You decide to go back up the stairs.")
@@ -2432,7 +2507,6 @@ def look_at_the_storage_shelves():
     standing_storage_room()
 
  
-#Need to add the ritual room (make it a stand in so that it can be changed later)
 def going_through_the_pathway():
     if check_visited_rooms("pathway") == False:
         typewritter(going_through_secret_hole_new_text)
@@ -2442,28 +2516,122 @@ def going_through_the_pathway():
     else:
         typewritter(going_through_secret_hole_old_text)
         time.sleep(1)
-        #need to add the standing in the ritual room function
+        standing_in_ritual_room()
 
 def standing_in_ritual_room():
     if check_inventory("lab_candles") == True and check_inventory("Ashes") == True and check_events("psychiatric_ward_clue") == True:
-        typewritter(all_ingridients_text)
+        typewritter(all_ingredients_text)
         time.sleep(1)
-        performing_ritual()
+        trapped_in_ritual_room()
     else:
         if check_events("ritual_old_candles") == True and check_inventory("ritual_note") == True and check_events("Metal_Box_Ritual") == True:
             typewritter(standing_in_the_ritual_chamber_all_check_text)
             time.sleep(1)
-            not_enough_ingridients()
+            not_enough_ingredients()
         else:
             typewritter(standing_in_the_ritual_chamber_text)
             time.sleep(1)
-            not_enough_ingridients()
+            not_enough_ingredients()
 
 
+def trapped_in_ritual_room():
+    typewritter(trapped_in_ritual_room_text)
+    time.sleep(1)
+    performing_ritual1()
+
+def performing_ritual1():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Chant the words that the ghost told you after the riddle.")
+        time.sleep(2)
+        print("2. Put the candles on each of the tips of the pentagram.")
+        time.sleep(2)
+        print("3. Draw a circle around the pentagram with the ashes.")
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to chant the words that the ghost told you after the riddle.")
+            time.sleep(2)
+            wrong_order_generic_text()
+            time.sleep(1)
+            attempting_ritual_again()
+            break
+        elif choice == "2":
+            print("You decide to put the candles on each of the tips of the pentagram.")
+            time.sleep(2)
+            placing_candles_text()
+            time.sleep(1)
+            performing_ritual2()
+            break
+        elif choice == "3":
+            print("You decide to draw a circle around the pentagram with the ashes.")
+            time.sleep(2)
+            wrong_order_generic_text()
+            time.sleep(1)
+            attempting_ritual_again()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
 
 
+def performing_ritual2():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Chant the words that the ghost told you after the riddle.")
+        time.sleep(2)
+        print("2. Draw a circle around the pentagram with the ashes.")
+        choice = input("Enter the number of your choice: ")
 
-def not_enough_ingridients():
+        if choice == "1":
+            print("You decide to chant the words that the ghost told you after the riddle.")
+            time.sleep(2)
+            wrong_order_generic_text()
+            time.sleep(1)
+            attempting_ritual_again()
+            break
+        elif choice == "2":
+            print("You decide to draw a circle around the pentagram with the ashes.")
+            time.sleep(2)
+            drawing_circle_text()
+            time.sleep(1)
+            performing_ritual3()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+
+
+def performing_ritual3():
+    while True:
+        print("What do you want to do?")
+        time.sleep(2)
+        print("1. Chant the words that the ghost told you after the riddle.")
+        choice = input("Enter the number of your choice: ")
+
+        if choice == "1":
+            print("You decide to chant the words that the ghost told you after the riddle.")
+            time.sleep(2)
+            chanting_text()
+            time.sleep(1)
+            ritual_completed()
+            break
+        else:
+            print("Invalid choice. Please enter a valid number.")
+            time.sleep(2)
+
+
+def attempting_ritual_again():
+    typewritter(attempting_ritual_again_text)
+    time.sleep(1)
+    performing_ritual1()
+
+def ritual_completed():
+    pass
+
+def not_enough_ingredients():
     while True:
         print("What do you want to do?")
         time.sleep(2)
