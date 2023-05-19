@@ -19,16 +19,21 @@ Explore the hospital, uncover its secrets, and discover the truth behind the Sha
 
 ## How to play :
 
+
 1. **Installation:**
 
 * Ensure you have Python installed on your computer. If not, download and install Python from the official website.
 * Clone or download the Shadows of Hushan Hospital repository from GitHub to your local machine.
+
+
 
 2. **Setup:**
 
 * Open your preferred terminal or command prompt and navigate to the game's directory.
 * Run the following command to launch the game:
 '''python main.py'''
+
+
 
 3. **Gameplay:**
 
@@ -37,16 +42,22 @@ Explore the hospital, uncover its secrets, and discover the truth behind the Sha
 * Explore the hospital, interact with objects, and make decisions that will shape the outcome of your journey.
 * Pay attention to clues, notes, and conversations with ghosts as they may provide valuable information to progress in the game.
 
+
+
 4. **Controls:**
 
 * To select an option, type the corresponding number or keyword provided in the prompts.
 * Use the "Enter" or "Return" key to submit your choice.
 * Follow on-screen instructions for any additional controls or special actions.
 
+
+
 5. **Tips:**
 
 * Take your time to explore each area thoroughly and examine objects for potential clues or items.
 * Interact with objects and ghosts to learn more about the hospital's history and the events that took place.
+
+
 
 5. **Enjoy the Adventure:**
 
