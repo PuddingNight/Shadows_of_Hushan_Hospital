@@ -12,15 +12,13 @@ As you progress through the game, you will encounter ghosts, discover clues, and
 ## The Haunting Background
 The game was developed in two days (which turned into a week) using Python and just the time and random librairies.
 
-The code may be considered messy, but it was created as a personal challenge to produce a functioning game in a timely manner without external help or research. It serves as a testament to the power of creativity and resourcefulness. Despite its less-than-ideal structure, the code effectively brings the game to life, allowing players to immerse themselves in a chilling world.
-
-Explore the hospital, uncover its secrets, and discover the truth behind the Shadows of Hushan Hospital.
+The code may be considered messy, but it was created as a personal challenge to produce a functioning game in a timely manner without external help or research. Despite its less-than-ideal structure, the code effectively brings the game to life.
 
 
 ## How to play :
 
 
-1. **Installation:**
+### 1. **Installation:**
 
 * Ensure you have Python installed on your computer. If not, download and install Python from the official website.
 * Clone or download the Shadows of Hushan Hospital repository from GitHub to your local machine.
@@ -31,7 +29,8 @@ Explore the hospital, uncover its secrets, and discover the truth behind the Sha
 
 * Open your preferred terminal or command prompt and navigate to the game's directory.
 * Run the following command to launch the game:
-'''python main.py'''
+
+'''python Events.py'''
 
 
 
@@ -74,7 +73,7 @@ Wishing you unforgettable adventures and spine-chilling moments as you uncover t
 ---
 
 <p align="center">
-<img src="https://github.com/PuddingNight/Shadows_of_Hushan_Hospital/blob/master/map_low_res.jpg">
+<img src="https://github.com/PuddingNight/Shadows_of_Hushan_Hospital/blob/master/Hushan_Map.jpg?raw=true">
 </p>
 
 
