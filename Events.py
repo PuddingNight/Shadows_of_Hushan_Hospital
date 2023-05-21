@@ -699,8 +699,10 @@ journal_operating_room_text = """
 As you open the journal, you realize that it belonged to one of the surgeons who worked in this ward.\n
 The entries are filled with detailed descriptions of surgical procedures, some of which are so graphic and disturbing that you can barely bring yourself to read them.\n
 \n
-But as you continue to flip through the pages, you come across an entry that stands out.\n
-\n
+But as you continue to flip through the pages, you come across an entry that stands out:\n
+"""
+
+rading_surgical_journal_text = """
 "As I continue my research into the possibility of immortality, I have made a remarkable discovery.\n
 It seems that the human soul contains a life essence that, when properly extracted, can be transformed into a fluid that has the power to extend one's life.\n
 \n
@@ -727,18 +729,21 @@ As I sit here, writing this note, I am wracked with guilt and horror at what I h
 But at the same time, I cannot deny the power and potential of this discovery.\n
 I must continue my research, no matter the cost. And if that means experimenting on the severed heads of patients to find a way to produce more fluid, then so be it.\n
 The quest for immortality is not for the faint of heart."\n
-\n
-You realize that this journal could be the key to uncovering the truth about what happened in this hospital, and you tuck it away in your bag, determined to continue your investigation.\n
 """
 
+closing_surgical_journal_text = """
+You realize that this journal could be the key to uncovering the truth about what happened in this hospital, and you tuck it away in your bag, determined to continue your investigation.\n
+"""
 
 journal_laboratory_text = """
 You carefully pick up the journal and open it.\n
 Flipping through the pages of the journal, you discover that the author was a former doctor of the hospital who became increasingly obsessed with using the power of the occult to extend his life.\n
 He describes in great detail the various rituals and experiments he conducted, and the horrific things he did in the name of science.\n
 \n
-As you read on, you come across a page with a strange symbol scrawled across it in blood-red ink. Beneath it, note reads,\n
-\n
+As you read on, you come across a page with a strange symbol scrawled across it in blood-red ink. Beneath it, note reads:\n
+"""
+
+journal_laboratory_read_text = """
 "Now is the time to begin my greatest experiment, the culmination of all my research.\n
 I have gathered the necessary materials and prepared the rital chamber.\n
 It took me weeks to dig this pit in the storage room, but I could conduct my darkest works without fear of interruption.\n
@@ -766,8 +771,9 @@ I will finally have the time to seek the knowledge I crave.\n
 I just need to prepare myself for this trial.\n
 \n
 Quick, the overseer is urging me to go down to the bowels of the hospital."\n
-\n
-\n
+"""
+
+journal_laboratory_close_text = """
 You slowly close the journal, and put it in your bag.\n
 \n
 You wonder where this ritual could have taken place.\n
@@ -970,7 +976,7 @@ Finally, you spot a small journal tucked away in one of the cabinets. Its cover 
 Should you read it ? or carry on exploring ?\n
 """
 
-enteting_the_surgical_ward_old_No_Journal_text = """
+entering_the_surgical_ward_old_No_Journal_text = """
 You step back into the surgical ward, and find yourself in the same room as before.\n
 The smell of blood and disinfectant is still strong, and the floor is still sticky with some kind of dark liquid.\n
 You can't help but wonder what does this journal contains.\n
@@ -2361,7 +2367,7 @@ def investigating_the_last_gurney():
 
 
 def grabbing_the_journal():
-    typewritter(reading_the_journal_morgue_text)
+    read_notes(reading_the_journal_morgue_text)
     time.sleep(1)
     typewritter(killer_comes_morgue_text)
     time.sleep(1)
@@ -2698,7 +2704,7 @@ def climbing_through_the_window_out():
 
 
 def picking_up_the_folder():
-    typewritter(administrative_office_note)
+    read_notes(administrative_office_note)
     time.sleep(1)
     events.append("administrative_journal")
     administrative_offices_decision()
@@ -2824,7 +2830,7 @@ def entering_the_surgical_ward():
         surgical_ward_decision()
     else:
         if check_events("surgical_journal") == False:
-            typewritter(enteting_the_surgical_ward_old_No_Journal_text)
+            typewritter(entering_the_surgical_ward_old_No_Journal_text)
             time.sleep(1)
             surgical_ward_decision()
         else:
@@ -2846,7 +2852,7 @@ def surgical_ward_decision():
         if choice == "1":
             print("You decide to pick up the journal.")
             time.sleep(2)
-            picking_up_the_journal()
+            picking_up_the_surgical_journal()
         elif choice == "2":
             print("You decide to go back to the stairs.")
             time.sleep(2)
@@ -2869,6 +2875,14 @@ def surgical_ward_decision():
             print("Invalid choice. Please enter a valid number.")
             time.sleep(2)
 
+def picking_up_the_surgical_journal():
+    typewritter(journal_operating_room_text)
+    time.sleep(1)
+    read_notes(rading_surgical_journal_text)
+    time.sleep(1)
+    typewritter(closing_surgical_journal_text)
+    events.append("surgical_journal")
+    surgical_ward_decision()
 
 def entering_the_lab():
     if check_visited_rooms("lab") == False:
@@ -2995,6 +3009,10 @@ def picking_up_the_candles():
 
 def picking_up_the_journal():
     typewritter(journal_laboratory_text)
+    time.sleep(1)
+    read_notes(journal_laboratory_read_text)
+    time.sleep(1)
+    typewritter(journal_laboratory_close_text)
     time.sleep(1)
     events.append("Lab_Journal")
     if check_inventory("lab_candles") == False:
