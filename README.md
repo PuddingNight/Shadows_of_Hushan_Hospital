@@ -20,9 +20,8 @@ The code may be considered messy, but it was created as a personal challenge to 
 
 ### 1. **Installation:**
 
-* Ensure you have Python installed on your computer. If not, download and install Python from the official website.
+* Ensure you have [Python installed on your computer](https://www.codecademy.com/article/install-python3 "A really good guide to learn how to do it.").
 * Clone or download the Shadows of Hushan Hospital repository from GitHub to your local machine.
-
 
 
 ### 2. **Setup:**
