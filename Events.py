@@ -16,33 +16,33 @@ def typewritter(string):
 def read_notes(string):
     for char in string:
         print(char, end="", flush=True)
-        time.sleep(random.randint(1, 3) / 100)
+        time.sleep(random.randint(9, 15) / 100) # random delay between 0.09 and 0.15 seconds
         if char == "\n":
-            time.sleep(random.randint(1, 3) / 10)
+            time.sleep(random.randint(1, 3))
         if char == ".":
-            time.sleep(random.randint(1, 3) / 10)
+            time.sleep(random.randint(1, 3))
         if char == "?":
-            time.sleep(random.randint(1, 3) / 10)
+            time.sleep(random.randint(1, 3))
         if char == "!":
-            time.sleep(random.randint(1, 3) / 10)
+            time.sleep(random.randint(1, 3))
         if char == ",":
-            time.sleep(random.randint(1, 3) / 10)
+            time.sleep(random.randint(1, 3))
         if char == "(":
-            time.sleep(random.randint(1, 3) / 10)
+            time.sleep(random.randint(1, 3))
         if char == ")":
-            time.sleep(random.randint(1, 3) / 10)
+            time.sleep(random.randint(1, 3))
         if char == ";":
-            time.sleep(random.randint(1, 3) / 10)
+            time.sleep(random.randint(1, 3))
         if char == ":":
-            time.sleep(random.randint(1, 3) / 10)
+            time.sleep(random.randint(1, 3))
         if char == "'":
-            time.sleep(random.randint(1, 3) / 10)
+            time.sleep(random.randint(1, 3))
         if char == '"':
-            time.sleep(random.randint(1, 3) / 10)
+            time.sleep(random.randint(1, 3))
         if char == "-":
-            time.sleep(random.randint(1, 3) / 10)
+            time.sleep(random.randint(1, 3))
         if char == "...":
-            time.sleep(random.randint(1, 3) / 10)
+            time.sleep(random.randint(1, 3))
     print("\n")
 
 
