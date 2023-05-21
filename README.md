@@ -60,15 +60,15 @@ python3 Events.py
 
 ### 6. **Enjoy the Adventure:**
 
-* Immerse yourself in the atmosphere of Shadows of Hushan Hospital and embrace the suspenseful journey that awaits.
+* Immerse yourself in the atmosphere and embrace the suspenseful journey that awaits.
 
 ## If you want to read more about how it was made, head up to my portfolio : 
 
 
 ## Conclusion :
-Thank you for joining me on this thrilling journey through Shadows of Hushan Hospital. May your exploration of its dark depths bring you both fear and exhilaration, leaving an indelible mark on your gaming experience.
+Thank you for joining me on this thrilling journey through Shadows of Hushan Hospital. May your exploration of its dark depths bring you both fear and exhilaration !
 
-Wishing you unforgettable adventures and spine-chilling moments as you uncover the secrets that dwell within the shadows.
+Wishing you a nice adventure as you uncover the secrets that dwell within the shadows.
 
 ---
 
