@@ -7,9 +7,9 @@ import random
 def typewritter(string):
     for char in string:
         print(char, end="", flush=True)
-        time.sleep(0.04)
+        time.sleep(0.05)
         if char == "\n":
-            time.sleep(0.08)
+            time.sleep(1.3)
     print("\n")
 
 # Function that allows the text to be printed out one character at a time, but with a random delay for notes
